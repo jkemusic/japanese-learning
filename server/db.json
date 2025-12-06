@@ -1,0 +1,282 @@
+[
+  {
+    "word": "境",
+    "reading": "さかい",
+    "accent": "",
+    "part": "名",
+    "level": "N2",
+    "meaning": "邊界、界限、境界",
+    "examples": [
+      {
+        "jap": "国境を越える。",
+        "cht": "越過國境。"
+      },
+      {
+        "jap": "子供と大人の境目。",
+        "cht": "小孩與大人的界線。"
+      },
+      {
+        "jap": "心の境地を高める。",
+        "cht": "提升心靈境界。"
+      }
+    ],
+    "originalQuery": "境",
+    "history": {
+      "count": 2,
+      "lastSearched": "2025-12-03T15:30:07.979Z"
+    },
+    "isLLM": true
+  },
+  {
+    "word": "増す",
+    "reading": "ます",
+    "accent": "",
+    "part": "",
+    "level": "N3",
+    "meaning": "增加、增長、增多／增益、增進",
+    "examples": [
+      {
+        "jap": "自信が増す。",
+        "cht": "自信增加。"
+      },
+      {
+        "jap": "食欲が増す。",
+        "cht": "食慾增加。"
+      },
+      {
+        "jap": "人口が増す。",
+        "cht": "人口增加。"
+      }
+    ],
+    "originalQuery": null,
+    "history": {
+      "count": 2,
+      "lastSearched": "2025-12-03T15:33:39.913Z"
+    },
+    "isLLM": true
+  },
+  {
+    "word": "増える",
+    "reading": "ふえる",
+    "accent": "[2]",
+    "part": "自下",
+    "level": "N4",
+    "meaning": "增加",
+    "examples": [
+      {
+        "jap": "人口が増える。",
+        "cht": "人口增加。"
+      },
+      {
+        "jap": "仕事が増える。",
+        "cht": "工作增加。"
+      },
+      {
+        "jap": "体重が増える。",
+        "cht": "體重增加。"
+      }
+    ],
+    "originalQuery": null,
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    },
+    "isLLM": true
+  },
+  {
+    "word": "増やす",
+    "reading": "ふやす",
+    "accent": "[2]",
+    "part": "他五",
+    "level": "N3",
+    "meaning": "增加",
+    "examples": [
+      {
+        "jap": "貯金を増やす。",
+        "cht": "增加存款。"
+      },
+      {
+        "jap": "野菜を増やす。",
+        "cht": "增加蔬菜。"
+      },
+      {
+        "jap": "生産量を増やす。",
+        "cht": "增加產量。"
+      }
+    ],
+    "originalQuery": null,
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    },
+    "isLLM": true
+  },
+  {
+    "word": "増水",
+    "reading": "ぞうすい",
+    "accent": "",
+    "part": "",
+    "level": "N2",
+    "meaning": "漲水、水位上升",
+    "examples": [
+      {
+        "jap": "大雨で川が増水した。",
+        "cht": "因為下大雨，河川漲水了。"
+      },
+      {
+        "jap": "増水注意の警報が出ている。",
+        "cht": "發布了注意漲水的警報。"
+      },
+      {
+        "jap": "ダムの放水で川が増水する。",
+        "cht": "因為水壩洩洪，河川會漲水。"
+      }
+    ],
+    "originalQuery": "増水",
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    },
+    "isLLM": true
+  },
+  {
+    "word": "増築",
+    "reading": "ぞうちく",
+    "accent": "",
+    "part": "",
+    "level": "N2",
+    "meaning": "增建、擴建",
+    "examples": [
+      {
+        "jap": "家を増築しました。",
+        "cht": "我家增建了。"
+      },
+      {
+        "jap": "図書館が増築される予定です。",
+        "cht": "圖書館預計要增建。"
+      },
+      {
+        "jap": "増築の費用は高いです。",
+        "cht": "增建的費用很高。"
+      }
+    ],
+    "originalQuery": "増築",
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    },
+    "isLLM": true
+  },
+  {
+    "word": "通う",
+    "reading": "かよう",
+    "accent": "[0]",
+    "part": "自五",
+    "level": "N4",
+    "meaning": "通學／往來／通行",
+    "examples": [
+      {
+        "jap": "毎日学校に通っています。",
+        "cht": "每天都去學校上學。"
+      },
+      {
+        "jap": "彼はジムに通うことにした。",
+        "cht": "他決定去健身房。"
+      },
+      {
+        "jap": "この道は駅に通う道です。",
+        "cht": "這條路是通往車站的路。"
+      }
+    ],
+    "originalQuery": null,
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    },
+    "isLLM": true
+  },
+  {
+    "word": "墨守",
+    "reading": "ぼくしゅ",
+    "accent": "",
+    "part": "",
+    "level": "N1",
+    "meaning": "墨守、固守",
+    "examples": [
+      {
+        "jap": "過去の慣習を墨守する。",
+        "cht": "墨守過去的習慣。"
+      },
+      {
+        "jap": "古い考え方を墨守していては、進歩はない。",
+        "cht": "如果墨守舊的想法，就不會有進步。"
+      },
+      {
+        "jap": "彼は伝統的な方法を墨守している。",
+        "cht": "他墨守傳統的方法。"
+      }
+    ],
+    "originalQuery": "墨守",
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    },
+    "isLLM": true
+  },
+  {
+    "word": "墨跡",
+    "reading": "ぼくせき",
+    "accent": "",
+    "part": "名",
+    "level": "N1",
+    "meaning": "墨跡、墨寶",
+    "examples": [
+      {
+        "jap": "これは有名な禅僧の墨跡です。",
+        "cht": "這是著名禪僧的墨跡。"
+      },
+      {
+        "jap": "美術館で貴重な墨跡を鑑賞しました。",
+        "cht": "在美術館欣賞了珍貴的墨寶。"
+      },
+      {
+        "jap": "その墨跡には力強い筆致が感じられる。",
+        "cht": "從那幅墨跡中能感受到強勁的筆觸。"
+      }
+    ],
+    "originalQuery": "墨蹟",
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    },
+    "isLLM": true
+  },
+  {
+    "word": "白墨",
+    "reading": "はくぼく",
+    "accent": "",
+    "part": "名",
+    "level": "",
+    "meaning": "粉筆",
+    "examples": [
+      {
+        "jap": "先生は白墨で黒板に書きます。",
+        "cht": "老師用粉筆在黑板上寫字。"
+      },
+      {
+        "jap": "白墨が折れてしまった。",
+        "cht": "粉筆斷掉了。"
+      },
+      {
+        "jap": "これは新しい白墨です。",
+        "cht": "這是新的粉筆。"
+      }
+    ],
+    "originalQuery": "白墨",
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    },
+    "isLLM": true
+  }
+]

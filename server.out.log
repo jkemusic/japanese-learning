@@ -1,0 +1,473 @@
+[dotenv@17.2.3] injecting env (1) from .env -- tip: ⚙️  override existing env vars with { override: true }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Detected Chinese input: "貓". Translating to Japanese...
+Word not found. Trying to convert to Hiragana...
+[Session Started 2025/12/03 �g�T 23:29:06.59]  
+[dotenv@17.2.3] injecting env (1) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Detected Chinese input: "境". Translating to Japanese...
+Translated "境" to "境"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "国境を越える。",
+    "cht": "越過國境。"
+  },
+  {
+    "jap": "心に境はない。",
+    "cht": "心裡沒有界限。"
+  },
+  {
+    "jap": "彼は達人の境地に達した。",
+    "cht": "他達到達人的境界。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "境". Translating to Japanese...
+Translated "境" to "境"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "国境を越える。",
+    "cht": "越過國境。"
+  },
+  {
+    "jap": "子供と大人の境目。",
+    "cht": "小孩與大人的界線。"
+  },
+  {
+    "jap": "心の境地を高める。",
+    "cht": "提升心靈境界。"
+  }
+]
+```
+LLM examples generated successfully.
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "雨がますます増すでしょう。",
+    "cht": "雨勢將會越來越增強吧。"
+  },
+  {
+    "jap": "食欲が増しました。",
+    "cht": "食慾增加了。"
+  },
+  {
+    "jap": "不安が増すばかりです。",
+    "cht": "只會越來越不安。"
+  }
+]
+```
+LLM examples generated successfully.
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "期待が高まる。",
+    "cht": "期待感增高。"
+  },
+  {
+    "jap": "気温が高まる。",
+    "cht": "氣溫升高。"
+  },
+  {
+    "jap": "緊張が高まる。",
+    "cht": "緊張感高漲。"
+  }
+]
+```
+LLM examples generated successfully.
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "自信が増す。",
+    "cht": "自信增加。"
+  },
+  {
+    "jap": "食欲が増す。",
+    "cht": "食慾增加。"
+  },
+  {
+    "jap": "人口が増す。",
+    "cht": "人口增加。"
+  }
+]
+```
+LLM examples generated successfully.
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "人口が増える。",
+    "cht": "人口增加。"
+  },
+  {
+    "jap": "仕事が増える。",
+    "cht": "工作增加。"
+  },
+  {
+    "jap": "体重が増える。",
+    "cht": "體重增加。"
+  }
+]
+```
+LLM examples generated successfully.
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "貯金を増やす。",
+    "cht": "增加存款。"
+  },
+  {
+    "jap": "野菜を増やす。",
+    "cht": "增加蔬菜。"
+  },
+  {
+    "jap": "生産量を増やす。",
+    "cht": "增加產量。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "増水". Translating to Japanese...
+Translated "増水" to "増水"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "大雨で川が増水した。",
+    "cht": "因為下大雨，河川漲水了。"
+  },
+  {
+    "jap": "増水注意の警報が出ている。",
+    "cht": "發布了注意漲水的警報。"
+  },
+  {
+    "jap": "ダムの放水で川が増水する。",
+    "cht": "因為水壩洩洪，河川會漲水。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "増築". Translating to Japanese...
+Translated "増築" to "増築"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "家を増築しました。",
+    "cht": "我家增建了。"
+  },
+  {
+    "jap": "図書館が増築される予定です。",
+    "cht": "圖書館預計要增建。"
+  },
+  {
+    "jap": "増築の費用は高いです。",
+    "cht": "增建的費用很高。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "激増". Translating to Japanese...
+Translated "激増" to "急増"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "最近、コロナ感染者が急増している。",
+    "cht": "最近，新冠感染者正在急速增加。"
+  },
+  {
+    "jap": "その商品の需要が急増した。",
+    "cht": "那個商品的需求急速增加了。"
+  },
+  {
+    "jap": "オンライン会議の利用者が急増している。",
+    "cht": "線上會議的使用者正在急速增加。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "激増". Translating to Japanese...
+Translated "激増" to "急増"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "最近、感染者が急増しています。",
+    "cht": "最近，感染者正在急速增加。"
+  },
+  {
+    "jap": "観光客が急増し、ホテルが不足している。",
+    "cht": "觀光客急速增加，導致飯店不足。"
+  },
+  {
+    "jap": "注文が急増して、対応が追いつかない。",
+    "cht": "訂單急速增加，導致無法應付。"
+  }
+]
+```
+LLM examples generated successfully.
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "毎日学校に通っています。",
+    "cht": "每天都去學校上學。"
+  },
+  {
+    "jap": "彼はジムに通うことにした。",
+    "cht": "他決定去健身房。"
+  },
+  {
+    "jap": "この道は駅に通う道です。",
+    "cht": "這條路是通往車站的路。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "墨絵". Translating to Japanese...
+Translated "墨絵" to "墨絵"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "これは有名な墨絵です。",
+    "cht": "這是一幅有名的水墨畫。"
+  },
+  {
+    "jap": "彼は墨絵を描くのが得意です。",
+    "cht": "他很擅長畫水墨畫。"
+  },
+  {
+    "jap": "墨絵は静かで美しいです。",
+    "cht": "水墨畫很安靜且美麗。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "墨守". Translating to Japanese...
+Translated "墨守" to "墨守"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "過去の慣習を墨守する。",
+    "cht": "墨守過去的習慣。"
+  },
+  {
+    "jap": "古い考え方を墨守していては、進歩はない。",
+    "cht": "如果墨守舊的想法，就不會有進步。"
+  },
+  {
+    "jap": "彼は伝統的な方法を墨守している。",
+    "cht": "他墨守傳統的方法。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "木石". Translating to Japanese...
+Translated "木石" to "木石"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "彼はまるで木石のように感情を見せない。",
+    "cht": "他簡直像木頭石頭一樣，不顯露感情。"
+  },
+  {
+    "jap": "木石にも心があると言われている。",
+    "cht": "據說木頭石頭也有心。"
+  },
+  {
+    "jap": "この庭には木石を配置した庭園がある。",
+    "cht": "這個庭院裡有一個配置了木頭和石頭的庭園。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "墨蹟". Translating to Japanese...
+Translated "墨蹟" to "墨跡"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "これは有名な禅僧の墨跡です。",
+    "cht": "這是著名禪僧的墨跡。"
+  },
+  {
+    "jap": "美術館で貴重な墨跡を鑑賞しました。",
+    "cht": "在美術館欣賞了珍貴的墨寶。"
+  },
+  {
+    "jap": "その墨跡には力強い筆致が感じられる。",
+    "cht": "從那幅墨跡中能感受到強勁的筆觸。"
+  }
+]
+```
+LLM examples generated successfully.
+[Session Started 2025/12/03 �g�T 23:49:57.62]  
+[dotenv@17.2.3] injecting env (1) from .env -- tip: ⚙️  override existing env vars with { override: true }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Detected Chinese input: "石墨". Translating to Japanese...
+Translated "石墨" to "黒鉛"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "黒鉛は鉛筆の芯に使われる。",
+    "cht": "石墨被用於鉛筆筆芯。"
+  },
+  {
+    "jap": "黒鉛は電気を通しやすい。",
+    "cht": "石墨容易導電。"
+  },
+  {
+    "jap": "電池には黒鉛が使われている。",
+    "cht": "電池裡使用了石墨。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "白墨". Translating to Japanese...
+Translated "白墨" to "白墨"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "先生は白墨で黒板に書きます。",
+    "cht": "老師用粉筆在黑板上寫字。"
+  },
+  {
+    "jap": "白墨が折れてしまった。",
+    "cht": "粉筆斷掉了。"
+  },
+  {
+    "jap": "これは新しい白墨です。",
+    "cht": "這是新的粉筆。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "白墨". Translating to Japanese...
+Translated "白墨" to "白墨"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "白墨で絵を描く。",
+    "cht": "用粉筆畫圖。"
+  },
+  {
+    "jap": "先生は白墨を使った。",
+    "cht": "老師用了粉筆。"
+  },
+  {
+    "jap": "これは白い白墨です。",
+    "cht": "這是白色的粉筆。"
+  }
+]
+```
+LLM examples generated successfully.
+[Session Started 2025/12/04 �g�| 23:46:10.17]  
+[Session Started 2025/12/04 �g�| 23:59:01.03]  
+[Session Started 2025/12/05 �g��  0:05:45.58]  
+[dotenv@17.2.3] injecting env (1) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+[Session Started 2025/12/05 �g��  0:32:43.38]  
+[dotenv@17.2.3] injecting env (1) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Detected Chinese input: "墳墓". Translating to Japanese...
+Translated "墳墓" to "墓"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "墓に花を供えた。",
+    "cht": "在墳墓獻了花。"
+  },
+  {
+    "jap": "その墓は古い。",
+    "cht": "那座墳墓很老舊。"
+  },
+  {
+    "jap": "墓参りに行った。",
+    "cht": "去掃墓了。"
+  }
+]
+```
+LLM examples generated successfully.
+Detected Chinese input: "恐怖". Translating to Japanese...
+Translated "恐怖" to "恐怖"
+Attempting to scrape examples...
+Scraped 0 examples.
+No examples found. Using LLM fallback...
+LLM Response: ```json
+[
+  {
+    "jap": "暗闇への恐怖を感じる。",
+    "cht": "我感到對黑暗的恐懼。"
+  },
+  {
+    "jap": "彼は恐怖で震えていた。",
+    "cht": "他因為恐懼而顫抖。"
+  },
+  {
+    "jap": "その話は恐怖を煽った。",
+    "cht": "那個故事煽動了恐懼。"
+  }
+]
+```
+LLM examples generated successfully.
