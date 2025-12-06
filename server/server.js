@@ -35,124 +35,107 @@ app.get('/api/search', async (req, res) => {
     const direction = req.query.direction || 'zh-ja'; // 'zh-ja' or 'ja-zh'
     if (!query) return res.status(400).json({ error: 'Query is required' });
 
+    // Helper function to scrape Sigure
+    const scrapeSigure = async (target) => {
+        try {
+            const url = `https://www.sigure.tw/dict/jp/${encodeURIComponent(target)}`;
+            const { data } = await axios.get(url, {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+                }
+            });
+            const $ = cheerio.load(data);
+            const word = $('.word-card__word').text().trim();
+            
+            if (!word) return null;
+
+            const result = {
+                word: word,
+                reading: $('.word-card__kana').text().trim(),
+                accent: $('.word-card__badge--accent').text().trim(),
+                part: $('.word-card__badge--part').text().trim(),
+                level: $('.word-card__badge--level').text().trim(),
+                meaning: $('.word-card__translation-text').first().text().trim(),
+                examples: []
+            };
+
+            // Scrape examples
+            $('.word-card__examples-list li').each((i, el) => {
+                const jap = $(el).find('.example-jp').text().trim();
+                const cht = $(el).find('.example-ch').text().trim();
+                if (jap) result.examples.push({ jap, cht });
+            });
+
+            return result;
+        } catch (e) {
+            console.error(`Scrape failed for ${target}:`, e.message);
+            return null;
+        }
+    };
+
     try {
-
-        let targetQuery = query;
+        let result = null;
         let originalQuery = null;
-        let translationError = null;
-        let translatedMeaning = null; // For ja-zh mode
+        let apiError = null;
 
-        // Handle Chinese-to-Japanese translation
-        if (direction === 'zh-ja') {
-            // Detect Chinese input (simple regex for common Chinese ranges)
+        // 1. Try Direct Search first
+        console.log(`Attempting direct search for: "${query}"`);
+        result = await scrapeSigure(query);
+
+        // 2. If not found, try fallbacks (Only if API key exists)
+        if (!result && process.env.GEMINI_API_KEY) {
+            console.log(`Direct search failed for "${query}". Checking fallbacks...`);
+
+            // Check if input looks like Chinese (and not Japanese Kana)
             const isChinese = /[\u4e00-\u9fa5]/.test(query) && !/[\u3040-\u309f\u30a0-\u30ff]/.test(query);
 
-            if (isChinese && process.env.GEMINI_API_KEY) {
-                console.log(`Detected Chinese input: "${query}". Translating to Japanese...`);
+            if (direction === 'zh-ja' && isChinese) {
                 try {
+                    console.log(`Input looks like Chinese. Translating "${query}" to Japanese...`);
                     const prompt = `Translate the Chinese word "${query}" to the most common Japanese word (Kanji or Kana). Return ONLY the Japanese word.`;
                     const resultLLM = await model.generateContent(prompt);
-                    const response = await resultLLM.response;
-                    const translated = response.text().trim();
-
+                    const translated = resultLLM.response.text().trim();
+                    
                     if (translated) {
-                        console.log(`Translated "${query}" to "${translated}"`);
-                        targetQuery = translated;
-                        originalQuery = query;
+                        console.log(`Translated to "${translated}". Searching...`);
+                        result = await scrapeSigure(translated);
+                        if (result) originalQuery = query; // Store original if found via translation
                     }
                 } catch (e) {
                     console.error('Translation failed:', e.message);
-                    if (e.message.includes('429')) {
-                        translationError = 'API Quota Exceeded (Translation)';
-                    } else {
-                        translationError = 'Translation Failed';
-                    }
+                    apiError = e.message;
                 }
             }
-        }
 
-        const url = `https://www.sigure.tw/dict/jp/${encodeURIComponent(targetQuery)}`;
-        const { data } = await axios.get(url, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-            }
-        });
-
-        let $ = cheerio.load(data);
-        const result = {
-            word: $('.word-card__word').text().trim(),
-            reading: $('.word-card__kana').text().trim(),
-            accent: $('.word-card__badge--accent').text().trim(),
-            part: $('.word-card__badge--part').text().trim(),
-            level: $('.word-card__badge--level').text().trim(),
-            meaning: $('.word-card__translation-text').first().text().trim(),
-            examples: [],
-            originalQuery: originalQuery
-        };
-
-        // If no word found, try to convert to Hiragana and search again
-        if (!result.word) {
-            console.log('Word not found. Trying to convert to Hiragana...');
-            if (process.env.GEMINI_API_KEY) {
+            // If still not found, try converting to Hiragana (handling Kanji reading issues)
+            if (!result) {
                 try {
+                    console.log(`Trying conversion to Hiragana for "${query}"...`);
                     const prompt = `Convert "${query}" to Hiragana. Return ONLY the Hiragana.`;
                     const resultLLM = await model.generateContent(prompt);
-                    const response = await resultLLM.response;
-                    const hiragana = response.text().trim();
-                    console.log(`Converted "${query}" to "${hiragana}". Retrying search...`);
+                    const hiragana = resultLLM.response.text().trim();
 
                     if (hiragana && hiragana !== query) {
-                        const url2 = `https://www.sigure.tw/dict/jp/${encodeURIComponent(hiragana)}`;
-                        const { data: data2 } = await axios.get(url2, {
-                            headers: {
-                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-                            }
-                        });
-                        const $2 = cheerio.load(data2);
-                        result.word = $2('.word-card__word').text().trim();
-                        result.reading = $2('.word-card__kana').text().trim();
-                        result.accent = $2('.word-card__badge--accent').text().trim();
-                        result.part = $2('.word-card__badge--part').text().trim();
-                        result.level = $2('.word-card__badge--level').text().trim();
-                        result.meaning = $2('.word-card__translation-text').first().text().trim();
-
-                        // Scrape examples for the new result
-                        $2('.word-card__examples-list li').each((i, el) => {
-                            const jap = $2(el).find('.example-jp').text().trim();
-                            const cht = $2(el).find('.example-ch').text().trim();
-                            if (jap) result.examples.push({ jap, cht });
-                        });
+                        console.log(`Converted to "${hiragana}". Searching...`);
+                        result = await scrapeSigure(hiragana);
                     }
                 } catch (e) {
                     console.error('Conversion failed:', e.message);
+                    if (!apiError) apiError = e.message;
                 }
             }
         }
 
-        if (!result.word) {
-            if (translationError) {
-                return res.status(429).json({ error: `找不到資料 (${translationError})` });
+        // 3. Final Result Check
+        if (!result) {
+            if (apiError && apiError.includes('429')) {
+                return res.status(429).json({ error: '找不到單字 (且 API 額度已滿，無法翻譯)' });
             }
-            return res.status(404).json({ error: 'Word not found' });
+            return res.status(404).json({ error: '找不到單字' });
         }
 
-
-
-        // Actually, the previous code block had example scraping AFTER the 404 check.
-        // I inserted the retry logic BEFORE the 404 check.
-        // So I should move the initial example scraping into the initial try block or just check if examples are empty.
-
-        // Let's just rely on the fact that `result.examples` is initialized to [] and populated if found.
-        // If initial search found word, it populated examples (wait, I need to check where I inserted).
-
-        // The insertion point was replacing lines 56-58 (the 404 check).
-        // The initial example scraping was at lines 85-89, which is AFTER the 404 check.
-        // So if I insert retry logic at 56, I need to make sure I scrape examples for the INITIAL successful search too?
-        // No, the initial search scraping happened at lines 46-53 (basic info).
-        // Example scraping was later.
-
-        // Correct flow:
-
+        // Add original query info if we translated it
+        if (originalQuery) result.originalQuery = originalQuery;
 
         // Update History
         const history = readHistory();
@@ -160,13 +143,7 @@ app.get('/api/search', async (req, res) => {
         if (!history[result.word]) {
             history[result.word] = { count: 0, lastSearched: null };
         }
-
-        // Prepare response with previous history data BEFORE incrementing for "last time" context, 
-        // OR return the updated data. The user asked for "This word has been searched X times" and "Last searched on...".
-        // Usually "Last searched" implies the previous time.
-        // Let's return the current state (including this search) but maybe also the previous date?
-        // Simpler: Return the updated count and the *previous* date (if any), then update the date.
-
+        
         const previousDate = history[result.word].lastSearched;
         history[result.word].count += 1;
         history[result.word].lastSearched = now;
@@ -174,67 +151,44 @@ app.get('/api/search', async (req, res) => {
 
         result.history = {
             count: history[result.word].count,
-            lastSearched: previousDate // Return the date BEFORE this current search
+            lastSearched: previousDate
         };
 
-        // Try to scrape examples
-        console.log('Attempting to scrape examples...');
-        $('.word-card__examples-list li').each((i, el) => {
-            const jap = $(el).find('.example-jp').text().trim();
-            const cht = $(el).find('.example-ch').text().trim();
-            if (jap) result.examples.push({ jap, cht });
-        });
-        console.log(`Scraped ${result.examples.length} examples.`);
+        // LLM Example Fallback (if no scraped examples)
+        if (result.examples.length === 0 && process.env.GEMINI_API_KEY) {
+            console.log('No examples found. Using LLM fallback...');
+            try {
+                const prompt = `Generate 3 simple Japanese example sentences for the word "${result.word}" (${result.meaning}). 
+                Format as JSON array of objects with 'jap' (Japanese sentence) and 'cht' (Traditional Chinese translation, Taiwan usage).
+                Example: [{"jap": "猫がいます。", "cht": "有一隻貓。"}]`;
 
-        // If no examples found, use LLM
-        if (result.examples.length === 0) {
-            if (process.env.GEMINI_API_KEY) {
-                console.log('No examples found. Using LLM fallback...');
-                try {
-                    const prompt = `Generate 3 simple Japanese example sentences for the word "${result.word}" (${result.meaning}). 
-                    Format as JSON array of objects with 'jap' (Japanese sentence) and 'cht' (Traditional Chinese translation, Taiwan usage).
-                    Example: [{"jap": "猫がいます。", "cht": "有一隻貓。"}]`;
-
-                    const resultLLM = await model.generateContent(prompt);
-                    const response = await resultLLM.response;
-                    const text = response.text();
-                    console.log('LLM Response:', text);
-
-                    const jsonStr = text.replace(/```json/g, '').replace(/```/g, '').trim();
-                    result.examples = JSON.parse(jsonStr);
-                    result.isLLM = true;
-                    console.log('LLM examples generated successfully.');
-                } catch (llmError) {
-                    console.error('LLM generation failed:', llmError);
-                }
-            } else {
-                console.log('No examples found and GEMINI_API_KEY is missing.');
+                const resultLLM = await model.generateContent(prompt);
+                const text = resultLLM.response.text();
+                const jsonStr = text.replace(/```json/g, '').replace(/```/g, '').trim();
+                result.examples = JSON.parse(jsonStr);
+                result.isLLM = true;
+            } catch (e) {
+                console.error('LLM example generation failed:', e.message);
             }
         }
 
-        // Handle Japanese-to-Chinese translation
+        // JA-ZH Extra Translation (Optional)
         if (direction === 'ja-zh' && process.env.GEMINI_API_KEY) {
-            console.log(`Japanese-to-Chinese mode. Translating "${result.word}" to Chinese...`);
-            try {
+             try {
                 const prompt = `Translate the Japanese word "${result.word}" (reading: ${result.reading}) to Traditional Chinese (Taiwan usage). Return ONLY the Chinese translation, no explanation.`;
                 const resultLLM = await model.generateContent(prompt);
-                const response = await resultLLM.response;
-                const translated = response.text().trim();
-
-                if (translated) {
-                    console.log(`Translated "${result.word}" to "${translated}"`);
-                    result.translatedMeaning = translated;
-                    result.originalMeaning = result.meaning; // Keep original meaning from dictionary
-                }
+                result.translatedMeaning = resultLLM.response.text().trim();
+                result.originalMeaning = result.meaning;
             } catch (e) {
-                console.error('Japanese-to-Chinese translation failed:', e.message);
+                console.error('JA-ZH translation failed:', e.message);
             }
         }
 
         res.json(result);
+
     } catch (error) {
-        console.error('Scraping error:', error.message);
-        res.status(500).json({ error: 'Failed to fetch data' });
+        console.error('Search handler error:', error.message);
+        res.status(500).json({ error: 'Server Error' });
     }
 });
 

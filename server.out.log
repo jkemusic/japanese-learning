@@ -471,3 +471,12 @@ LLM Response: ```json
 ]
 ```
 LLM examples generated successfully.
+[Session Started 2025/12/06 ∂g§ª 23:56:34.64]  
+[dotenv@17.2.3] injecting env (1) from .env -- tip: ‚öôÔ∏è  specify custom .env file path with { path: '/custom/path/.env' }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+No heartbeat received. Shutting down...
+[Session Started 2025/12/07 ∂g§È  0:32:29.28]  
+[dotenv@17.2.3] injecting env (1) from .env -- tip: ‚öôÔ∏è  write to custom object with { processEnv: myObject }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
