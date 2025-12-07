@@ -278,5 +278,45 @@
       "lastSearched": null
     },
     "isLLM": true
+  },
+  {
+    "word": "通りかかる",
+    "reading": "とおりかかる",
+    "accent": "",
+    "part": "",
+    "level": "N2",
+    "meaning": "路過、經過、碰巧經過",
+    "examples": [
+      {
+        "jap": "公園を通りかかった時、友達に会いました。",
+        "cht": "經過公園的時候，碰巧遇到朋友。"
+      },
+      {
+        "jap": "通りかかった店から、いい匂いがしました。",
+        "cht": "經過的店飄來了很棒的味道。"
+      },
+      {
+        "jap": "急いでいたので、駅を通りかかっただけです。",
+        "cht": "因為很趕時間，只是路過車站而已。"
+      }
+    ],
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    },
+    "isLLM": true
+  },
+  {
+    "word": "突き当り",
+    "reading": "つきあたり",
+    "accent": "[0]",
+    "part": "名",
+    "level": "N3",
+    "meaning": "盡頭",
+    "examples": [],
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    }
   }
 ]

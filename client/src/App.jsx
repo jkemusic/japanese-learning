@@ -14,7 +14,7 @@ function App() {
   const [error, setError] = useState(null);
   const [searchMode, setSearchMode] = useState('word'); // 'word' or 'grammar'
   const [filterLevel, setFilterLevel] = useState('All'); // 'All', 'N1', 'N2', 'N3', 'N4', 'N5', 'Uncategorized'
-  const [translateDirection, setTranslateDirection] = useState('zh-ja'); // 'zh-ja' or 'ja-zh'
+  const [translateDirection, setTranslateDirection] = useState('ja-zh'); // 'zh-ja' or 'ja-zh'
   const searchTimeout = useRef(null);
 
   useEffect(() => {

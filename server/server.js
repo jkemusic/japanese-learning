@@ -32,7 +32,7 @@ const writeHistory = (data) => fs.writeFileSync(HISTORY_FILE, JSON.stringify(dat
 // Scraping Endpoint
 app.get('/api/search', async (req, res) => {
     const query = req.query.q;
-    const direction = req.query.direction || 'zh-ja'; // 'zh-ja' or 'ja-zh'
+    const direction = req.query.direction || 'ja-zh'; // 'zh-ja' or 'ja-zh'
     if (!query) return res.status(400).json({ error: 'Query is required' });
 
     // Helper function to scrape Sigure
