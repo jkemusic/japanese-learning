@@ -318,5 +318,96 @@
       "count": 1,
       "lastSearched": null
     }
+  },
+  {
+    "word": "奉る",
+    "reading": "たてまつる",
+    "accent": "",
+    "part": "他五",
+    "level": "N1",
+    "meaning": "奉獻、獻上、敬奉",
+    "examples": [],
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    }
+  },
+  {
+    "word": "奴隷",
+    "reading": "どれい",
+    "accent": "",
+    "part": "",
+    "level": "N1",
+    "meaning": "奴隸",
+    "examples": [],
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    }
+  },
+  {
+    "word": "欠航",
+    "reading": "けっこう",
+    "accent": "",
+    "part": "",
+    "level": "",
+    "meaning": "停飛、停航",
+    "examples": [],
+    "history": {
+      "count": 2,
+      "lastSearched": "2025-12-09T06:54:49.635Z"
+    }
+  },
+  {
+    "word": "突如",
+    "reading": "とつじょ",
+    "accent": "",
+    "part": "",
+    "level": "N1",
+    "meaning": "突然、忽然",
+    "examples": [],
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    }
+  },
+  {
+    "word": "妥当",
+    "reading": "だとう",
+    "accent": "",
+    "part": "",
+    "level": "N2",
+    "meaning": "妥當、適當、合理",
+    "examples": [],
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    }
+  },
+  {
+    "word": "決着",
+    "reading": "けっちゃく",
+    "accent": "",
+    "part": "",
+    "level": "N2",
+    "meaning": "決著、了結、解決",
+    "examples": [],
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    }
+  },
+  {
+    "word": "外す",
+    "reading": "はずす",
+    "accent": "[0]",
+    "part": "他五",
+    "level": "N3",
+    "meaning": "取下／錯過／離席",
+    "examples": [],
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    }
   }
 ]

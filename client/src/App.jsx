@@ -115,15 +115,16 @@ function App() {
       .finally(() => setLoading(false));
   };
 
-  const handleToggleSave = async () => {
-    if (!result) return;
-    const isSaved = savedWords.some(w => w.word === result.word);
+  const handleToggleSave = async (targetItem) => {
+    const itemToSave = targetItem || result; // Fallback for safety or old calls
+    if (!itemToSave) return;
+    const isSaved = savedWords.some(w => w.word === itemToSave.word);
 
     try {
       if (isSaved) {
-        await axios.delete(`${API_URL}/saved/${result.word}`);
+        await axios.delete(`${API_URL}/saved/${itemToSave.word}`);
       } else {
-        await axios.post(`${API_URL}/save`, result);
+        await axios.post(`${API_URL}/save`, itemToSave);
       }
       fetchSavedWords();
     } catch (err) {
@@ -288,114 +289,126 @@ function App() {
       )}
 
       {result && (
-        <div className="glass-panel card">
-          {searchMode === 'word' ? (
-            <>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                <div>
-                  <h2 className="word-title">{result.word}</h2>
-                  <div className="reading">{result.reading}</div>
-                </div>
-                <button className="btn btn-icon" onClick={handleToggleSave} title={savedWords.find(w => w.word === result.word) ? "取消收藏" : "收藏"}>
-                  <Bookmark size={24} fill={savedWords.find(w => w.word === result.word) ? "currentColor" : "none"} />
-                </button>
-              </div>
-
-              <div className="badges">
-                {result.accent && <span className="badge badge-accent">重音: {result.accent}</span>}
-                {result.part && <span className="badge badge-part">{result.part}</span>}
-                {result.level && (
-                  <span className={`badge ${result.level.includes('N1') ? 'badge-n1' :
-                    result.level.includes('N2') ? 'badge-n2' :
-                      result.level.includes('N3') ? 'badge-n3' :
-                        result.level.includes('N4') ? 'badge-n4' :
-                          result.level.includes('N5') ? 'badge-n5' :
-                            'badge-level'
-                    }`}>
-                    {result.level}
-                  </span>
-                )}
-              </div>
-
-              {result.history && (
-                <div style={{ display: 'flex', gap: '1rem', margin: '1rem 0', fontSize: '0.9rem', color: 'var(--text-secondary)', background: 'rgba(255,255,255,0.05)', padding: '0.5rem 1rem', borderRadius: '0.5rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                    <History size={14} />
-                    查詢次數: <span style={{ color: 'var(--primary)', fontWeight: 'bold' }}>{result.history.count}</span>
-                  </div>
-                  <div style={{ borderLeft: '1px solid var(--glass-border)' }}></div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          {/* Handle Word Results (Array) */}
+          {searchMode === 'word' && Array.isArray(result) ? (
+            result.map((item, index) => (
+              <div key={index} className="glass-panel card">
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                   <div>
-                    上次查詢: {result.history.lastSearched ? formatDate(result.history.lastSearched) : '第一次查詢'}
+                    <h2 className="word-title">{item.word}</h2>
+                    <div className="reading">{item.reading}</div>
                   </div>
+                  <button 
+                    className="btn btn-icon" 
+                    onClick={() => handleToggleSave(item)} 
+                    title={savedWords.find(w => w.word === item.word) ? "取消收藏" : "收藏"}
+                  >
+                    <Bookmark size={24} fill={savedWords.find(w => w.word === item.word) ? "currentColor" : "none"} />
+                  </button>
                 </div>
-              )}
 
-              <div className="meaning">
-                <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  中文意思
-                  {result.translatedMeaning && <span title="由 AI 翻譯" style={{ fontSize: '0.8rem', background: 'var(--accent)', color: 'white', padding: '0.1rem 0.4rem', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '0.2rem' }}><Sparkles size={12} /> AI 翻譯</span>}
-                </h3>
-                <p>{result.translatedMeaning || result.meaning}</p>
-                {result.translatedMeaning && result.originalMeaning && (
-                  <p style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)', fontStyle: 'italic' }}>
-                    字典原文：{result.originalMeaning}
-                  </p>
+                <div className="badges">
+                  {item.accent && <span className="badge badge-accent">重音: {item.accent}</span>}
+                  {item.part && <span className="badge badge-part">{item.part}</span>}
+                  {item.level && (
+                    <span className={`badge ${item.level.includes('N1') ? 'badge-n1' :
+                      item.level.includes('N2') ? 'badge-n2' :
+                        item.level.includes('N3') ? 'badge-n3' :
+                          item.level.includes('N4') ? 'badge-n4' :
+                            item.level.includes('N5') ? 'badge-n5' :
+                              'badge-level'
+                      }`}>
+                      {item.level}
+                    </span>
+                  )}
+                </div>
+
+                {item.history && (
+                  <div style={{ display: 'flex', gap: '1rem', margin: '1rem 0', fontSize: '0.9rem', color: 'var(--text-secondary)', background: 'rgba(255,255,255,0.05)', padding: '0.5rem 1rem', borderRadius: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                      <History size={14} />
+                      查詢次數: <span style={{ color: 'var(--primary)', fontWeight: 'bold' }}>{item.history.count}</span>
+                    </div>
+                    <div style={{ borderLeft: '1px solid var(--glass-border)' }}></div>
+                    <div>
+                      上次查詢: {item.history.lastSearched ? formatDate(item.history.lastSearched) : '第一次查詢'}
+                    </div>
+                  </div>
+                )}
+
+                <div className="meaning">
+                  <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    中文意思
+                    {item.translatedMeaning && <span title="由 AI 翻譯" style={{ fontSize: '0.8rem', background: 'var(--accent)', color: 'white', padding: '0.1rem 0.4rem', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '0.2rem' }}><Sparkles size={12} /> AI 翻譯</span>}
+                  </h3>
+                  <p>{item.translatedMeaning || item.meaning}</p>
+                  {item.translatedMeaning && item.originalMeaning && (
+                    <p style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+                      字典原文：{item.originalMeaning}
+                    </p>
+                  )}
+                </div>
+
+                {item.examples && item.examples.length > 0 && (
+                  <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--glass-border)' }}>
+                    <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      例句
+                      {item.isLLM && <span title="由 AI 生成" style={{ fontSize: '0.8rem', background: 'var(--accent)', color: 'white', padding: '0.1rem 0.4rem', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '0.2rem' }}><Sparkles size={12} /> AI 生成</span>}
+                    </h3>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                      {item.examples.map((ex, idx) => (
+                        <div key={idx} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '0.5rem' }}>
+                          <div style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>{ex.jap}</div>
+                          <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{ex.cht}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 )}
               </div>
-
-              {result.examples && result.examples.length > 0 && (
-                <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--glass-border)' }}>
-                  <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    例句
-                    {result.isLLM && <span title="由 AI 生成" style={{ fontSize: '0.8rem', background: 'var(--accent)', color: 'white', padding: '0.1rem 0.4rem', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '0.2rem' }}><Sparkles size={12} /> AI 生成</span>}
-                  </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                    {result.examples.map((ex, idx) => (
-                      <div key={idx} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '0.5rem' }}>
-                        <div style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>{ex.jap}</div>
-                        <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{ex.cht}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </>
+            ))
           ) : (
-            <>
-              <div style={{ marginBottom: '1.5rem' }}>
-                <h2 className="word-title" style={{ fontSize: '2rem' }}>{result.grammar}</h2>
-                <div style={{ display: 'inline-block', background: 'var(--accent)', color: 'white', padding: '0.2rem 0.6rem', borderRadius: '4px', fontSize: '0.8rem', marginTop: '0.5rem' }}>
-                  <Sparkles size={12} style={{ marginRight: '4px' }} />
-                  AI 文法解析
-                </div>
-              </div>
-
-              <div className="meaning" style={{ marginBottom: '1.5rem' }}>
-                <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>中文意思</h3>
-                <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{result.meaning}</p>
-              </div>
-
-              <div className="usage" style={{ marginBottom: '1.5rem' }}>
-                <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>用法解說</h3>
-                <p style={{ lineHeight: '1.6' }}>{result.usage}</p>
-              </div>
-
-              {result.examples && result.examples.length > 0 && (
-                <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--glass-border)' }}>
-                  <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                    例句
-                  </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                    {result.examples.map((ex, idx) => (
-                      <div key={idx} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '0.5rem' }}>
-                        <div style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>{ex.jap}</div>
-                        <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{ex.cht}</div>
-                      </div>
-                    ))}
+            // Handle Grammar (Single Object) or fallback
+             <div className="glass-panel card">
+            {searchMode === 'grammar' && !Array.isArray(result) ? (
+              <>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h2 className="word-title" style={{ fontSize: '2rem' }}>{result.grammar}</h2>
+                  <div style={{ display: 'inline-block', background: 'var(--accent)', color: 'white', padding: '0.2rem 0.6rem', borderRadius: '4px', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+                    <Sparkles size={12} style={{ marginRight: '4px' }} />
+                    AI 文法解析
                   </div>
                 </div>
-              )}
-            </>
+
+                <div className="meaning" style={{ marginBottom: '1.5rem' }}>
+                  <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>中文意思</h3>
+                  <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{result.meaning}</p>
+                </div>
+
+                <div className="usage" style={{ marginBottom: '1.5rem' }}>
+                  <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>用法解說</h3>
+                  <p style={{ lineHeight: '1.6' }}>{result.usage}</p>
+                </div>
+
+                {result.examples && result.examples.length > 0 && (
+                  <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--glass-border)' }}>
+                    <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+                      例句
+                    </h3>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                      {result.examples.map((ex, idx) => (
+                        <div key={idx} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '0.5rem' }}>
+                          <div style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>{ex.jap}</div>
+                          <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{ex.cht}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
+            ) : null}
+            </div>
           )}
         </div>
       )}
