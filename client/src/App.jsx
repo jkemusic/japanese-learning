@@ -15,6 +15,8 @@ function App() {
   const [searchMode, setSearchMode] = useState('word'); // 'word' or 'grammar'
   const [filterLevel, setFilterLevel] = useState('All'); // 'All', 'N1', 'N2', 'N3', 'N4', 'N5', 'Uncategorized'
   const [translateDirection, setTranslateDirection] = useState('ja-zh'); // 'zh-ja' or 'ja-zh'
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 16;
   const searchTimeout = useRef(null);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ function App() {
   const fetchSavedWords = async () => {
     try {
       const { data } = await axios.get(`${API_URL}/saved`);
-      setSavedWords(data);
+      setSavedWords([...data].reverse());
     } catch (err) {
       console.error('Failed to fetch saved words', err);
     }
@@ -155,6 +157,23 @@ function App() {
     setError(null);
     setSearchMode('word');
   };
+
+  // Calculate filtered and paginated items
+  const filteredSavedWords = savedWords.filter(item => {
+    if (filterLevel === 'All') return true;
+    if (filterLevel === 'Uncategorized') return !item.level;
+    return item.level && item.level.includes(filterLevel);
+  });
+
+  const totalPages = Math.ceil(filteredSavedWords.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  // Calculate the slice for the current page
+  const currentItems = filteredSavedWords.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  // Reset page if out of bounds
+  if (currentPage > totalPages && totalPages > 0) {
+    setCurrentPage(1);
+  }
 
   return (
     <div className="app">
@@ -432,7 +451,7 @@ function App() {
                 key={level}
                 className={`btn ${filterLevel === level ? 'btn-primary' : 'glass-panel'}`}
                 style={{ padding: '0.25rem 0.75rem', fontSize: '0.9rem', borderRadius: '15px', color: 'white' }}
-                onClick={() => setFilterLevel(level)}
+                onClick={() => { setFilterLevel(level); setCurrentPage(1); }}
               >
                 {level === 'All' ? '全部' : level === 'Uncategorized' ? '未分類' : level} <span style={{ opacity: 0.7, fontSize: '0.8em', marginLeft: '2px' }}>({count})</span>
               </button>
@@ -441,49 +460,69 @@ function App() {
         </div>
 
         <div className="saved-list">
-          {savedWords
-            .filter(item => {
-              if (filterLevel === 'All') return true;
-              if (filterLevel === 'Uncategorized') return !item.level;
-              return item.level && item.level.includes(filterLevel);
-            })
-            .map((item) => (
-              <div
-                key={item.word}
-                className="glass-panel saved-item"
-                onClick={() => { setQuery(item.word); setResult(item); }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <span style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>{item.word}</span>
-                    {item.level ? (
-                      <span className={`badge ${item.level.includes('N1') ? 'badge-n1' :
-                        item.level.includes('N2') ? 'badge-n2' :
-                          item.level.includes('N3') ? 'badge-n3' :
-                            item.level.includes('N4') ? 'badge-n4' :
-                              item.level.includes('N5') ? 'badge-n5' :
-                                'badge-level'
-                        }`} style={{ fontSize: '0.7rem', padding: '0.1rem 0.4rem' }}>
-                        {item.level}
-                      </span>
-                    ) : (
-                      <span className="badge badge-level" style={{ fontSize: '0.7rem', padding: '0.1rem 0.4rem', background: 'rgba(255,255,255,0.1)' }}>
-                        未分類
-                      </span>
-                    )}
-                  </div>
-                  <button className="btn-icon" onClick={(e) => handleDelete(item.word, e)}>
-                    <Trash2 size={16} />
-                  </button>
+          {currentItems.map((item) => (
+            <div
+              key={item.word}
+              className="glass-panel saved-item"
+              onClick={() => { setQuery(item.word); setResult(item); }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>{item.word}</span>
+                  {item.level ? (
+                    <span className={`badge ${item.level.includes('N1') ? 'badge-n1' :
+                      item.level.includes('N2') ? 'badge-n2' :
+                        item.level.includes('N3') ? 'badge-n3' :
+                          item.level.includes('N4') ? 'badge-n4' :
+                            item.level.includes('N5') ? 'badge-n5' :
+                              'badge-level'
+                      }`} style={{ fontSize: '0.7rem', padding: '0.1rem 0.4rem' }}>
+                      {item.level}
+                    </span>
+                  ) : (
+                    <span className="badge badge-level" style={{ fontSize: '0.7rem', padding: '0.1rem 0.4rem', background: 'rgba(255,255,255,0.1)' }}>
+                      未分類
+                    </span>
+                  )}
                 </div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{item.reading}</div>
-                <div style={{ marginTop: '0.5rem', fontSize: '0.9rem' }} className="truncate">{item.meaning}</div>
+                <button className="btn-icon" onClick={(e) => handleDelete(item.word, e)}>
+                  <Trash2 size={16} />
+                </button>
               </div>
-            ))}
-          {savedWords.length === 0 && (
+              <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{item.reading}</div>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.9rem' }} className="truncate">{item.meaning}</div>
+            </div>
+          ))}
+          
+          {filteredSavedWords.length === 0 && (
             <p style={{ color: 'var(--text-secondary)', fontStyle: 'italic' }}>尚無收藏單字</p>
           )}
         </div>
+
+        {/* Pagination Controls - Moved Outside saved-list */}
+        {filteredSavedWords.length > 0 && (
+          <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '2rem', gap: '1rem' }}>
+            <button 
+              className="btn glass-panel" 
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              style={{ padding: '0.5rem 1rem', color: 'white', opacity: currentPage === 1 ? 0.5 : 1, cursor: currentPage === 1 ? 'default' : 'pointer' }}
+            >
+              上一頁
+            </button>
+            <span style={{ color: 'white', fontWeight: 'bold' }}>
+              {currentPage} / {totalPages || 1}
+            </span>
+            <button 
+              className="btn glass-panel" 
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+              style={{ padding: '0.5rem 1rem', color: 'white', opacity: currentPage === totalPages ? 0.5 : 1, cursor: currentPage === totalPages ? 'default' : 'pointer' }}
+            >
+              下一頁
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
