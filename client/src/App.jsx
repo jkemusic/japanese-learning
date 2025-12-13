@@ -23,25 +23,13 @@ function App() {
     fetchSavedWords();
   }, []);
 
-  useEffect(() => {
-    fetchSavedWords();
-
-    // Heartbeat
-    const heartbeatInterval = setInterval(() => {
-      axios.get(`${API_URL}/heartbeat`).catch(() => {
-        // Ignore errors (server might be down or starting)
-      });
-    }, 2000); // Send every 2 seconds
-
-    return () => clearInterval(heartbeatInterval);
-  }, []);
-
   const fetchSavedWords = async () => {
     try {
       const { data } = await axios.get(`${API_URL}/saved`);
       setSavedWords([...data].reverse());
     } catch (err) {
       console.error('Failed to fetch saved words', err);
+      setError(`無法讀取收藏清單: ${err.message}`);
     }
   };
 
@@ -171,9 +159,11 @@ function App() {
   const currentItems = filteredSavedWords.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   // Reset page if out of bounds
-  if (currentPage > totalPages && totalPages > 0) {
-    setCurrentPage(1);
-  }
+  useEffect(() => {
+    if (currentPage > totalPages && totalPages > 0) {
+      setCurrentPage(1);
+    }
+  }, [currentPage, totalPages]);
 
   return (
     <div className="app">

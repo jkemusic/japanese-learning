@@ -316,23 +316,7 @@ app.delete('/api/saved/:word', (req, res) => {
 });
 
 // Heartbeat System
-// Heartbeat System
-let lastHeartbeat = Date.now();
-let isConnected = false;
-const SHUTDOWN_DELAY = 60000; // 60 seconds
-
-// Check for heartbeat every second
-setInterval(() => {
-    // Only check for shutdown if we have established a connection at least once
-    if (isConnected && Date.now() - lastHeartbeat > SHUTDOWN_DELAY) {
-        console.log('No heartbeat received. Shutting down...');
-        process.exit(0);
-    }
-}, 1000);
-
 app.get('/api/heartbeat', (req, res) => {
-    lastHeartbeat = Date.now();
-    isConnected = true; // Mark as connected on first heartbeat
     res.json({ status: 'alive' });
 });
 

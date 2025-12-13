@@ -461,5 +461,31 @@
       "count": 1,
       "lastSearched": null
     }
+  },
+  {
+    "word": "威圧",
+    "reading": "いあつ",
+    "accent": "",
+    "part": "",
+    "level": "N1",
+    "meaning": "威壓、壓迫、恐嚇",
+    "examples": [],
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    }
+  },
+  {
+    "word": "騒ぎ",
+    "reading": "さわぎ",
+    "accent": "[1]",
+    "part": "名",
+    "level": "N3",
+    "meaning": "騷動／吵鬧",
+    "examples": [],
+    "history": {
+      "count": 1,
+      "lastSearched": null
+    }
   }
 ]
