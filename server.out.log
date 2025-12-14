@@ -479,3 +479,5 @@ Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first co
 [dotenv@17.2.3] injecting env (1) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
 Server running on http://localhost:3000
 Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Attempting direct search for: "読む"
+No examples found for 読む. Using LLM fallback...
