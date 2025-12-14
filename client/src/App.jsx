@@ -16,6 +16,8 @@ function App() {
   const [filterLevel, setFilterLevel] = useState('All'); // 'All', 'N1', 'N2', 'N3', 'N4', 'N5', 'Uncategorized'
   const [translateDirection, setTranslateDirection] = useState('ja-zh'); // 'zh-ja' or 'ja-zh'
   const [dbStatus, setDbStatus] = useState('unknown'); // 'connected', 'disconnected', 'local'
+  const [sortBy, setSortBy] = useState('date'); // 'date' or 'count'
+  const [sortOrder, setSortOrder] = useState('desc'); // 'desc' or 'asc'
   const [currentPage, setCurrentPage] = useState(1);
   const [selectionPopup, setSelectionPopup] = useState({ show: false, x: 0, y: 0, loading: false, result: null, text: '' });
   const ITEMS_PER_PAGE = 16;
@@ -214,10 +216,27 @@ function App() {
   };
 
   // Calculate filtered and paginated items
+  // Calculate filtered and paginated items
   const filteredSavedWords = savedWords.filter(item => {
     if (filterLevel === 'All') return true;
     if (filterLevel === 'Uncategorized') return !item.level;
     return item.level && item.level.includes(filterLevel);
+  }).sort((a, b) => {
+    let diff = 0;
+    if (sortBy === 'date') {
+      // Assuming savedAt exists. If not, use implicit index logic (but array is pre-sorted by server). 
+      // Server returns latest first (DESC).
+      // So if sortOrder is DESC, we keep it. If ASC, we reverse.
+      const dateA = a.savedAt ? new Date(a.savedAt).getTime() : 0;
+      const dateB = b.savedAt ? new Date(b.savedAt).getTime() : 0;
+      diff = dateA - dateB;
+    } else if (sortBy === 'count') {
+      const countA = a.searchCount || (a.history ? a.history.count : 0) || 0;
+      const countB = b.searchCount || (b.history ? b.history.count : 0) || 0;
+      diff = countA - countB;
+    }
+
+    return sortOrder === 'asc' ? diff : -diff;
   });
 
   const totalPages = Math.ceil(filteredSavedWords.length / ITEMS_PER_PAGE);
@@ -515,25 +534,53 @@ function App() {
           )}
         </div>
 
-        <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
-          {['All', 'N5', 'N4', 'N3', 'N2', 'N1', 'Uncategorized'].map(level => {
-            const count = level === 'All'
-              ? savedWords.length
-              : level === 'Uncategorized'
-                ? savedWords.filter(w => !w.level).length
-                : savedWords.filter(w => w.level && w.level.includes(level)).length;
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            {['All', 'N5', 'N4', 'N3', 'N2', 'N1', 'Uncategorized'].map(level => {
+              const count = level === 'All'
+                ? savedWords.length
+                : level === 'Uncategorized'
+                  ? savedWords.filter(w => !w.level).length
+                  : savedWords.filter(w => w.level && w.level.includes(level)).length;
 
-            return (
-              <button
-                key={level}
-                className={`btn ${filterLevel === level ? 'btn-primary' : 'glass-panel'}`}
-                style={{ padding: '0.25rem 0.75rem', fontSize: '0.9rem', borderRadius: '15px', color: 'white' }}
-                onClick={() => { setFilterLevel(level); setCurrentPage(1); }}
-              >
-                {level === 'All' ? '全部' : level === 'Uncategorized' ? '未分類' : level} <span style={{ opacity: 0.7, fontSize: '0.8em', marginLeft: '2px' }}>({count})</span>
-              </button>
-            );
-          })}
+              return (
+                <button
+                  key={level}
+                  className={`btn ${filterLevel === level ? 'btn-primary' : 'glass-panel'}`}
+                  style={{ padding: '0.25rem 0.75rem', fontSize: '0.9rem', borderRadius: '15px', color: 'white' }}
+                  onClick={() => { setFilterLevel(level); setCurrentPage(1); }}
+                >
+                  {level === 'All' ? '全部' : level === 'Uncategorized' ? '未分類' : level} <span style={{ opacity: 0.7, fontSize: '0.8em', marginLeft: '2px' }}>({count})</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+            <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>排序:</span>
+            <button 
+              className={`btn ${sortBy === 'date' ? 'btn-primary' : 'glass-panel'}`}
+              style={{ padding: '0.2rem 0.6rem', fontSize: '0.85rem', borderRadius: '8px', color: 'white', display: 'flex', alignItems: 'center', gap: '0.25rem' }}
+              onClick={() => {
+                if (sortBy === 'date') setSortOrder(prev => prev === 'desc' ? 'asc' : 'desc');
+                else { setSortBy('date'); setSortOrder('desc'); }
+              }}
+            >
+              時間
+              {sortBy === 'date' && (sortOrder === 'desc' ? '↓' : '↑')}
+            </button>
+            <button 
+              className={`btn ${sortBy === 'count' ? 'btn-primary' : 'glass-panel'}`}
+              style={{ padding: '0.2rem 0.6rem', fontSize: '0.85rem', borderRadius: '8px', color: 'white', display: 'flex', alignItems: 'center', gap: '0.25rem' }}
+              onClick={() => {
+                if (sortBy === 'count') setSortOrder(prev => prev === 'desc' ? 'asc' : 'desc');
+                else { setSortBy('count'); setSortOrder('desc'); }
+              }}
+            >
+              熱門
+              {sortBy === 'count' && (sortOrder === 'desc' ? '↓' : '↑')}
+            </button>
+          </div>
         </div>
 
         <div className="saved-list">
@@ -541,7 +588,18 @@ function App() {
             <div
               key={item.word}
               className="glass-panel saved-item"
-              onClick={() => { setQuery(item.word); setResult([item]); }}
+              onClick={() => { 
+                setQuery(item.word); 
+                // Normalize history data structure to match search result format
+                const normalizedItem = {
+                  ...item,
+                  history: {
+                    count: item.searchCount || 0,
+                    lastSearched: item.lastSearched
+                  }
+                };
+                setResult([normalizedItem]); 
+              }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

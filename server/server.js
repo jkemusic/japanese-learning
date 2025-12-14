@@ -353,9 +353,38 @@ app.get('/api/grammar', async (req, res) => {
 // Saved Words Endpoints (MongoDB)
 app.get('/api/saved', async (req, res) => {
     try {
-        const words = await SavedWord.find().sort({ savedAt: -1 });
+        const words = await SavedWord.aggregate([
+            {
+                $lookup: {
+                    from: 'histories',
+                    localField: 'word',
+                    foreignField: 'word',
+                    as: 'historyData'
+                }
+            },
+            {
+                $addFields: {
+                   searchCount: { $ifNull: [{ $arrayElemAt: ["$historyData.count", 0] }, 0] },
+                   lastSearched: { $arrayElemAt: ["$historyData.lastSearched", 0] }
+                }
+            },
+            {
+                $project: {
+                    historyData: 0
+                }
+            },
+            { $sort: { savedAt: -1 } }
+        ]);
+        
+        if (words.length > 0) {
+            console.log('Debug /api/saved first item:', JSON.stringify(words[0], null, 2));
+        } else {
+            console.log('Debug /api/saved: No saved words found.');
+        }
+
         res.json(words);
     } catch (e) {
+        console.error('Saved words fetch error:', e);
         res.status(500).json({ error: e.message });
     }
 });

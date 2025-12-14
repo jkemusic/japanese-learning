@@ -529,3 +529,95 @@ Direct search failed for "増や". Checking fallbacks...
 Trying conversion to Hiragana for "増や"...
 Attempting direct search for: "増やす"
 No examples found for 増やす. Using LLM fallback...
+[Session Started 2025/12/14 �g�� 22:13:20.58]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Attempting direct search for: "気遣い"
+No examples found for 気遣い. Using LLM fallback...
+Attempting direct search for: "親しい"
+No examples found for 親しい. Using LLM fallback...
+Attempting direct search for: "増す"
+No examples found for 増す. Using LLM fallback...
+Attempting direct search for: "越え"
+No examples found for 越え. Using LLM fallback...
+Attempting direct search for: "越え"
+No examples found for 越え. Using LLM fallback...
+Attempting direct search for: "越える"
+No examples found for 越える. Using LLM fallback...
+[Session Started 2025/12/14 �g�� 22:23:29.39]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "693ec6d13fe81269bc98350e",
+  "word": "親しい",
+  "reading": "したしい",
+  "accent": "[3]",
+  "part": "形",
+  "level": "N3",
+  "meaning": "親密",
+  "examples": [],
+  "savedAt": "2025-12-14T14:16:49.178Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-14T14:16:47.441Z"
+}
+Debug /api/saved first item: {
+  "_id": "693ec6d13fe81269bc98350e",
+  "word": "親しい",
+  "reading": "したしい",
+  "accent": "[3]",
+  "part": "形",
+  "level": "N3",
+  "meaning": "親密",
+  "examples": [],
+  "savedAt": "2025-12-14T14:16:49.178Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-14T14:16:47.441Z"
+}
+Debug /api/saved first item: {
+  "_id": "693ec6d13fe81269bc98350e",
+  "word": "親しい",
+  "reading": "したしい",
+  "accent": "[3]",
+  "part": "形",
+  "level": "N3",
+  "meaning": "親密",
+  "examples": [],
+  "savedAt": "2025-12-14T14:16:49.178Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-14T14:16:47.441Z"
+}
+Debug /api/saved first item: {
+  "_id": "693ec6d13fe81269bc98350e",
+  "word": "親しい",
+  "reading": "したしい",
+  "accent": "[3]",
+  "part": "形",
+  "level": "N3",
+  "meaning": "親密",
+  "examples": [],
+  "savedAt": "2025-12-14T14:16:49.178Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-14T14:16:47.441Z"
+}
+Debug /api/saved first item: {
+  "_id": "693ec6d13fe81269bc98350e",
+  "word": "親しい",
+  "reading": "したしい",
+  "accent": "[3]",
+  "part": "形",
+  "level": "N3",
+  "meaning": "親密",
+  "examples": [],
+  "savedAt": "2025-12-14T14:16:49.178Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-14T14:16:47.441Z"
+}
