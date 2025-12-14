@@ -69,194 +69,27 @@
 [2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
 [2mä¸Šåˆ12:36:34[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
 [2mä¸Šåˆ12:40:55[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[Session Started 2025/12/06 ¶g¤» 23:56:34.66]  
+[Session Started 2025/12/14 ¶g¤é 14:18:24.59]  
 
 > client@0.0.0 dev
 > vite
 
-[2mä¸‹åˆ11:56:37[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
+[2mä¸‹åˆ2:18:27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
 
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m791[22m[2m[0m ms[22m
+  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m1408[22m[2m[0m ms[22m
 
   [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
 [2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
 [2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[Session Started 2025/12/07 ¶g¤é  1:17:39.01]  
+[2mä¸‹åˆ2:20:28[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mindex.html[22m
+[2mä¸‹åˆ2:20:28[22m [36m[1m[vite][22m[39m [32mvite.config.js changed, restarting server...[39m
+[2mä¸‹åˆ2:20:28[22m [36m[1m[vite][22m[39m server restarted.
+[2mä¸‹åˆ2:21:05[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
+[2mä¸‹åˆ2:21:05[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2mä¸‹åˆ2:22:03[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/main.jsx[22m
+[Session Started 2025/12/14 ¶g¤é 15:54:30.82]  
 
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m619[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[Session Started 2025/12/07 ¶g¤é 14:55:51.22]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m813[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[Session Started 2025/12/07 ¶g¤é 15:09:28.15]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m1195[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[2mä¸‹åˆ3:12:55[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[2mä¸‹åˆ3:17:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[2mä¸‹åˆ3:17:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[Session Started 2025/12/07 ¶g¤é 21:15:00.89]  
-[Session Started 2025/12/07 ¶g¤é 21:15:05.00]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m1173[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[Session Started 2025/12/08 ¶g¤@ 23:43:09.49]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m599[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[Session Started 2025/12/08 ¶g¤@ 23:46:20.33]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m424[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[Session Started 2025/12/09 ¶g¤G 14:52:31.72]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m1209[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[Session Started 2025/12/09 ¶g¤G 15:17:35.80]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m613[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-­n²×¤î§å¦¸¤u§@¶Ü (Y/N)? [Session Started 2025/12/09 ¶g¤G 15:21:15.00]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m504[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[Session Started 2025/12/10 ¶g¤T 16:00:24.30]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m481[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[Session Started 2025/12/11 ¶g¥| 22:18:28.66]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m851[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[2mä¸‹åˆ10:23:33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[2mä¸‹åˆ10:23:33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[2mä¸‹åˆ10:28:03[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[2mä¸‹åˆ10:28:05[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[2mä¸‹åˆ10:28:07[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[2mä¸‹åˆ10:29:56[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[2mä¸‹åˆ10:35:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[2mä¸‹åˆ10:36:27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[2mä¸‹åˆ10:37:15[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[Session Started 2025/12/13 ¶g¤» 22:26:23.44]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m536[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[Session Started 2025/12/13 ¶g¤» 22:27:13.13]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m315[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[2mä¸‹åˆ10:30:44[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[2mä¸‹åˆ10:38:32[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
-[Session Started 2025/12/13 ¶g¤» 23:59:11.53]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m558[22m[2m[0m ms[22m
-
-  [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
-[2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m[32m  âžœ[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
-[Session Started 2025/12/14 ¶g¤é  0:10:24.71]  
-
-> client@0.0.0 dev
-> vite
-
-
-  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m564[22m[2m[0m ms[22m
+  [32m[1mVITE[22m v7.2.6[39m  [2mready in [0m[1m674[22m[2m[0m ms[22m
 
   [32mâžœ[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
 [2m  [32mâžœ[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m

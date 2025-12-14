@@ -9,6 +9,7 @@ require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const app = express();
 const PORT = 3000;
+const SHUTDOWN_DELAY = 60000; // 60 seconds
 const DB_FILE = path.join(__dirname, 'db.json');
 const HISTORY_FILE = path.join(__dirname, 'history.json');
 

@@ -99,13 +99,19 @@ echo.
 echo All dependencies are ready!
 echo.
 
+:: Find Node path for explicit usage
+for /f "tokens=*" %%i in ('where node') do set NODE_EXE=%%i
+if not defined NODE_EXE (
+    if defined NODE_PATH set NODE_EXE=%NODE_PATH%\node.exe
+)
+
 :: Start Backend
 echo Starting Backend Server...
-start "JP Backend" cmd /c "cd server && echo [Session Started %date% %time%] >> ..\server.out.log && node server.js >> ..\server.out.log 2>> ..\server.err.log"
+start "JP Backend" cmd /c "cd server && echo [Session Started %date% %time%] >> ..\server.out.log && "%NODE_EXE%" server.js >> ..\server.out.log 2>> ..\server.err.log"
 
 :: Start Frontend
 echo Starting Frontend Server...
-start "JP Frontend" cmd /c "cd client && echo [Session Started %date% %time%] >> ..\client.out.log && npm run dev >> ..\client.out.log 2>> ..\client.err.log"
+start "JP Frontend" cmd /c "cd client && echo [Session Started %date% %time%] >> ..\client.out.log && "%NODE_EXE%" node_modules/vite/bin/vite.js >> ..\client.out.log 2>> ..\client.err.log"
 
 :: Wait for servers to initialize
 echo Waiting for servers to start...

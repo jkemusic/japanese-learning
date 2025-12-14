@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Search, Bookmark, Trash2, BookOpen, Volume2, Sparkles, History, Home, ArrowRightLeft } from 'lucide-react';
 
-const API_URL = 'http://localhost:3000/api';
+const API_URL = '/api';
 
 function App() {
   const [query, setQuery] = useState('');
