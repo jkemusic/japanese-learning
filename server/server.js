@@ -4,6 +4,7 @@ const cheerio = require('cheerio');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const mongoose = require('mongoose');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
@@ -20,15 +21,75 @@ const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 app.use(cors());
 app.use(express.json());
 
-// Ensure files exist
-if (!fs.existsSync(DB_FILE)) fs.writeFileSync(DB_FILE, '[]');
-if (!fs.existsSync(HISTORY_FILE)) fs.writeFileSync(HISTORY_FILE, '{}');
+// MongoDB Models
+const HistorySchema = new mongoose.Schema({
+    word: { type: String, unique: true },
+    count: { type: Number, default: 0 },
+    lastSearched: Date
+});
+const History = mongoose.model('History', HistorySchema);
 
-// Helper to read/write DB
-const readDB = () => JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
-const writeDB = (data) => fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
-const readHistory = () => JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
-const writeHistory = (data) => fs.writeFileSync(HISTORY_FILE, JSON.stringify(data, null, 2));
+const SavedWordSchema = new mongoose.Schema({
+    word: { type: String, unique: true },
+    reading: String,
+    accent: String,
+    part: String,
+    level: String,
+    meaning: String,
+    examples: Array,
+    savedAt: { type: Date, default: Date.now }
+});
+const SavedWord = mongoose.model('SavedWord', SavedWordSchema);
+
+// MongoDB Connection & Migration
+mongoose.connect(process.env.MONGODB_URI)
+    .then(async () => {
+        console.log('Connected to MongoDB');
+        await migrateData();
+    })
+    .catch(err => console.error('MongoDB connection error:', err));
+
+const migrateData = async () => {
+    try {
+        // Migrate History
+        const historyCount = await History.countDocuments();
+        if (historyCount === 0 && fs.existsSync(HISTORY_FILE)) {
+            const data = fs.readFileSync(HISTORY_FILE, 'utf8');
+            if (data.trim() !== '{}') {
+                const localHistory = JSON.parse(data);
+                const docs = Object.entries(localHistory).map(([word, val]) => ({
+                    word, 
+                    count: val.count, 
+                    lastSearched: val.lastSearched 
+                }));
+                if (docs.length > 0) {
+                    await History.insertMany(docs);
+                    console.log(`Migrated ${docs.length} history items to Cloud.`);
+                }
+            }
+        }
+
+        // Migrate Saved Words
+        const savedCount = await SavedWord.countDocuments();
+        if (savedCount === 0 && fs.existsSync(DB_FILE)) {
+            const data = fs.readFileSync(DB_FILE, 'utf8');
+            if (data.trim() !== '[]') {
+                const localSaved = JSON.parse(data);
+                if (localSaved.length > 0) {
+                    // Try/Catch for duplicates just in case
+                    try {
+                        await SavedWord.insertMany(localSaved);
+                        console.log(`Migrated ${localSaved.length} saved words to Cloud.`);
+                    } catch (e) {
+                         console.warn('Migration warning ( SavedWords):', e.message);
+                    }
+                }
+            }
+        }
+    } catch (e) {
+        console.error('Migration failed:', e);
+    }
+};
 
 // Scraping Endpoint
 app.get('/api/search', async (req, res) => {
@@ -51,6 +112,7 @@ app.get('/api/search', async (req, res) => {
             $('.word-card').each((i, card) => {
                 const $card = $(card);
                 const word = $card.find('.word-card__word').text().trim();
+                // ... (rest of parsing logic stays same, just copying structure)
                 if (!word) return;
 
                 const result = {
@@ -63,7 +125,6 @@ app.get('/api/search', async (req, res) => {
                     examples: []
                 };
 
-                // Scrape examples
                 $card.find('.word-card__examples-list li').each((j, el) => {
                     const jap = $(el).find('.example-jp').text().trim();
                     const cht = $(el).find('.example-ch').text().trim();
@@ -114,7 +175,7 @@ app.get('/api/search', async (req, res) => {
                 }
             }
 
-            // If still not found, try converting to Hiragana (handling Kanji reading issues)
+            // If still not found, try converting to Hiragana
             if (!results) {
                 try {
                     console.log(`Trying conversion to Hiragana for "${query}"...`);
@@ -141,31 +202,28 @@ app.get('/api/search', async (req, res) => {
             return res.status(404).json({ error: '找不到單字' });
         }
 
-        // Process results
-        const history = readHistory();
-        const now = new Date().toISOString();
+        // Process results update History
+        const now = new Date();
 
         for (const result of results) {
-            // Add original query info if we translated it
             if (originalQuery) result.originalQuery = originalQuery;
 
-            // Update History
-            if (!history[result.word]) {
-                history[result.word] = { count: 0, lastSearched: null };
+            // Update History in MongoDB
+            let historyItem = await History.findOne({ word: result.word });
+            if (!historyItem) {
+                historyItem = new History({ word: result.word });
             }
-            
-            const previousDate = history[result.word].lastSearched;
-            history[result.word].count += 1;
-            history[result.word].lastSearched = now;
+            const previousDate = historyItem.lastSearched;
+            historyItem.count += 1;
+            historyItem.lastSearched = now;
+            await historyItem.save();
 
             result.history = {
-                count: history[result.word].count,
+                count: historyItem.count,
                 lastSearched: previousDate
             };
 
-            // LLM Example Fallback (if no scraped examples) - Only do this for the FIRST result to save quota/time?
-            // Or maybe do it for all? Doing it for all might be slow.
-            // Let's do it only if examples are empty, for up to 3 results.
+            // LLM Example Fallback
             if (result.examples.length === 0 && process.env.GEMINI_API_KEY && results.length <= 3) {
                 console.log(`No examples found for ${result.word}. Using LLM fallback...`);
                 try {
@@ -183,7 +241,7 @@ app.get('/api/search', async (req, res) => {
                 }
             }
 
-            // JA-ZH Extra Translation (Optional)
+            // JA-ZH Extra Translation
             if (direction === 'ja-zh' && process.env.GEMINI_API_KEY && results.length <= 3) {
                  try {
                     const prompt = `Translate the Japanese word "${result.word}" (reading: ${result.reading}) to Traditional Chinese (Taiwan usage). Return ONLY the Chinese translation, no explanation.`;
@@ -195,7 +253,6 @@ app.get('/api/search', async (req, res) => {
                 }
             }
         }
-        writeHistory(history);
 
         res.json(results);
 
@@ -293,32 +350,56 @@ app.get('/api/grammar', async (req, res) => {
     }
 });
 
-// Saved Words Endpoints
-app.get('/api/saved', (req, res) => {
-    res.json(readDB());
-});
-
-app.post('/api/save', (req, res) => {
-    const newWord = req.body;
-    const db = readDB();
-    if (!db.find(w => w.word === newWord.word)) {
-        db.push(newWord);
-        writeDB(db);
+// Saved Words Endpoints (MongoDB)
+app.get('/api/saved', async (req, res) => {
+    try {
+        const words = await SavedWord.find().sort({ savedAt: -1 });
+        res.json(words);
+    } catch (e) {
+        res.status(500).json({ error: e.message });
     }
-    res.json({ success: true, data: db });
 });
 
-app.delete('/api/saved/:word', (req, res) => {
+app.post('/api/save', async (req, res) => {
+    const newWord = req.body;
+    try {
+        const existing = await SavedWord.findOne({ word: newWord.word });
+        if (!existing) {
+            await new SavedWord(newWord).save();
+        }
+        // Return updated list
+        const words = await SavedWord.find().sort({ savedAt: -1 });
+        res.json({ success: true, data: words });
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
+app.delete('/api/saved/:word', async (req, res) => {
     const wordToDelete = req.params.word;
-    let db = readDB();
-    db = db.filter(w => w.word !== wordToDelete);
-    writeDB(db);
-    res.json({ success: true, data: db });
+    try {
+        await SavedWord.deleteOne({ word: wordToDelete });
+        const words = await SavedWord.find().sort({ savedAt: -1 });
+        res.json({ success: true, data: words });
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
 });
 
 // Heartbeat System
 app.get('/api/heartbeat', (req, res) => {
-    res.json({ status: 'alive' });
+    const dbState = mongoose.connection.readyState;
+    const statusMap = {
+        0: 'disconnected',
+        1: 'connected',
+        2: 'connecting',
+        3: 'disconnecting'
+    };
+    res.json({ 
+        status: 'alive', 
+        dbStatus: statusMap[dbState] || 'unknown',
+        dbMode: process.env.MONGODB_URI ? 'cloud' : 'local' 
+    });
 });
 
 app.listen(PORT, () => {

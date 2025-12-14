@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import { Search, Bookmark, Trash2, BookOpen, Volume2, Sparkles, History, Home, ArrowRightLeft } from 'lucide-react';
+import { Search, Bookmark, Trash2, BookOpen, Volume2, Sparkles, History, Home, ArrowRightLeft, Cloud, CloudOff } from 'lucide-react';
 
 const API_URL = '/api';
 
@@ -15,13 +15,80 @@ function App() {
   const [searchMode, setSearchMode] = useState('word'); // 'word' or 'grammar'
   const [filterLevel, setFilterLevel] = useState('All'); // 'All', 'N1', 'N2', 'N3', 'N4', 'N5', 'Uncategorized'
   const [translateDirection, setTranslateDirection] = useState('ja-zh'); // 'zh-ja' or 'ja-zh'
+  const [dbStatus, setDbStatus] = useState('unknown'); // 'connected', 'disconnected', 'local'
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectionPopup, setSelectionPopup] = useState({ show: false, x: 0, y: 0, loading: false, result: null, text: '' });
   const ITEMS_PER_PAGE = 16;
   const searchTimeout = useRef(null);
+  const popupRef = useRef(null);
 
   useEffect(() => {
+    checkConnection();
     fetchSavedWords();
+
+    const handleSelection = (e) => {
+      // Don't trigger if selecting inside input/textarea
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+      // Don't trigger if clicking inside the popup itself
+      if (popupRef.current && popupRef.current.contains(e.target)) return;
+
+      const selection = window.getSelection();
+      const text = selection.toString().trim();
+
+      if (text && text.length > 0 && text.length < 20) { // Limit length to avoid accidental paragraph searches
+        // Calculate position
+        const range = selection.getRangeAt(0);
+        const rect = range.getBoundingClientRect();
+        
+        setSelectionPopup({
+          show: true,
+          x: rect.left + window.scrollX,
+          y: rect.bottom + window.scrollY + 10,
+          loading: true,
+          result: null,
+          text: text
+        });
+
+        // Perform Search
+        searchSelection(text);
+      } else {
+        // Only close if clicking outside popup
+        if (popupRef.current && !popupRef.current.contains(e.target)) {
+           setSelectionPopup(prev => ({ ...prev, show: false }));
+        }
+      }
+    };
+
+    document.addEventListener('mouseup', handleSelection);
+    return () => document.removeEventListener('mouseup', handleSelection);
   }, []);
+
+  const searchSelection = async (text) => {
+    try {
+      const { data } = await axios.get(`${API_URL}/search`, {
+        params: { q: text, direction: 'ja-zh' } // Default to ja-zh for reading text
+      });
+      // Handle array vs object response logic
+      let res = Array.isArray(data) ? data[0] : data;
+      setSelectionPopup(prev => ({ ...prev, loading: false, result: res }));
+    } catch (err) {
+      setSelectionPopup(prev => ({ ...prev, loading: false, error: '查無結果' }));
+    }
+  };
+
+  const checkConnection = async () => {
+    try {
+      const { data } = await axios.get(`${API_URL}/heartbeat`);
+      if (data.dbMode === 'cloud' && data.dbStatus === 'connected') {
+        setDbStatus('connected');
+      } else {
+        setDbStatus('error');
+      }
+    } catch (e) {
+      setDbStatus('error');
+    }
+  };
 
   const fetchSavedWords = async () => {
     try {
@@ -423,10 +490,30 @@ function App() {
       )}
 
       <div style={{ marginTop: '4rem' }}>
-        <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-          <BookOpen size={20} />
-          收藏單字
-        </h3>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+          <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: 0 }}>
+            <BookOpen size={20} />
+            收藏單字
+          </h3>
+          {dbStatus === 'connected' && (
+            <div title="雲端同步已開啟" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#10b981', background: 'rgba(16, 185, 129, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
+              <Cloud size={14} />
+              <span>已同步</span>
+            </div>
+          )}
+          {dbStatus === 'local' && (
+             <div title="僅本機儲存" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#f59e0b', background: 'rgba(245, 158, 11, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
+              <CloudOff size={14} />
+              <span>Local</span>
+            </div>
+          )}
+           {dbStatus === 'error' && (
+             <div title="連線錯誤" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#ef4444', background: 'rgba(239, 68, 68, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
+              <CloudOff size={14} />
+              <span>連線錯誤</span>
+            </div>
+          )}
+        </div>
 
         <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
           {['All', 'N5', 'N4', 'N3', 'N2', 'N1', 'Uncategorized'].map(level => {
@@ -454,7 +541,7 @@ function App() {
             <div
               key={item.word}
               className="glass-panel saved-item"
-              onClick={() => { setQuery(item.word); setResult(item); }}
+              onClick={() => { setQuery(item.word); setResult([item]); }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -514,6 +601,67 @@ function App() {
           </div>
         )}
       </div>
+
+      {/* Selection Popup */}
+      {selectionPopup.show && (
+        <div 
+          ref={popupRef}
+          className="glass-panel"
+          style={{
+            position: 'absolute',
+            top: selectionPopup.y,
+            left: Math.min(selectionPopup.x, window.innerWidth - 320), // Prevent overflow right
+            width: '300px',
+            zIndex: 1000,
+            padding: '1rem',
+            boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5)',
+            border: '1px solid rgba(255, 255, 255, 0.2)'
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '0.5rem' }}>
+             <span style={{ fontWeight: 'bold', color: 'var(--primary)' }}>快速查詢</span>
+             <button onClick={() => setSelectionPopup(prev => ({...prev, show: false}))} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}>✕</button>
+          </div>
+          
+          {selectionPopup.loading ? (
+             <div style={{ textAlign: 'center', padding: '1rem', color: 'var(--text-secondary)' }}>
+               <Sparkles className="spin" size={20} style={{ marginBottom: '0.5rem' }} />
+               <p>搜尋 "{selectionPopup.text}" 中...</p>
+             </div>
+          ) : selectionPopup.result ? (
+            <div>
+               <div style={{ fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '0.2rem' }}>{selectionPopup.result.word}</div>
+               <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>{selectionPopup.result.reading}</div>
+               
+               <div style={{ marginBottom: '0.5rem' }}>
+                 {selectionPopup.result.accent && <span className="badge badge-accent" style={{ fontSize: '0.7rem', marginRight: '0.25rem' }}>{selectionPopup.result.accent}</span>}
+                 {selectionPopup.result.level && <span className="badge badge-level" style={{ fontSize: '0.7rem' }}>{selectionPopup.result.level}</span>}
+               </div>
+
+               <div style={{ fontSize: '0.95rem', lineHeight: '1.4' }}>
+                 {selectionPopup.result.translatedMeaning || selectionPopup.result.meaning}
+               </div>
+               
+               <button 
+                  className="btn btn-primary" 
+                  style={{ width: '100%', marginTop: '1rem', padding: '0.4rem', fontSize: '0.9rem' }}
+                  onClick={() => {
+                     setQuery(selectionPopup.result.word);
+                     setResult(Array.isArray(selectionPopup.result) ? selectionPopup.result : [selectionPopup.result]);
+                     setSelectionPopup(prev => ({...prev, show: false}));
+                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+               >
+                 查看完整詳情
+               </button>
+            </div>
+          ) : (
+             <div style={{ textAlign: 'center', padding: '1rem', color: '#ef4444' }}>
+               找不到 "{selectionPopup.text}" 的結果
+             </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
