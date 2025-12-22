@@ -111,7 +111,7 @@ start "JP Backend" cmd /c "cd server && echo [Session Started %date% %time%] >> 
 
 :: Start Frontend
 echo Starting Frontend Server...
-start "JP Frontend" cmd /c "cd client && echo [Session Started %date% %time%] >> ..\client.out.log && "%NODE_EXE%" node_modules/vite/bin/vite.js >> ..\client.out.log 2>> ..\client.err.log"
+start "JP Frontend" cmd /c "cd client && echo [Session Started %date% %time%] >> ..\client.out.log && "%NODE_EXE%" node_modules/vite/bin/vite.js --open >> ..\client.out.log 2>> ..\client.err.log"
 
 :: Wait for servers to initialize
 echo Waiting for servers to start...
@@ -119,7 +119,7 @@ timeout /t 5 >nul
 
 :: Open Browser
 echo Opening Application...
-start http://localhost:5173
+:: Browser is opened automatically by Vite (--open flag)
 
 echo.
 echo ===================================================

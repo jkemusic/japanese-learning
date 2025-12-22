@@ -693,7 +693,17 @@ function App() {
                
                <div style={{ marginBottom: '0.5rem' }}>
                  {selectionPopup.result.accent && <span className="badge badge-accent" style={{ fontSize: '0.7rem', marginRight: '0.25rem' }}>{selectionPopup.result.accent}</span>}
-                 {selectionPopup.result.level && <span className="badge badge-level" style={{ fontSize: '0.7rem' }}>{selectionPopup.result.level}</span>}
+                 {selectionPopup.result.level && (
+                   <span className={`badge ${selectionPopup.result.level.includes('N1') ? 'badge-n1' :
+                     selectionPopup.result.level.includes('N2') ? 'badge-n2' :
+                       selectionPopup.result.level.includes('N3') ? 'badge-n3' :
+                         selectionPopup.result.level.includes('N4') ? 'badge-n4' :
+                           selectionPopup.result.level.includes('N5') ? 'badge-n5' :
+                             'badge-level'
+                     }`} style={{ fontSize: '0.7rem' }}>
+                     {selectionPopup.result.level}
+                   </span>
+                 )}
                </div>
 
                <div style={{ fontSize: '0.95rem', lineHeight: '1.4' }}>

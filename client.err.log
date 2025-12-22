@@ -149,4 +149,4 @@
       at step (C:\Users\user\Desktop\日文\client\node_modules\gensync\index.js:287:14)
       at C:\Users\user\Desktop\日文\client\node_modules\gensync\index.js:273:13
       at async.call.result.err.err (C:\Users\user\Desktop\日文\client\node_modules\gensync\index.js:223:11)
-^C
+^C^C^C^C^C
