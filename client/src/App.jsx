@@ -225,17 +225,34 @@ function App() {
   };
 
   // Calculate filtered and paginated items
+  const [statsFilter, setStatsFilter] = useState('all'); // 'all', 'mastered', 'learning'
+  
   // Calculate filtered and paginated items
   const filteredSavedWords = savedWords.filter(item => {
-    if (filterLevel === 'All') return true;
-    if (filterLevel === 'Uncategorized') return !item.level;
-    return item.level && item.level.includes(filterLevel);
+    // 1. Level Filter
+    if (filterLevel !== 'All') {
+      if (filterLevel === 'Uncategorized') {
+        if (item.level) return false;
+      } else {
+        if (!item.level || !item.level.includes(filterLevel)) return false;
+      }
+    }
+
+    // 2. Stats Filter
+    if (statsFilter === 'mastered') {
+       const isMastered = (item.flashcardStats?.correct || 0) > (item.flashcardStats?.incorrect || 0) * 2 && (item.flashcardStats?.correct || 0) > 3;
+       if (!isMastered) return false;
+    } else if (statsFilter === 'learning') {
+       const hasStats = item.flashcardStats && (item.flashcardStats.correct > 0 || item.flashcardStats.incorrect > 0);
+       const isMastered = (item.flashcardStats?.correct || 0) > (item.flashcardStats?.incorrect || 0) * 2 && (item.flashcardStats?.correct || 0) > 3;
+       // Learning = Has been exercised but not yet mastered
+       if (!hasStats || isMastered) return false;
+    }
+
+    return true;
   }).sort((a, b) => {
     let diff = 0;
     if (sortBy === 'date') {
-      // Assuming savedAt exists. If not, use implicit index logic (but array is pre-sorted by server). 
-      // Server returns latest first (DESC).
-      // So if sortOrder is DESC, we keep it. If ASC, we reverse.
       const dateA = a.savedAt ? new Date(a.savedAt).getTime() : 0;
       const dateB = b.savedAt ? new Date(b.savedAt).getTime() : 0;
       diff = dateA - dateB;
@@ -259,16 +276,31 @@ function App() {
       setCurrentPage(1);
     }
   }, [currentPage, totalPages]);
+  
+  // Reset stats filter when leaving page or changing level? 
+  // Maybe better to keep it independent.
 
   // Flashcard Logic
   const startFlashcardSetup = () => {
     setFlashcardMode('setup');
+    
+    // Set count based on current filtered view if stats filter is active?
+    // Or just default to filteredSavedWords length? 
+    // Usually users practice specific sets. 
+    // Let's use filteredSavedWords for candidates in startFlashcardGame
     setFlashcardSettings(prev => ({ ...prev, count: Math.min(10, savedWords.length) }));
   };
 
   const startFlashcardGame = () => {
-    // 1. Filter candidates (optionally filter by level if needed, but for now take all)
-    let candidates = [...savedWords];
+    // Use filteredSavedWords if user wants to practice current filter?
+    // The previous logic used savedWords. 
+    // If statsFilter is active, user probably wants to practice "Learning" words.
+    // Let's us filteredSavedWords as the pool candidates if filter is active, otherwise savedWords.
+    
+    let pool = statsFilter !== 'all' ? filteredSavedWords : savedWords;
+    if (pool.length === 0) pool = savedWords; // Fallback
+
+    let candidates = [...pool];
     
     // 2. Shuffle (Fisher-Yates)
     for (let i = candidates.length - 1; i > 0; i--) {
@@ -276,12 +308,6 @@ function App() {
       [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
     }
 
-    // 3. Selection Algorithm (Slightly favor items with high incorrect count?)
-    // For now, simpler: Just take the first N after shuffle. 
-    // Ideally we sort by "need review" but random is good for general review.
-    // Let's optimize: Sort by (correct - incorrect) ascending? So harder ones come first?
-    // Let's do a mix: Shuffle is good.
-    
     const selected = candidates.slice(0, flashcardSettings.count);
     setFlashcards(selected);
     setCurrentCardIndex(0);
@@ -289,6 +315,10 @@ function App() {
     setSessionStats({ correct: 0, incorrect: 0 }); // Reset session stats
     setFlashcardMode('game');
   };
+
+  // ... (handleCardResult is fine)
+
+
 
   const handleCardResult = async (result) => {
     // result: 'correct' | 'incorrect'
@@ -617,6 +647,53 @@ function App() {
           </button>
         </div>
 
+        {/* Global Stats Summary & Filter */}
+        {savedWords.some(w => w.flashcardStats && (w.flashcardStats.correct > 0 || w.flashcardStats.incorrect > 0)) && (
+          <div className="glass-panel" style={{ marginBottom: '1.5rem', padding: '1rem', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+            
+            {/* Total Reviews / All */}
+            <div 
+               onClick={() => { setStatsFilter('all'); setCurrentPage(1); }}
+               style={{ textAlign: 'center', cursor: 'pointer', padding: '0.5rem', borderRadius: '8px', background: statsFilter === 'all' ? 'rgba(255,255,255,0.1)' : 'transparent', transition: 'background 0.2s' }}
+            >
+               <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>總練習次數</div>
+               <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
+                 {savedWords.reduce((acc, w) => acc + (w.flashcardStats?.correct || 0) + (w.flashcardStats?.incorrect || 0), 0)}
+               </div>
+            </div>
+            
+            <div style={{ width: '1px', height: '40px', background: 'var(--glass-border)' }}></div>
+            
+            {/* Learning / Need Review */}
+            <div 
+               onClick={() => { setStatsFilter('learning'); setCurrentPage(1); }}
+               style={{ textAlign: 'center', cursor: 'pointer', padding: '0.5rem', borderRadius: '8px', background: statsFilter === 'learning' ? 'rgba(255,255,255,0.1)' : 'transparent', transition: 'background 0.2s' }}
+            >
+               <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>加強中</div>
+               <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#f59e0b' }}>
+                 {savedWords.filter(w => {
+                    const hasStats = w.flashcardStats && (w.flashcardStats.correct > 0 || w.flashcardStats.incorrect > 0);
+                    const isMastered = (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3;
+                    return hasStats && !isMastered;
+                 }).length}
+               </div>
+            </div>
+
+            <div style={{ width: '1px', height: '40px', background: 'var(--glass-border)' }}></div>
+
+            {/* Mastered */}
+            <div 
+               onClick={() => { setStatsFilter('mastered'); setCurrentPage(1); }}
+               style={{ textAlign: 'center', cursor: 'pointer', padding: '0.5rem', borderRadius: '8px', background: statsFilter === 'mastered' ? 'rgba(255,255,255,0.1)' : 'transparent', transition: 'background 0.2s' }}
+            >
+               <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>已熟記</div>
+               <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#10b981' }}>
+                 {savedWords.filter(w => (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3).length}
+               </div>
+            </div>
+          </div>
+        )}
+
         {/* Flashcard Overlays */}
         {flashcardMode !== 'none' && (
           <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.85)', zIndex: 2000, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '1rem' }}>
@@ -769,11 +846,25 @@ function App() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
             {['All', 'N5', 'N4', 'N3', 'N2', 'N1', 'Uncategorized'].map(level => {
+              // Calculate counts based on current stats filter
+              const currentStatsFiltered = savedWords.filter(w => {
+                 if (statsFilter === 'all') return true;
+                 if (statsFilter === 'mastered') {
+                    return (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3;
+                 }
+                 if (statsFilter === 'learning') {
+                    const hasStats = w.flashcardStats && (w.flashcardStats.correct > 0 || w.flashcardStats.incorrect > 0);
+                    const isMastered = (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3;
+                    return hasStats && !isMastered;
+                 }
+                 return true;
+              });
+
               const count = level === 'All'
-                ? savedWords.length
+                ? currentStatsFiltered.length
                 : level === 'Uncategorized'
-                  ? savedWords.filter(w => !w.level).length
-                  : savedWords.filter(w => w.level && w.level.includes(level)).length;
+                  ? currentStatsFiltered.filter(w => !w.level).length
+                  : currentStatsFiltered.filter(w => w.level && w.level.includes(level)).length;
 
               return (
                 <button

@@ -6552,3 +6552,80 @@ Debug /api/saved first item: {
   "searchCount": 1,
   "lastSearched": "2026-01-06T08:37:12.692Z"
 }
+[Session Started 2026/01/06 �g�G 18:54:31.57]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "695cc9babc0227b9c6e71bad",
+  "word": "有無",
+  "reading": "うむ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "有無、有沒有、存在與否",
+  "examples": [],
+  "savedAt": "2026-01-06T08:37:14.230Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:37:12.692Z"
+}
+Debug /api/saved first item: {
+  "_id": "695cc9babc0227b9c6e71bad",
+  "word": "有無",
+  "reading": "うむ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "有無、有沒有、存在與否",
+  "examples": [],
+  "savedAt": "2026-01-06T08:37:14.230Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:37:12.692Z"
+}
+Debug /api/saved first item: {
+  "_id": "695cc9babc0227b9c6e71bad",
+  "word": "有無",
+  "reading": "うむ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "有無、有沒有、存在與否",
+  "examples": [],
+  "savedAt": "2026-01-06T08:37:14.230Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:37:12.692Z"
+}
+Attempting direct search for: "0"
+No examples found for ゼロ. Using LLM fallback...
+Attempting direct search for: "0"
+No examples found for ゼロ. Using LLM fallback...
+Attempting direct search for: "已熟記單字"
+Direct search failed for "已熟記單字". Checking fallbacks...
+Trying conversion to Hiragana for "已熟記單字"...
+Attempting direct search for: "已熟記單字"
+Direct search failed for "已熟記單字". Checking fallbacks...
+Trying conversion to Hiragana for "已熟記單字"...
+Attempting direct search for: "40%"
+Direct search failed for "40%". Checking fallbacks...
+Trying conversion to Hiragana for "40%"...
+Attempting direct search for: "40%"
+Direct search failed for "40%". Checking fallbacks...
+Trying conversion to Hiragana for "40%"...
+Debug /api/saved first item: {
+  "_id": "695cc9babc0227b9c6e71bad",
+  "word": "有無",
+  "reading": "うむ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "有無、有沒有、存在與否",
+  "examples": [],
+  "savedAt": "2026-01-06T08:37:14.230Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:37:12.692Z"
+}
