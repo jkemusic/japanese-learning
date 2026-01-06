@@ -1626,3 +1626,4929 @@ Trying conversion to Hiragana for "上次"...
 Attempting direct search for: "次數"
 Direct search failed for "次數". Checking fallbacks...
 Trying conversion to Hiragana for "次數"...
+Attempting direct search for: "宗家"
+No examples found for 宗家. Using LLM fallback...
+Attempting direct search for: "宗教"
+No examples found for 宗教. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694975446c38451b201b4814",
+  "word": "宗教",
+  "reading": "しゅうきょう",
+  "accent": "[1]",
+  "part": "名",
+  "level": "N3",
+  "meaning": "宗教",
+  "examples": [],
+  "savedAt": "2025-12-22T16:43:48.192Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T16:43:45.552Z"
+}
+Attempting direct search for: "分ける"
+No examples found for 分ける. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6949758b6c38451b201b481c",
+  "word": "分ける",
+  "reading": "わける",
+  "accent": "[2]",
+  "part": "他下",
+  "level": "N3",
+  "meaning": "分／分開／平手",
+  "examples": [],
+  "savedAt": "2025-12-22T16:44:59.530Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T16:44:58.033Z"
+}
+Debug /api/saved first item: {
+  "_id": "694975446c38451b201b4814",
+  "word": "宗教",
+  "reading": "しゅうきょう",
+  "accent": "[1]",
+  "part": "名",
+  "level": "N3",
+  "meaning": "宗教",
+  "examples": [],
+  "savedAt": "2025-12-22T16:43:48.192Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T16:43:45.552Z"
+}
+Debug /api/saved first item: {
+  "_id": "694975446c38451b201b4814",
+  "word": "宗教",
+  "reading": "しゅうきょう",
+  "accent": "[1]",
+  "part": "名",
+  "level": "N3",
+  "meaning": "宗教",
+  "examples": [],
+  "savedAt": "2025-12-22T16:43:48.192Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T16:43:45.552Z"
+}
+Debug /api/saved first item: {
+  "_id": "694975a86c38451b201b4827",
+  "word": "分ける",
+  "reading": "わける",
+  "accent": "[2]",
+  "part": "他下",
+  "level": "N3",
+  "meaning": "分／分開／平手",
+  "examples": [],
+  "savedAt": "2025-12-22T16:45:28.588Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T16:44:58.033Z"
+}
+Debug /api/saved first item: {
+  "_id": "694975446c38451b201b4814",
+  "word": "宗教",
+  "reading": "しゅうきょう",
+  "accent": "[1]",
+  "part": "名",
+  "level": "N3",
+  "meaning": "宗教",
+  "examples": [],
+  "savedAt": "2025-12-22T16:43:48.192Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T16:43:45.552Z"
+}
+Debug /api/saved first item: {
+  "_id": "694975a96c38451b201b482f",
+  "word": "分ける",
+  "reading": "わける",
+  "accent": "[2]",
+  "part": "他下",
+  "level": "N3",
+  "meaning": "分／分開／平手",
+  "examples": [],
+  "savedAt": "2025-12-22T16:45:29.729Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T16:44:58.033Z"
+}
+Attempting direct search for: "きちんと"
+No examples found for きちんと. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694975ae6c38451b201b4837",
+  "word": "きちんと",
+  "reading": "きちんと",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "整齊地、規矩地／確實地、好好地",
+  "examples": [],
+  "savedAt": "2025-12-22T16:45:34.857Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T16:45:33.267Z"
+}
+Attempting direct search for: "とは限らない"
+No examples found for とは限らない. Using LLM fallback...
+Attempting direct search for: "ない"
+No examples found for ない. Using LLM fallback...
+Attempting direct search for: "倒産"
+No examples found for 倒産. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694978be6c38451b201b4845",
+  "word": "倒産",
+  "reading": "とうさん",
+  "accent": "[0]",
+  "part": "名自サ",
+  "level": "N3",
+  "meaning": "（企業）倒閉、破產",
+  "examples": [],
+  "savedAt": "2025-12-22T16:58:38.967Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T16:58:36.499Z"
+}
+Attempting direct search for: "意外に"
+Direct search failed for "意外に". Checking fallbacks...
+Trying conversion to Hiragana for "意外に"...
+Attempting direct search for: "意外"
+No examples found for 意外. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694978f86c38451b201b484d",
+  "word": "意外",
+  "reading": "いがい",
+  "accent": "",
+  "part": "形動と副名",
+  "level": "N3",
+  "meaning": "意外、出乎意料",
+  "examples": [],
+  "savedAt": "2025-12-22T16:59:36.923Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T16:59:34.666Z"
+}
+Attempting direct search for: "ニーズ"
+No examples found for ニーズ. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694979306c38451b201b4855",
+  "word": "ニーズ",
+  "reading": "ニーズ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "需求、需要",
+  "examples": [],
+  "savedAt": "2025-12-22T17:00:32.324Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T17:00:30.760Z"
+}
+Attempting direct search for: "あたり"
+No examples found for 辺り. Using LLM fallback...
+Attempting direct search for: "当たり"
+No examples found for 当たり. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69497a176c38451b201b4860",
+  "word": "当たり",
+  "reading": "あたり",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "中獎、命中／成功／適當、恰當／每",
+  "examples": [],
+  "savedAt": "2025-12-22T17:04:23.667Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T17:04:20.180Z"
+}
+Attempting direct search for: "まとまり"
+No examples found for x纏まり. Using LLM fallback...
+Attempting direct search for: "必ずしも"
+No examples found for 必ずしも. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69497ad86c38451b201b486b",
+  "word": "必ずしも",
+  "reading": "かならずしも",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "不一定、未必",
+  "examples": [],
+  "savedAt": "2025-12-22T17:07:36.316Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T17:07:34.749Z"
+}
+Attempting direct search for: "争う"
+No examples found for 争う. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69497b436c38451b201b4873",
+  "word": "争う",
+  "reading": "あらそう",
+  "accent": "[3]",
+  "part": "他五",
+  "level": "N3",
+  "meaning": "爭／競爭／爭吵、爭執／爭取",
+  "examples": [],
+  "savedAt": "2025-12-22T17:09:23.259Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T17:09:20.173Z"
+}
+Attempting direct search for: "せめて"
+No examples found for せめて. Using LLM fallback...
+No examples found for 攻め手. Using LLM fallback...
+Attempting direct search for: "展望"
+No examples found for 展望. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69497c366c38451b201b4881",
+  "word": "展望",
+  "reading": "てんぼう",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "展望／遠景、前景、瞭望",
+  "examples": [],
+  "savedAt": "2025-12-22T17:13:26.085Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T17:13:24.999Z"
+}
+[Session Started 2025/12/23 �g�G 21:28:14.10]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "69497c366c38451b201b4881",
+  "word": "展望",
+  "reading": "てんぼう",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "展望／遠景、前景、瞭望",
+  "examples": [],
+  "savedAt": "2025-12-22T17:13:26.085Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T17:13:24.999Z"
+}
+Debug /api/saved first item: {
+  "_id": "69497c366c38451b201b4881",
+  "word": "展望",
+  "reading": "てんぼう",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "展望／遠景、前景、瞭望",
+  "examples": [],
+  "savedAt": "2025-12-22T17:13:26.085Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-22T17:13:24.999Z"
+}
+Attempting direct search for: "宙返り"
+No examples found for 宙返り. Using LLM fallback...
+Attempting direct search for: "宝物殿"
+No examples found for 宝物殿. Using LLM fallback...
+Attempting direct search for: "重宝"
+No examples found for 重宝. Using LLM fallback...
+Attempting direct search for: "宛名"
+No examples found for 宛名. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694a9b3676adb71343e68438",
+  "word": "宛名",
+  "reading": "あてな",
+  "accent": "[0]",
+  "part": "名",
+  "level": "N3",
+  "meaning": "收件人姓名",
+  "examples": [],
+  "savedAt": "2025-12-23T13:37:58.291Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-23T13:37:53.612Z"
+}
+Attempting direct search for: "宛る"
+Direct search failed for "宛る". Checking fallbacks...
+Trying conversion to Hiragana for "宛る"...
+Attempting direct search for: "宛てる"
+No examples found for 宛てる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694a9b5776adb71343e68440",
+  "word": "宛てる",
+  "reading": "あてる",
+  "accent": "",
+  "part": "他一",
+  "level": "N3",
+  "meaning": "寄給、寄往／瞄準、對準",
+  "examples": [],
+  "savedAt": "2025-12-23T13:38:31.380Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-23T13:38:27.713Z"
+}
+Attempting direct search for: "便宜"
+No examples found for 便宜. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694a9bac76adb71343e68448",
+  "word": "便宜",
+  "reading": "べんぎ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "方便、權宜",
+  "examples": [],
+  "savedAt": "2025-12-23T13:39:56.960Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-23T13:39:54.057Z"
+}
+Attempting direct search for: "よろしい"
+No examples found for よろしい. Using LLM fallback...
+Attempting direct search for: "適宜"
+No examples found for 適宜. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694a9bcd76adb71343e68453",
+  "word": "適宜",
+  "reading": "てきぎ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "適宜、適當、恰當",
+  "examples": [],
+  "savedAt": "2025-12-23T13:40:29.172Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-23T13:40:26.533Z"
+}
+[Session Started 2025/12/24 �g�T 21:25:41.62]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "694a9bcd76adb71343e68453",
+  "word": "適宜",
+  "reading": "てきぎ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "適宜、適當、恰當",
+  "examples": [],
+  "savedAt": "2025-12-23T13:40:29.172Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-23T13:40:26.533Z"
+}
+Debug /api/saved first item: {
+  "_id": "694a9bcd76adb71343e68453",
+  "word": "適宜",
+  "reading": "てきぎ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "適宜、適當、恰當",
+  "examples": [],
+  "savedAt": "2025-12-23T13:40:29.172Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-23T13:40:26.533Z"
+}
+Attempting direct search for: "連線錯誤"
+Direct search failed for "連線錯誤". Checking fallbacks...
+Trying conversion to Hiragana for "連線錯誤"...
+Attempting direct search for: "連線錯誤"
+Direct search failed for "連線錯誤". Checking fallbacks...
+Trying conversion to Hiragana for "連線錯誤"...
+Debug /api/saved first item: {
+  "_id": "694a9bcd76adb71343e68453",
+  "word": "適宜",
+  "reading": "てきぎ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "適宜、適當、恰當",
+  "examples": [],
+  "savedAt": "2025-12-23T13:40:29.172Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-23T13:40:26.533Z"
+}
+Debug /api/saved first item: {
+  "_id": "694a9bcd76adb71343e68453",
+  "word": "適宜",
+  "reading": "てきぎ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "適宜、適當、恰當",
+  "examples": [],
+  "savedAt": "2025-12-23T13:40:29.172Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-23T13:40:26.533Z"
+}
+Attempting direct search for: "便宜"
+No examples found for 便宜. Using LLM fallback...
+Attempting direct search for: "客間"
+No examples found for 客間. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694beec885867e56fd79e2be",
+  "word": "客間",
+  "reading": "きゃくま",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "客廳、會客室",
+  "examples": [],
+  "savedAt": "2025-12-24T13:46:48.528Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-24T13:46:46.067Z"
+}
+Attempting direct search for: "宣言"
+No examples found for 宣言. Using LLM fallback...
+Attempting direct search for: "宣告"
+No examples found for 宣告. Using LLM fallback...
+Attempting direct search for: "託宣"
+No examples found for 託宣. Using LLM fallback...
+Attempting direct search for: "設定"
+No examples found for 設定. Using LLM fallback...
+Attempting direct search for: "お宮"
+No examples found for お宮. Using LLM fallback...
+Attempting direct search for: "傷害"
+No examples found for 傷害. Using LLM fallback...
+Attempting direct search for: "障害"
+No examples found for 障害. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694bfbde85867e56fd79e2d8",
+  "word": "障害",
+  "reading": "しょうがい",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "障礙、妨礙／殘障、殘疾",
+  "examples": [],
+  "savedAt": "2025-12-24T14:42:38.280Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-24T14:42:37.161Z"
+}
+Attempting direct search for: "利害"
+No examples found for 利害. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694bfbf285867e56fd79e2e0",
+  "word": "利害",
+  "reading": "りがい",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "利害、利弊／利害關係",
+  "examples": [],
+  "savedAt": "2025-12-24T14:42:58.543Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-24T14:42:56.770Z"
+}
+Debug /api/saved first item: {
+  "_id": "694bfbf285867e56fd79e2e0",
+  "word": "利害",
+  "reading": "りがい",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "利害、利弊／利害關係",
+  "examples": [],
+  "savedAt": "2025-12-24T14:42:58.543Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-24T14:42:56.770Z"
+}
+Debug /api/saved first item: {
+  "_id": "694bfbf285867e56fd79e2e0",
+  "word": "利害",
+  "reading": "りがい",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "利害、利弊／利害關係",
+  "examples": [],
+  "savedAt": "2025-12-24T14:42:58.543Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-24T14:42:56.770Z"
+}
+Attempting direct search for: "世おい"
+Direct search failed for "世おい". Checking fallbacks...
+Trying conversion to Hiragana for "世おい"...
+Attempting direct search for: "容易"
+No examples found for 容易. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d727385867e56fd79e2ea",
+  "word": "容易",
+  "reading": "ようい",
+  "accent": "",
+  "part": "形動名",
+  "level": "N4",
+  "meaning": "容易、簡單、輕鬆",
+  "examples": [],
+  "savedAt": "2025-12-25T17:20:51.897Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:20:43.903Z"
+}
+Attempting direct search for: "容器"
+No examples found for 容器. Using LLM fallback...
+Attempting direct search for: "容疑"
+No examples found for 容疑. Using LLM fallback...
+Attempting direct search for: "疑い"
+No examples found for 疑い. Using LLM fallback...
+Attempting direct search for: "容姿"
+No examples found for 容姿. Using LLM fallback...
+Attempting direct search for: "容認"
+No examples found for 容認. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d744785867e56fd79e2fd",
+  "word": "容認",
+  "reading": "ようにん",
+  "accent": "",
+  "part": "",
+  "level": "N1",
+  "meaning": "容許、認可、默許",
+  "examples": [],
+  "savedAt": "2025-12-25T17:28:39.215Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:28:27.746Z"
+}
+Attempting direct search for: "寛容"
+No examples found for 寛容. Using LLM fallback...
+Attempting direct search for: "許容"
+No examples found for 許容. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d746385867e56fd79e308",
+  "word": "許容",
+  "reading": "きょよう",
+  "accent": "[0]",
+  "part": "",
+  "level": "N1",
+  "meaning": "許容、容許、容忍",
+  "examples": [],
+  "savedAt": "2025-12-25T17:29:07.897Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:29:05.459Z"
+}
+Attempting direct search for: "掲揚"
+No examples found for 掲揚. Using LLM fallback...
+Attempting direct search for: "形容"
+No examples found for 形容. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d747d85867e56fd79e313",
+  "word": "形容",
+  "reading": "けいよう",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "形容、描述",
+  "examples": [],
+  "savedAt": "2025-12-25T17:29:33.013Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:29:30.660Z"
+}
+Attempting direct search for: "聞き返す"
+No examples found for 聞き返す. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d748a85867e56fd79e31b",
+  "word": "聞き返す",
+  "reading": "ききかえす",
+  "accent": "[3]",
+  "part": "他五",
+  "level": "N3",
+  "meaning": "反問、問回去／重新問、再問一次",
+  "examples": [],
+  "savedAt": "2025-12-25T17:29:46.495Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:29:44.371Z"
+}
+Attempting direct search for: "聞き直す"
+No examples found for 聞き直す. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d749585867e56fd79e323",
+  "word": "聞き直す",
+  "reading": "ききなおす",
+  "accent": "",
+  "part": "他五",
+  "level": "N3",
+  "meaning": "重聽、再問一次",
+  "examples": [],
+  "savedAt": "2025-12-25T17:29:57.008Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:29:54.378Z"
+}
+Attempting direct search for: "言い返す"
+No examples found for 言い返す. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d749e85867e56fd79e32b",
+  "word": "言い返す",
+  "reading": "いいかえす",
+  "accent": "",
+  "part": "他五",
+  "level": "N3",
+  "meaning": "頂嘴、反駁、回嘴",
+  "examples": [],
+  "savedAt": "2025-12-25T17:30:06.691Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:30:05.720Z"
+}
+Attempting direct search for: "美容"
+No examples found for 美容. Using LLM fallback...
+Attempting direct search for: "宴席"
+No examples found for 宴席. Using LLM fallback...
+Attempting direct search for: "主演"
+No examples found for 主演. Using LLM fallback...
+Attempting direct search for: "酒宴"
+No examples found for 酒宴. Using LLM fallback...
+Attempting direct search for: "祝宴"
+No examples found for 祝宴. Using LLM fallback...
+Attempting direct search for: "日披露宴"
+Direct search failed for "日披露宴". Checking fallbacks...
+Trying conversion to Hiragana for "日披露宴"...
+Attempting direct search for: "披露宴"
+No examples found for 披露宴. Using LLM fallback...
+Attempting direct search for: "宿る"
+No examples found for 宿る. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d757485867e56fd79e345",
+  "word": "宿る",
+  "reading": "やどる",
+  "accent": "",
+  "part": "自五",
+  "level": "N2",
+  "meaning": "寄宿、投宿、住宿／寄生、棲息／懷有、蘊藏",
+  "examples": [],
+  "savedAt": "2025-12-25T17:33:40.294Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:33:38.627Z"
+}
+Attempting direct search for: "雨宿り"
+No examples found for 雨宿り. Using LLM fallback...
+Attempting direct search for: "宿舎"
+No examples found for 宿舎. Using LLM fallback...
+Attempting direct search for: "宿舎"
+No examples found for 宿舎. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d76c585867e56fd79e352",
+  "word": "宿舎",
+  "reading": "しゅくしゃ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "宿舍",
+  "examples": [],
+  "savedAt": "2025-12-25T17:39:17.319Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2025-12-25T17:38:33.930Z"
+}
+Attempting direct search for: "宿直"
+No examples found for 宿直. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d76d585867e56fd79e35a",
+  "word": "宿直",
+  "reading": "しゅくちょく",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "值夜、夜班",
+  "examples": [],
+  "savedAt": "2025-12-25T17:39:33.303Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:39:25.863Z"
+}
+Attempting direct search for: "宿泊"
+No examples found for 宿泊. Using LLM fallback...
+Attempting direct search for: "合宿"
+No examples found for 合宿. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d76ef85867e56fd79e365",
+  "word": "合宿",
+  "reading": "がっしゅく",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "合宿、集訓",
+  "examples": [],
+  "savedAt": "2025-12-25T17:39:59.758Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:39:57.549Z"
+}
+Attempting direct search for: "下宿"
+No examples found for 下宿. Using LLM fallback...
+Attempting direct search for: "寄る"
+No examples found for 寄る. Using LLM fallback...
+Attempting direct search for: "偏る"
+No examples found for 偏る. Using LLM fallback...
+Attempting direct search for: "片寄る"
+No examples found for 偏る. Using LLM fallback...
+Attempting direct search for: "片寄る"
+No examples found for 偏る. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d779b85867e56fd79e377",
+  "word": "偏る",
+  "reading": "かたよる",
+  "accent": "",
+  "part": "自五",
+  "level": "N2",
+  "meaning": "偏向、偏重／偏倚",
+  "examples": [],
+  "savedAt": "2025-12-25T17:42:51.150Z",
+  "__v": 0,
+  "searchCount": 3,
+  "lastSearched": "2025-12-25T17:42:47.253Z"
+}
+Attempting direct search for: "年寄"
+No examples found for 年寄り. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d77e585867e56fd79e37f",
+  "word": "年寄り",
+  "reading": "としより",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "老人、老年人、長者",
+  "examples": [],
+  "savedAt": "2025-12-25T17:44:05.585Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:44:03.159Z"
+}
+Attempting direct search for: "身寄り"
+No examples found for 身寄り. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d77f185867e56fd79e387",
+  "word": "身寄り",
+  "reading": "みより",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "親戚、親人、親屬",
+  "examples": [],
+  "savedAt": "2025-12-25T17:44:17.262Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:44:14.515Z"
+}
+Attempting direct search for: "人寄せ"
+No examples found for 人寄せ. Using LLM fallback...
+Attempting direct search for: "人寄せ"
+Debug /api/saved first item: {
+  "_id": "694d7bc385867e56fd79e38f",
+  "word": "人寄せ",
+  "reading": "ひとよせ",
+  "accent": "",
+  "part": "",
+  "level": "",
+  "meaning": "聚集人群、招攬人潮",
+  "examples": [],
+  "savedAt": "2025-12-25T18:00:35.198Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T17:57:46.927Z"
+}
+No examples found for 人寄せ. Using LLM fallback...
+Attempting direct search for: "寄席"
+No examples found for 寄席. Using LLM fallback...
+Attempting direct search for: "寄席"
+No examples found for 寄席. Using LLM fallback...
+Attempting direct search for: "寄贈"
+No examples found for 寄贈. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d7bf085867e56fd79e39e",
+  "word": "寄贈",
+  "reading": "きぞう",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "贈送、捐贈",
+  "examples": [],
+  "savedAt": "2025-12-25T18:01:20.838Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T18:01:20.056Z"
+}
+Attempting direct search for: "寄付"
+No examples found for 寄付. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d7c1a85867e56fd79e3a6",
+  "word": "寄付",
+  "reading": "きふ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "捐贈、捐款、捐獻",
+  "examples": [],
+  "savedAt": "2025-12-25T18:02:02.174Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T18:02:00.320Z"
+}
+Attempting direct search for: "最寄り"
+No examples found for 最寄り. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d7c2385867e56fd79e3ae",
+  "word": "最寄り",
+  "reading": "もより",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "最近的、附近的、鄰近的",
+  "examples": [],
+  "savedAt": "2025-12-25T18:02:11.057Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T18:02:09.913Z"
+}
+Attempting direct search for: "御社"
+No examples found for 御社. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d7ffe85867e56fd79e3b6",
+  "word": "御社",
+  "reading": "おんしゃ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "貴公司（敬語）",
+  "examples": [],
+  "savedAt": "2025-12-25T18:18:38.764Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T18:18:36.979Z"
+}
+Attempting direct search for: "随分"
+No examples found for 随分. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d813085867e56fd79e3be",
+  "word": "随分",
+  "reading": "ずいぶん",
+  "accent": "[1]",
+  "part": "形動副",
+  "level": "N4",
+  "meaning": "相當地／非常地",
+  "examples": [],
+  "savedAt": "2025-12-25T18:23:44.361Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T18:23:43.668Z"
+}
+Attempting direct search for: "熱心"
+No examples found for 熱心. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d813e85867e56fd79e3c6",
+  "word": "熱心",
+  "reading": "ねっしん",
+  "accent": "[1]",
+  "part": "形動",
+  "level": "N4",
+  "meaning": "熱心／熱情／熱衷",
+  "examples": [],
+  "savedAt": "2025-12-25T18:23:58.333Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-25T18:23:56.977Z"
+}
+Attempting direct search for: "甘やかす"
+No examples found for 甘やかす. Using LLM fallback...
+Attempting direct search for: "追いかける"
+No examples found for 追いかける. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694d819f85867e56fd79e3d0",
+  "word": "追いかける",
+  "reading": "おいかける",
+  "accent": "[4]",
+  "part": "他一",
+  "level": "N3",
+  "meaning": "追趕、追逐、追隨",
+  "examples": [],
+  "savedAt": "2025-12-25T18:25:35.542Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2025-12-25T18:25:32.986Z"
+}
+Attempting direct search for: "甘い"
+No examples found for 甘い. Using LLM fallback...
+No examples found for うまい. Using LLM fallback...
+[Session Started 2025/12/27 �g��  0:22:45.89]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "694d819f85867e56fd79e3d0",
+  "word": "追いかける",
+  "reading": "おいかける",
+  "accent": "[4]",
+  "part": "他一",
+  "level": "N3",
+  "meaning": "追趕、追逐、追隨",
+  "examples": [],
+  "savedAt": "2025-12-25T18:25:35.542Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2025-12-25T18:25:32.986Z"
+}
+Debug /api/saved first item: {
+  "_id": "694d819f85867e56fd79e3d0",
+  "word": "追いかける",
+  "reading": "おいかける",
+  "accent": "[4]",
+  "part": "他一",
+  "level": "N3",
+  "meaning": "追趕、追逐、追隨",
+  "examples": [],
+  "savedAt": "2025-12-25T18:25:35.542Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2025-12-25T18:25:32.986Z"
+}
+Attempting direct search for: "密告"
+No examples found for 密告. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694eb84e9f6ff1b99e28a3e2",
+  "word": "密告",
+  "reading": "みっこく",
+  "accent": "",
+  "part": "",
+  "level": "N1",
+  "meaning": "密告、告密",
+  "examples": [],
+  "savedAt": "2025-12-26T16:31:10.921Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T16:30:38.604Z"
+}
+Attempting direct search for: "密接"
+No examples found for 密接. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694eb8509f6ff1b99e28a3ea",
+  "word": "密接",
+  "reading": "みっせつ",
+  "accent": "",
+  "part": "形動名",
+  "level": "N2",
+  "meaning": "密接、緊密",
+  "examples": [],
+  "savedAt": "2025-12-26T16:31:12.574Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T16:31:11.931Z"
+}
+Debug /api/saved first item: {
+  "_id": "694eb8509f6ff1b99e28a3ea",
+  "word": "密接",
+  "reading": "みっせつ",
+  "accent": "",
+  "part": "形動名",
+  "level": "N2",
+  "meaning": "密接、緊密",
+  "examples": [],
+  "savedAt": "2025-12-26T16:31:12.574Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T16:31:11.931Z"
+}
+Debug /api/saved first item: {
+  "_id": "694eb8509f6ff1b99e28a3ea",
+  "word": "密接",
+  "reading": "みっせつ",
+  "accent": "",
+  "part": "形動名",
+  "level": "N2",
+  "meaning": "密接、緊密",
+  "examples": [],
+  "savedAt": "2025-12-26T16:31:12.574Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T16:31:11.931Z"
+}
+Attempting direct search for: "密輸"
+No examples found for 密輸. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694eb85e9f6ff1b99e28a3f4",
+  "word": "密輸",
+  "reading": "みつゆ",
+  "accent": "",
+  "part": "",
+  "level": "N1",
+  "meaning": "走私、偷運",
+  "examples": [],
+  "savedAt": "2025-12-26T16:31:26.382Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T16:31:25.356Z"
+}
+Attempting direct search for: "密"
+No examples found for 密. Using LLM fallback...
+Attempting direct search for: "密ぁ"
+Direct search failed for "密ぁ". Checking fallbacks...
+Trying conversion to Hiragana for "密ぁ"...
+Attempting direct search for: "密か"
+No examples found for 密か. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694eb8779f6ff1b99e28a3ff",
+  "word": "密か",
+  "reading": "ひそか",
+  "accent": "",
+  "part": "形動名",
+  "level": "N2",
+  "meaning": "秘密的、暗中的、悄悄的",
+  "examples": [],
+  "savedAt": "2025-12-26T16:31:51.829Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T16:31:50.378Z"
+}
+Attempting direct search for: "寂び"
+Direct search failed for "寂び". Checking fallbacks...
+Trying conversion to Hiragana for "寂び"...
+Attempting direct search for: "寂"
+No examples found for 寂. Using LLM fallback...
+No examples found for 寂. Using LLM fallback...
+Attempting direct search for: "寂"
+No examples found for 寂. Using LLM fallback...
+No examples found for 寂. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694eba799f6ff1b99e28a40d",
+  "word": "寂",
+  "reading": "さび",
+  "accent": "",
+  "part": "名",
+  "level": "N1",
+  "meaning": "寂、侘寂、枯淡之美",
+  "examples": [],
+  "savedAt": "2025-12-26T16:40:25.200Z",
+  "__v": 0,
+  "searchCount": 4,
+  "lastSearched": "2025-12-26T16:40:23.526Z"
+}
+Attempting direct search for: "寂れる"
+No examples found for 寂れる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694eba8b9f6ff1b99e28a415",
+  "word": "寂れる",
+  "reading": "さびれる",
+  "accent": "",
+  "part": "自一",
+  "level": "N2",
+  "meaning": "荒涼、衰敗、蕭條",
+  "examples": [],
+  "savedAt": "2025-12-26T16:40:43.287Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T16:40:40.431Z"
+}
+Attempting direct search for: "閑寂"
+No examples found for 閑寂. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694ebaa49f6ff1b99e28a41d",
+  "word": "閑寂",
+  "reading": "かんじゃく",
+  "accent": "",
+  "part": "形動名",
+  "level": "",
+  "meaning": "閒寂、幽靜",
+  "examples": [],
+  "savedAt": "2025-12-26T16:41:08.087Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T16:41:05.241Z"
+}
+Attempting direct search for: "寂寞"
+No examples found for 寂x寞. Using LLM fallback...
+No examples found for 寂x寞. Using LLM fallback...
+Attempting direct search for: "荒れる"
+No examples found for 荒れる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694ebad79f6ff1b99e28a42a",
+  "word": "荒れる",
+  "reading": "あれる",
+  "accent": "[0]",
+  "part": "自下",
+  "level": "",
+  "meaning": "惡劣／粗暴／粗糙／荒蕪／混亂",
+  "examples": [],
+  "savedAt": "2025-12-26T16:41:59.102Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T16:41:57.380Z"
+}
+Attempting direct search for: "惡劣／粗暴／粗糙／荒蕪"
+Direct search failed for "惡劣／粗暴／粗糙／荒蕪". Checking fallbacks...
+Trying conversion to Hiragana for "惡劣／粗暴／粗糙／荒蕪"...
+Attempting direct search for: "惡劣／粗暴／粗糙／荒蕪"
+Direct search failed for "惡劣／粗暴／粗糙／荒蕪". Checking fallbacks...
+Trying conversion to Hiragana for "惡劣／粗暴／粗糙／荒蕪"...
+Attempting direct search for: "粗暴"
+No examples found for 粗暴. Using LLM fallback...
+Attempting direct search for: "荒れる"
+No examples found for 荒れる. Using LLM fallback...
+Attempting direct search for: "夫"
+No examples found for 夫. Using LLM fallback...
+Attempting direct search for: "富む"
+No examples found for 富む. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694ebf999f6ff1b99e28a43a",
+  "word": "富む",
+  "reading": "とむ",
+  "accent": "",
+  "part": "自五",
+  "level": "N3",
+  "meaning": "富有、富裕、豐富",
+  "examples": [],
+  "savedAt": "2025-12-26T17:02:17.796Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T17:02:14.344Z"
+}
+Attempting direct search for: "日→中
+
+富む"
+Direct search failed for "日→中
+
+富む". Checking fallbacks...
+Trying conversion to Hiragana for "日→中
+
+富む"...
+Attempting direct search for: "富"
+No examples found for 富. Using LLM fallback...
+Attempting direct search for: "栄える"
+No examples found for 栄える. Using LLM fallback...
+No examples found for 映える. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694ec0e09f6ff1b99e28a448",
+  "word": "栄える",
+  "reading": "さかえる",
+  "accent": "",
+  "part": "自一",
+  "level": "N2",
+  "meaning": "繁榮、興盛、昌盛",
+  "examples": [],
+  "savedAt": "2025-12-26T17:07:44.647Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T17:07:43.011Z"
+}
+Attempting direct search for: "繁榮、興盛、昌盛"
+Direct search failed for "繁榮、興盛、昌盛". Checking fallbacks...
+Trying conversion to Hiragana for "繁榮、興盛、昌盛"...
+Attempting direct search for: "繁榮、興盛、昌盛"
+Direct search failed for "繁榮、興盛、昌盛". Checking fallbacks...
+Trying conversion to Hiragana for "繁榮、興盛、昌盛"...
+Attempting direct search for: "富み栄える"
+Direct search failed for "富み栄える". Checking fallbacks...
+Trying conversion to Hiragana for "富み栄える"...
+Attempting direct search for: "富み栄える"
+Direct search failed for "富み栄える". Checking fallbacks...
+Trying conversion to Hiragana for "富み栄える"...
+Attempting direct search for: "地頭"
+No examples found for 地頭. Using LLM fallback...
+No examples found for 地頭. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694ec1379f6ff1b99e28a452",
+  "word": "地頭",
+  "reading": "じあたま",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "天生的頭腦、天資",
+  "examples": [],
+  "savedAt": "2025-12-26T17:09:11.167Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2025-12-26T17:09:08.474Z"
+}
+Attempting direct search for: "通訳"
+No examples found for 通訳. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694ec26e9f6ff1b99e28a45a",
+  "word": "通訳",
+  "reading": "つうやく",
+  "accent": "[1]",
+  "part": "他サ",
+  "level": "N4",
+  "meaning": "口譯",
+  "examples": [],
+  "savedAt": "2025-12-26T17:14:22.363Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T17:14:19.545Z"
+}
+Attempting direct search for: "気に入る"
+No examples found for 気に入る. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694ec29d9f6ff1b99e28a462",
+  "word": "気に入る",
+  "reading": "きにいる",
+  "accent": "",
+  "part": "",
+  "level": "N4",
+  "meaning": "中意、喜歡、合心意",
+  "examples": [],
+  "savedAt": "2025-12-26T17:15:09.825Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T17:15:07.993Z"
+}
+Attempting direct search for: "人込み"
+No examples found for 人ごみ. Using LLM fallback...
+Attempting direct search for: "人混み"
+No examples found for 人ごみ. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694ec2c59f6ff1b99e28a46c",
+  "word": "人ごみ",
+  "reading": "ひとごみ",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "人群、人潮",
+  "examples": [],
+  "savedAt": "2025-12-26T17:15:49.876Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2025-12-26T17:15:47.912Z"
+}
+Attempting direct search for: "のみ"
+Debug /api/saved first item: {
+  "_id": "694ec98b9f6ff1b99e28a47d",
+  "word": "のみ",
+  "reading": "のみ",
+  "accent": "",
+  "part": "",
+  "level": "N5",
+  "meaning": "只、僅、唯有",
+  "examples": [],
+  "savedAt": "2025-12-26T17:44:43.760Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T17:44:41.567Z"
+}
+[Session Started 2025/12/27 �g�� 20:33:44.38]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "694ec98b9f6ff1b99e28a47d",
+  "word": "のみ",
+  "reading": "のみ",
+  "accent": "",
+  "part": "",
+  "level": "N5",
+  "meaning": "只、僅、唯有",
+  "examples": [],
+  "savedAt": "2025-12-26T17:44:43.760Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T17:44:41.567Z"
+}
+Debug /api/saved first item: {
+  "_id": "694ec98b9f6ff1b99e28a47d",
+  "word": "のみ",
+  "reading": "のみ",
+  "accent": "",
+  "part": "",
+  "level": "N5",
+  "meaning": "只、僅、唯有",
+  "examples": [],
+  "savedAt": "2025-12-26T17:44:43.760Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-26T17:44:41.567Z"
+}
+Attempting direct search for: "察する"
+No examples found for 察する. Using LLM fallback...
+Attempting direct search for: "察知"
+No examples found for 察知. Using LLM fallback...
+Attempting direct search for: "察知"
+No examples found for 察知. Using LLM fallback...
+Attempting direct search for: "察知"
+No examples found for 察知. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694fd40cedb696394927163e",
+  "word": "察知",
+  "reading": "さっち",
+  "accent": "",
+  "part": "",
+  "level": "N1",
+  "meaning": "察知、察覺、發覺",
+  "examples": [],
+  "savedAt": "2025-12-27T12:41:48.839Z",
+  "__v": 0,
+  "searchCount": 3,
+  "lastSearched": "2025-12-27T12:41:48.596Z"
+}
+Attempting direct search for: "手札"
+No examples found for 手札. Using LLM fallback...
+No examples found for 手札. Using LLM fallback...
+Attempting direct search for: "偵察"
+No examples found for 偵察. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694fd67fedb696394927164b",
+  "word": "偵察",
+  "reading": "ていさつ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "偵察",
+  "examples": [],
+  "savedAt": "2025-12-27T12:52:15.188Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-27T12:52:13.798Z"
+}
+Attempting direct search for: "むしろ"
+No examples found for 寧ろ. Using LLM fallback...
+No examples found for x筵. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694fd692edb6963949271656",
+  "word": "寧ろ",
+  "reading": "むしろ",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "不如、與其、倒不如",
+  "examples": [],
+  "savedAt": "2025-12-27T12:52:34.970Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-27T12:52:33.329Z"
+}
+Attempting direct search for: "丁寧"
+No examples found for 丁寧. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694fd6a7edb696394927165e",
+  "word": "丁寧",
+  "reading": "ていねい",
+  "accent": "[1]",
+  "part": "名形動",
+  "level": "N4",
+  "meaning": "禮貌、鄭重、客氣／謹慎、仔細、細心",
+  "examples": [],
+  "savedAt": "2025-12-27T12:52:55.454Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-27T12:52:51.990Z"
+}
+Attempting direct search for: "審議"
+No examples found for 審議. Using LLM fallback...
+Attempting direct search for: "審査"
+No examples found for 審査. Using LLM fallback...
+Attempting direct search for: "審美眼"
+No examples found for 審美眼. Using LLM fallback...
+Attempting direct search for: "最新"
+No examples found for 最新. Using LLM fallback...
+Attempting direct search for: "再審"
+No examples found for 再審. Using LLM fallback...
+Attempting direct search for: "控訴審"
+No examples found for 控訴審. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "694fd7bbedb6963949271675",
+  "word": "控訴審",
+  "reading": "こうそしん",
+  "accent": "",
+  "part": "名",
+  "level": "N1",
+  "meaning": "上訴審、二審",
+  "examples": [],
+  "savedAt": "2025-12-27T12:57:31.165Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-27T12:57:28.835Z"
+}
+[Session Started 2025/12/28 �g�� 20:21:54.93]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "694fd7bbedb6963949271675",
+  "word": "控訴審",
+  "reading": "こうそしん",
+  "accent": "",
+  "part": "名",
+  "level": "N1",
+  "meaning": "上訴審、二審",
+  "examples": [],
+  "savedAt": "2025-12-27T12:57:31.165Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-27T12:57:28.835Z"
+}
+Debug /api/saved first item: {
+  "_id": "694fd7bbedb6963949271675",
+  "word": "控訴審",
+  "reading": "こうそしん",
+  "accent": "",
+  "part": "名",
+  "level": "N1",
+  "meaning": "上訴審、二審",
+  "examples": [],
+  "savedAt": "2025-12-27T12:57:31.165Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-27T12:57:28.835Z"
+}
+Attempting direct search for: "寮生"
+No examples found for 寮生. Using LLM fallback...
+Attempting direct search for: "寸暇"
+No examples found for 寸暇. Using LLM fallback...
+Attempting direct search for: "寸志"
+No examples found for 寸志. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695121b9aa7813b9b6017432",
+  "word": "寸志",
+  "reading": "すんし",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "薄禮、微薄心意",
+  "examples": [],
+  "savedAt": "2025-12-28T12:25:29.290Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-28T12:25:19.376Z"
+}
+Attempting direct search for: "寸断"
+No examples found for 寸断. Using LLM fallback...
+Attempting direct search for: "寸評"
+No examples found for 寸評. Using LLM fallback...
+Attempting direct search for: "寸法"
+No examples found for 寸法. Using LLM fallback...
+Attempting direct search for: "減衰大"
+Direct search failed for "減衰大". Checking fallbacks...
+Trying conversion to Hiragana for "減衰大"...
+Attempting direct search for: "原寸大"
+No examples found for 原寸大. Using LLM fallback...
+Attempting direct search for: "寸前"
+No examples found for 寸前. Using LLM fallback...
+Attempting direct search for: "釣り合う"
+No examples found for 釣り合う. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6951237daa7813b9b6017449",
+  "word": "釣り合う",
+  "reading": "つりあう",
+  "accent": "",
+  "part": "自五",
+  "level": "N2",
+  "meaning": "平衡、相稱／相配、匹配",
+  "examples": [],
+  "savedAt": "2025-12-28T12:33:01.360Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-28T12:32:58.943Z"
+}
+Attempting direct search for: "対立"
+No examples found for 対立. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695123acaa7813b9b6017451",
+  "word": "対立",
+  "reading": "たいりつ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "對立、相對、對峙",
+  "examples": [],
+  "savedAt": "2025-12-28T12:33:48.350Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-28T12:33:45.810Z"
+}
+Attempting direct search for: "寿"
+No examples found for 寿. Using LLM fallback...
+No examples found for 寿. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69512752aa7813b9b601745b",
+  "word": "寿",
+  "reading": "ことぶき",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "壽、喜事、吉祥／辭職（女性結婚離職）",
+  "examples": [],
+  "savedAt": "2025-12-28T12:49:22.774Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2025-12-28T12:49:20.426Z"
+}
+Attempting direct search for: "減量"
+No examples found for 減量. Using LLM fallback...
+Attempting direct search for: "減量"
+No examples found for 減量. Using LLM fallback...
+Attempting direct search for: "起き上がり"
+Direct search failed for "起き上がり". Checking fallbacks...
+Trying conversion to Hiragana for "起き上がり"...
+Attempting direct search for: "起き上がる"
+No examples found for 起き上がる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69512e18aa7813b9b6017468",
+  "word": "起き上がる",
+  "reading": "おきあがる",
+  "accent": "",
+  "part": "自五",
+  "level": "N3",
+  "meaning": "起身、坐起來、爬起來",
+  "examples": [],
+  "savedAt": "2025-12-28T13:18:16.398Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-28T13:18:14.361Z"
+}
+Attempting direct search for: "驚く"
+No examples found for 驚く. Using LLM fallback...
+[Session Started 2025/12/30 �g�G  0:31:13.34]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "69512e18aa7813b9b6017468",
+  "word": "起き上がる",
+  "reading": "おきあがる",
+  "accent": "",
+  "part": "自五",
+  "level": "N3",
+  "meaning": "起身、坐起來、爬起來",
+  "examples": [],
+  "savedAt": "2025-12-28T13:18:16.398Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-28T13:18:14.361Z"
+}
+Debug /api/saved first item: {
+  "_id": "69512e18aa7813b9b6017468",
+  "word": "起き上がる",
+  "reading": "おきあがる",
+  "accent": "",
+  "part": "自五",
+  "level": "N3",
+  "meaning": "起身、坐起來、爬起來",
+  "examples": [],
+  "savedAt": "2025-12-28T13:18:16.398Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-28T13:18:14.361Z"
+}
+Attempting direct search for: "もっぱら"
+No examples found for 専ら. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6952adc790c0d3dd4ab9821d",
+  "word": "専ら",
+  "reading": "もっぱら",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "專門、專一、一心",
+  "examples": [],
+  "savedAt": "2025-12-29T16:35:19.062Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T16:35:15.954Z"
+}
+Attempting direct search for: "専横"
+No examples found for 専横. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6952add790c0d3dd4ab98225",
+  "word": "専横",
+  "reading": "せんおう",
+  "accent": "",
+  "part": "",
+  "level": "N1",
+  "meaning": "專橫、獨斷專行",
+  "examples": [],
+  "savedAt": "2025-12-29T16:35:35.595Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T16:35:33.560Z"
+}
+Attempting direct search for: "専業"
+No examples found for 専業. Using LLM fallback...
+Attempting direct search for: "封切"
+No examples found for 封切り. Using LLM fallback...
+Attempting direct search for: "封筒"
+No examples found for 封筒. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6952af7c90c0d3dd4ab98233",
+  "word": "封筒",
+  "reading": "ふうとう",
+  "accent": "[0]",
+  "part": "名",
+  "level": "N5",
+  "meaning": "信封",
+  "examples": [],
+  "savedAt": "2025-12-29T16:42:36.237Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T16:42:32.664Z"
+}
+Attempting direct search for: "封切"
+No examples found for 封切り. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6952af8190c0d3dd4ab9823a",
+  "word": "封切り",
+  "reading": "ふうきり",
+  "accent": "",
+  "part": "",
+  "level": "",
+  "meaning": "首映、首演、公開上映",
+  "examples": [],
+  "savedAt": "2025-12-29T16:42:41.377Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2025-12-29T16:42:40.850Z"
+}
+Attempting direct search for: "同封"
+No examples found for 同封. Using LLM fallback...
+Attempting direct search for: "封入"
+No examples found for 封入. Using LLM fallback...
+Attempting direct search for: "素封家"
+No examples found for 素封家. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6952b05890c0d3dd4ab98248",
+  "word": "素封家",
+  "reading": "そほうか",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "富豪、大富翁",
+  "examples": [],
+  "savedAt": "2025-12-29T16:46:16.738Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T16:46:15.149Z"
+}
+Attempting direct search for: "いる"
+No examples found for 要る. Using LLM fallback...
+No examples found for 居る. Using LLM fallback...
+Attempting direct search for: "射る"
+No examples found for 射る. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6952b06e90c0d3dd4ab98256",
+  "word": "射る",
+  "reading": "いる",
+  "accent": "",
+  "part": "他一",
+  "level": "N3",
+  "meaning": "射、射擊",
+  "examples": [],
+  "savedAt": "2025-12-29T16:46:38.891Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T16:46:37.347Z"
+}
+Attempting direct search for: "日射病"
+No examples found for 日射病. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6952b08390c0d3dd4ab9825e",
+  "word": "日射病",
+  "reading": "にっしゃびょう",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "日射病、中暑",
+  "examples": [],
+  "savedAt": "2025-12-29T16:46:59.827Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T16:46:59.106Z"
+}
+Attempting direct search for: "射す"
+No examples found for 射す. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6952b09f90c0d3dd4ab98266",
+  "word": "射す",
+  "reading": "さす",
+  "accent": "",
+  "part": "自五",
+  "level": "N2",
+  "meaning": "照射、射入",
+  "examples": [],
+  "savedAt": "2025-12-29T16:47:27.132Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T16:47:18.882Z"
+}
+Attempting direct search for: "陽射し"
+No examples found for 日差し. Using LLM fallback...
+Attempting direct search for: "カビ"
+No examples found for x黴. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6952b4cf90c0d3dd4ab98270",
+  "word": "x黴",
+  "reading": "カビ",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "黴、黴菌、霉",
+  "examples": [],
+  "savedAt": "2025-12-29T17:05:19.561Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T17:05:18.104Z"
+}
+[Session Started 2025/12/30 �g�G 21:02:49.84]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+[Session Started 2025/12/30 �g�G 21:03:56.14]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "6952b4cf90c0d3dd4ab98270",
+  "word": "x黴",
+  "reading": "カビ",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "黴、黴菌、霉",
+  "examples": [],
+  "savedAt": "2025-12-29T17:05:19.561Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T17:05:18.104Z"
+}
+Debug /api/saved first item: {
+  "_id": "6952b4cf90c0d3dd4ab98270",
+  "word": "x黴",
+  "reading": "カビ",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "黴、黴菌、霉",
+  "examples": [],
+  "savedAt": "2025-12-29T17:05:19.561Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T17:05:18.104Z"
+}
+Debug /api/saved first item: {
+  "_id": "6952b4cf90c0d3dd4ab98270",
+  "word": "x黴",
+  "reading": "カビ",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "黴、黴菌、霉",
+  "examples": [],
+  "savedAt": "2025-12-29T17:05:19.561Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T17:05:18.104Z"
+}
+Debug /api/saved first item: {
+  "_id": "6952b4cf90c0d3dd4ab98270",
+  "word": "x黴",
+  "reading": "カビ",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "黴、黴菌、霉",
+  "examples": [],
+  "savedAt": "2025-12-29T17:05:19.561Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-29T17:05:18.104Z"
+}
+Attempting direct search for: "そこそこ"
+No examples found for そこそこ. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953d0633dd41816ba82e24f",
+  "word": "そこそこ",
+  "reading": "そこそこ",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "還可以、馬馬虎虎、過得去／適度地、適可而止",
+  "examples": [],
+  "savedAt": "2025-12-30T13:15:15.121Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T13:15:12.800Z"
+}
+Attempting direct search for: "たっとい"
+Direct search failed for "たっとい". Checking fallbacks...
+Trying conversion to Hiragana for "たっとい"...
+Attempting direct search for: "尊い"
+No examples found for 尊い. Using LLM fallback...
+Attempting direct search for: "尊い"
+No examples found for 尊い. Using LLM fallback...
+Attempting direct search for: "尊ぶ"
+No examples found for 尊ぶ. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953d2d03dd41816ba82e25c",
+  "word": "尊ぶ",
+  "reading": "とうとぶ",
+  "accent": "",
+  "part": "他五",
+  "level": "N2",
+  "meaning": "尊崇、尊重、崇尚",
+  "examples": [],
+  "savedAt": "2025-12-30T13:25:36.755Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T13:25:34.932Z"
+}
+Attempting direct search for: "他zすねる"
+Direct search failed for "他zすねる". Checking fallbacks...
+Trying conversion to Hiragana for "他zすねる"...
+Attempting direct search for: "尋ねる"
+No examples found for 尋ねる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953d36d3dd41816ba82e264",
+  "word": "尋ねる",
+  "reading": "たずねる",
+  "accent": "[3]",
+  "part": "他下",
+  "level": "N4",
+  "meaning": "尋找",
+  "examples": [],
+  "savedAt": "2025-12-30T13:28:13.229Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T13:28:10.026Z"
+}
+Attempting direct search for: "千尋"
+No examples found for 千尋. Using LLM fallback...
+Attempting direct search for: "尋問"
+No examples found for 尋問. Using LLM fallback...
+Attempting direct search for: "当たり前"
+No examples found for 当たり前. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953d6403dd41816ba82e272",
+  "word": "当たり前",
+  "reading": "あたりまえ",
+  "accent": "[0]",
+  "part": "名",
+  "level": "N3",
+  "meaning": "理所當然",
+  "examples": [],
+  "savedAt": "2025-12-30T13:40:16.234Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T13:40:13.793Z"
+}
+Attempting direct search for: "当たる"
+No examples found for 当たる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953d6553dd41816ba82e27a",
+  "word": "当たる",
+  "reading": "あたる",
+  "accent": "[0]",
+  "part": "自他五",
+  "level": "N3",
+  "meaning": "碰撞／猜中／命中／曬、照／相當於／擔任、擔當",
+  "examples": [],
+  "savedAt": "2025-12-30T13:40:37.657Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T13:40:35.164Z"
+}
+Attempting direct search for: "当てる"
+No examples found for 当てる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953d7ae3dd41816ba82e282",
+  "word": "当てる",
+  "reading": "あてる",
+  "accent": "[0]",
+  "part": "他下",
+  "level": "N3",
+  "meaning": "猜／接觸／命中",
+  "examples": [],
+  "savedAt": "2025-12-30T13:46:22.529Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T13:46:20.002Z"
+}
+Attempting direct search for: "当選"
+No examples found for 当選. Using LLM fallback...
+Attempting direct search for: "当番"
+No examples found for 当番. Using LLM fallback...
+Attempting direct search for: "妥当"
+No examples found for 妥当. Using LLM fallback...
+Attempting direct search for: "妥当当惑"
+Direct search failed for "妥当当惑". Checking fallbacks...
+Trying conversion to Hiragana for "妥当当惑"...
+Attempting direct search for: "当惑"
+No examples found for 当惑. Using LLM fallback...
+Attempting direct search for: "戸惑う"
+No examples found for 戸惑う. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953da6f3dd41816ba82e295",
+  "word": "戸惑う",
+  "reading": "とまどう",
+  "accent": "",
+  "part": "自五",
+  "level": "N2",
+  "meaning": "困惑、迷惘、不知所措",
+  "examples": [],
+  "savedAt": "2025-12-30T13:58:07.869Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T13:58:06.373Z"
+}
+Attempting direct search for: "すらすら"
+Direct search failed for "すらすら". Checking fallbacks...
+Trying conversion to Hiragana for "すらすら"...
+Attempting direct search for: "すらすらと"
+Direct search failed for "すらすらと". Checking fallbacks...
+Trying conversion to Hiragana for "すらすらと"...
+Attempting direct search for: "スラスラ"
+No examples found for スラスラ. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953dad83dd41816ba82e29d",
+  "word": "スラスラ",
+  "reading": "スラスラ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "流暢地、順利地、暢通無阻地",
+  "examples": [],
+  "savedAt": "2025-12-30T13:59:52.178Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T13:59:50.543Z"
+}
+Attempting direct search for: "ちっとも"
+No examples found for ちっとも. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953dc543dd41816ba82e2a5",
+  "word": "ちっとも",
+  "reading": "ちっとも",
+  "accent": "[3]",
+  "part": "副",
+  "level": "N4",
+  "meaning": "一丁點",
+  "examples": [],
+  "savedAt": "2025-12-30T14:06:12.689Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T14:06:08.725Z"
+}
+Attempting direct search for: "でたらめ"
+No examples found for 出x鱈目. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953dca83dd41816ba82e2ad",
+  "word": "出x鱈目",
+  "reading": "でたらめ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "胡說八道、隨便亂說、馬虎、隨便",
+  "examples": [],
+  "savedAt": "2025-12-30T14:07:36.241Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T14:07:34.715Z"
+}
+Attempting direct search for: "ずいぶん"
+No examples found for 随分. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953dca83dd41816ba82e2ad",
+  "word": "出x鱈目",
+  "reading": "でたらめ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "胡說八道、隨便亂說、馬虎、隨便",
+  "examples": [],
+  "savedAt": "2025-12-30T14:07:36.241Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T14:07:34.715Z"
+}
+Debug /api/saved first item: {
+  "_id": "6953e0a23dd41816ba82e2b7",
+  "word": "随分",
+  "reading": "ずいぶん",
+  "accent": "[1]",
+  "part": "形動副",
+  "level": "N4",
+  "meaning": "相當地／非常地",
+  "examples": [],
+  "savedAt": "2025-12-30T14:24:34.625Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2025-12-30T14:24:33.385Z"
+}
+Attempting direct search for: "ずいぶん"
+No examples found for 随分. Using LLM fallback...
+Attempting direct search for: "ふらふら"
+No examples found for ふらふら. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953ecea3dd41816ba82e2c1",
+  "word": "ふらふら",
+  "reading": "ふらふら",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "搖搖晃晃、晃來晃去、頭暈目眩／漫無目的地",
+  "examples": [],
+  "savedAt": "2025-12-30T15:16:58.464Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T15:16:53.337Z"
+}
+Attempting direct search for: "心細い"
+No examples found for 心細い. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6953ed2c3dd41816ba82e2c9",
+  "word": "心細い",
+  "reading": "こころぼそい",
+  "accent": "",
+  "part": "形",
+  "level": "N2",
+  "meaning": "心裡不安、沒有把握、擔心",
+  "examples": [],
+  "savedAt": "2025-12-30T15:18:04.863Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T15:18:01.419Z"
+}
+[Session Started 2025/12/31 �g�T  0:21:58.64]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "6953ed2c3dd41816ba82e2c9",
+  "word": "心細い",
+  "reading": "こころぼそい",
+  "accent": "",
+  "part": "形",
+  "level": "N2",
+  "meaning": "心裡不安、沒有把握、擔心",
+  "examples": [],
+  "savedAt": "2025-12-30T15:18:04.863Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T15:18:01.419Z"
+}
+Debug /api/saved first item: {
+  "_id": "6953ed2c3dd41816ba82e2c9",
+  "word": "心細い",
+  "reading": "こころぼそい",
+  "accent": "",
+  "part": "形",
+  "level": "N2",
+  "meaning": "心裡不安、沒有把握、擔心",
+  "examples": [],
+  "savedAt": "2025-12-30T15:18:04.863Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T15:18:01.419Z"
+}
+Attempting direct search for: "夕飯"
+No examples found for 夕飯. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69540642b02cd3e3142111c1",
+  "word": "夕飯",
+  "reading": "ゆうはん",
+  "accent": "[0]",
+  "part": "名",
+  "level": "N5",
+  "meaning": "晩飯、晩餐",
+  "examples": [],
+  "savedAt": "2025-12-30T17:05:06.126Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T17:05:03.931Z"
+}
+Attempting direct search for: "背得趕"
+Direct search failed for "背得趕". Checking fallbacks...
+Trying conversion to Hiragana for "背得趕"...
+Attempting direct search for: "背得趕"
+Direct search failed for "背得趕". Checking fallbacks...
+Trying conversion to Hiragana for "背得趕"...
+Attempting direct search for: "背德感"
+Direct search failed for "背德感". Checking fallbacks...
+Trying conversion to Hiragana for "背德感"...
+Attempting direct search for: "背徳"
+No examples found for 背徳. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69540a0db02cd3e3142111c9",
+  "word": "背徳",
+  "reading": "はいとく",
+  "accent": "",
+  "part": "名",
+  "level": "N1",
+  "meaning": "背德、違背道德",
+  "examples": [],
+  "savedAt": "2025-12-30T17:21:17.615Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T17:21:16.868Z"
+}
+Attempting direct search for: "背徳間"
+Direct search failed for "背徳間". Checking fallbacks...
+Trying conversion to Hiragana for "背徳間"...
+Attempting direct search for: "背徳感"
+No examples found for 背徳感. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69540a19b02cd3e3142111d1",
+  "word": "背徳感",
+  "reading": "はいとくかん",
+  "accent": "",
+  "part": "名",
+  "level": "N1",
+  "meaning": "背德感、罪惡感",
+  "examples": [],
+  "savedAt": "2025-12-30T17:21:29.187Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T17:21:26.510Z"
+}
+Attempting direct search for: "流儀"
+No examples found for 流儀. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69540a77b02cd3e3142111d9",
+  "word": "流儀",
+  "reading": "りゅうぎ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "流派、作風、風格／方式、做法",
+  "examples": [],
+  "savedAt": "2025-12-30T17:23:03.885Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T17:23:01.930Z"
+}
+[Session Started 2025/12/31 �g�T 20:44:46.12]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "69540a77b02cd3e3142111d9",
+  "word": "流儀",
+  "reading": "りゅうぎ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "流派、作風、風格／方式、做法",
+  "examples": [],
+  "savedAt": "2025-12-30T17:23:03.885Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T17:23:01.930Z"
+}
+Debug /api/saved first item: {
+  "_id": "69540a77b02cd3e3142111d9",
+  "word": "流儀",
+  "reading": "りゅうぎ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "流派、作風、風格／方式、做法",
+  "examples": [],
+  "savedAt": "2025-12-30T17:23:03.885Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-30T17:23:01.930Z"
+}
+Attempting direct search for: "些細"
+No examples found for x些細. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69551acca9944293146d25aa",
+  "word": "x些細",
+  "reading": "ささい",
+  "accent": "",
+  "part": "形動",
+  "level": "N2",
+  "meaning": "瑣細、細微、微小",
+  "examples": [],
+  "savedAt": "2025-12-31T12:45:00.262Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-31T12:44:57.546Z"
+}
+Attempting direct search for: "どうせ"
+No examples found for どうせ. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69551ad4a9944293146d25b2",
+  "word": "どうせ",
+  "reading": "どうせ",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "反正、無論如何、橫豎",
+  "examples": [],
+  "savedAt": "2025-12-31T12:45:08.021Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-31T12:45:06.568Z"
+}
+Attempting direct search for: "きっちり"
+No examples found for きっちり. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69551b43a9944293146d25ba",
+  "word": "きっちり",
+  "reading": "きっちり",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "準確地、恰好、整齊地／嚴格地、一絲不苟地",
+  "examples": [],
+  "savedAt": "2025-12-31T12:46:59.198Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-31T12:46:57.442Z"
+}
+Attempting direct search for: "きっちり"
+No examples found for きっちり. Using LLM fallback...
+Attempting direct search for: "果たす"
+No examples found for 果たす. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69551b4ca9944293146d25c4",
+  "word": "果たす",
+  "reading": "はたす",
+  "accent": "",
+  "part": "他五",
+  "level": "N2",
+  "meaning": "完成、實現、履行、達成",
+  "examples": [],
+  "savedAt": "2025-12-31T12:47:08.490Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-31T12:47:06.793Z"
+}
+Attempting direct search for: "果たす"
+No examples found for 果たす. Using LLM fallback...
+Attempting direct search for: "校舎"
+No examples found for 校舎. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69551b8ba9944293146d25ce",
+  "word": "校舎",
+  "reading": "こうしゃ",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "校舍",
+  "examples": [],
+  "savedAt": "2025-12-31T12:48:11.300Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-31T12:48:08.610Z"
+}
+Attempting direct search for: "校舎"
+No examples found for 校舎. Using LLM fallback...
+Attempting direct search for: "勘違い"
+No examples found for 勘違い. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69551b96a9944293146d25d7",
+  "word": "勘違い",
+  "reading": "かんちがい",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "誤會、誤解、搞錯",
+  "examples": [],
+  "savedAt": "2025-12-31T12:48:22.502Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2025-12-31T12:48:21.091Z"
+}
+Attempting direct search for: "日→中
+
+勘違い"
+Direct search failed for "日→中
+
+勘違い". Checking fallbacks...
+Trying conversion to Hiragana for "日→中
+
+勘違い"...
+Attempting direct search for: "勘違い"
+No examples found for 勘違い. Using LLM fallback...
+Attempting direct search for: "ちなみに"
+No examples found for 因みに. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69551b9ea9944293146d25e1",
+  "word": "因みに",
+  "reading": "ちなみに",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "順便一提、順帶一提、附帶一提",
+  "examples": [],
+  "savedAt": "2025-12-31T12:48:30.926Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-31T12:48:29.460Z"
+}
+Attempting direct search for: "ばらばら"
+No examples found for ばらばら. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69551baca9944293146d25e9",
+  "word": "ばらばら",
+  "reading": "ばらばら",
+  "accent": "[0]",
+  "part": "形動副",
+  "level": "N3",
+  "meaning": "零散、分散、七零八碎／各自不同",
+  "examples": [],
+  "savedAt": "2025-12-31T12:48:44.186Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2025-12-31T12:48:42.805Z"
+}
+Attempting direct search for: "ばらばら"
+No examples found for ばらばら. Using LLM fallback...
+Attempting direct search for: "胸糞"
+No examples found for 胸x糞. Using LLM fallback...
+Attempting direct search for: "むなくそ"
+No examples found for 胸x糞. Using LLM fallback...
+Attempting direct search for: "むなくそ"
+No examples found for 胸x糞. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69551c19a9944293146d25f7",
+  "word": "胸x糞",
+  "reading": "むなくそ",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "令人不快、令人作嘔",
+  "examples": [],
+  "savedAt": "2025-12-31T12:50:33.572Z",
+  "__v": 0,
+  "searchCount": 3,
+  "lastSearched": "2025-12-31T12:50:32.054Z"
+}
+Attempting direct search for: "胸糞"
+No examples found for 胸x糞. Using LLM fallback...
+Attempting direct search for: "粋"
+No examples found for 粋. Using LLM fallback...
+No examples found for 粋. Using LLM fallback...
+Attempting direct search for: "粋"
+No examples found for 粋. Using LLM fallback...
+No examples found for 粋. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69551c46a9944293146d2607",
+  "word": "粋",
+  "reading": "いき",
+  "accent": "",
+  "part": "形動名",
+  "level": "N1",
+  "meaning": "粹、瀟灑、有品味／精華、精髓",
+  "examples": [],
+  "savedAt": "2025-12-31T12:51:18.841Z",
+  "__v": 0,
+  "searchCount": 4,
+  "lastSearched": "2025-12-31T12:51:14.257Z"
+}
+Attempting direct search for: "粋"
+No examples found for 粋. Using LLM fallback...
+No examples found for 粋. Using LLM fallback...
+Attempting direct search for: "わく"
+No examples found for 沸く. Using LLM fallback...
+Attempting direct search for: "枠"
+No examples found for 枠. Using LLM fallback...
+[Session Started 2026/01/02 �g��  2:35:39.70]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "69551c46a9944293146d2607",
+  "word": "粋",
+  "reading": "いき",
+  "accent": "",
+  "part": "形動名",
+  "level": "N1",
+  "meaning": "粹、瀟灑、有品味／精華、精髓",
+  "examples": [],
+  "savedAt": "2025-12-31T12:51:18.841Z",
+  "__v": 0,
+  "searchCount": 6,
+  "lastSearched": "2025-12-31T12:51:22.346Z"
+}
+Debug /api/saved first item: {
+  "_id": "69551c46a9944293146d2607",
+  "word": "粋",
+  "reading": "いき",
+  "accent": "",
+  "part": "形動名",
+  "level": "N1",
+  "meaning": "粹、瀟灑、有品味／精華、精髓",
+  "examples": [],
+  "savedAt": "2025-12-31T12:51:18.841Z",
+  "__v": 0,
+  "searchCount": 6,
+  "lastSearched": "2025-12-31T12:51:22.346Z"
+}
+Attempting direct search for: "尚古"
+No examples found for 尚古. Using LLM fallback...
+Attempting direct search for: "勝負"
+No examples found for 勝負. Using LLM fallback...
+Attempting direct search for: "尚武"
+No examples found for 尚武. Using LLM fallback...
+Attempting direct search for: "尚早"
+No examples found for 尚早. Using LLM fallback...
+Attempting direct search for: "就く"
+No examples found for 就く. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6956c1057369c50acc46e269",
+  "word": "就く",
+  "reading": "つく",
+  "accent": "",
+  "part": "自五",
+  "level": "N3",
+  "meaning": "就任、擔任、從事／就寢、上床",
+  "examples": [],
+  "savedAt": "2026-01-01T18:46:29.152Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-01T18:46:20.266Z"
+}
+Attempting direct search for: "就ける"
+No examples found for 就ける. Using LLM fallback...
+[Session Started 2026/01/02 �g�� 20:41:51.60]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "6956c1057369c50acc46e269",
+  "word": "就く",
+  "reading": "つく",
+  "accent": "",
+  "part": "自五",
+  "level": "N3",
+  "meaning": "就任、擔任、從事／就寢、上床",
+  "examples": [],
+  "savedAt": "2026-01-01T18:46:29.152Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-01T18:46:20.266Z"
+}
+Debug /api/saved first item: {
+  "_id": "6956c1057369c50acc46e269",
+  "word": "就く",
+  "reading": "つく",
+  "accent": "",
+  "part": "自五",
+  "level": "N3",
+  "meaning": "就任、擔任、從事／就寢、上床",
+  "examples": [],
+  "savedAt": "2026-01-01T18:46:29.152Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-01T18:46:20.266Z"
+}
+Debug /api/saved first item: {
+  "_id": "6956c1057369c50acc46e269",
+  "word": "就く",
+  "reading": "つく",
+  "accent": "",
+  "part": "自五",
+  "level": "N3",
+  "meaning": "就任、擔任、從事／就寢、上床",
+  "examples": [],
+  "savedAt": "2026-01-01T18:46:29.152Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-01T18:46:20.266Z"
+}
+Debug /api/saved first item: {
+  "_id": "6956c1057369c50acc46e269",
+  "word": "就く",
+  "reading": "つく",
+  "accent": "",
+  "part": "自五",
+  "level": "N3",
+  "meaning": "就任、擔任、從事／就寢、上床",
+  "examples": [],
+  "savedAt": "2026-01-01T18:46:29.152Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-01T18:46:20.266Z"
+}
+Attempting direct search for: "就労"
+No examples found for 就労. Using LLM fallback...
+Attempting direct search for: "就労"
+No examples found for 就労. Using LLM fallback...
+Attempting direct search for: "去就"
+No examples found for 去就. Using LLM fallback...
+Attempting direct search for: "尺度"
+No examples found for 尺度. Using LLM fallback...
+Attempting direct search for: "尻"
+No examples found for 尻. Using LLM fallback...
+Attempting direct search for: "しり上がり"
+Direct search failed for "しり上がり". Checking fallbacks...
+Trying conversion to Hiragana for "しり上がり"...
+Attempting direct search for: "尻上がり"
+No examples found for 尻上がり. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6957c325f957b6dae658e58e",
+  "word": "尻上がり",
+  "reading": "しりあがり",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "逐漸上升、越來越好／尾巴上翹",
+  "examples": [],
+  "savedAt": "2026-01-02T13:07:49.981Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-02T13:07:47.907Z"
+}
+Attempting direct search for: "尻軽"
+No examples found for 尻軽. Using LLM fallback...
+Attempting direct search for: "尻込み"
+No examples found for 尻込み. Using LLM fallback...
+Attempting direct search for: "尻下がり"
+No examples found for 尻下がり. Using LLM fallback...
+Attempting direct search for: "尻すぼみ"
+No examples found for 尻すぼみ. Using LLM fallback...
+Attempting direct search for: "しりとり"
+No examples found for 尻取り. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6957c845f957b6dae658e5a2",
+  "word": "尻取り",
+  "reading": "しりとり",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "接龍遊戲、文字接龍",
+  "examples": [],
+  "savedAt": "2026-01-02T13:29:41.888Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-02T13:29:40.264Z"
+}
+Attempting direct search for: "目じり"
+No examples found for 目尻. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6957c84df957b6dae658e5aa",
+  "word": "目尻",
+  "reading": "めじり",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "眼角、眼尾",
+  "examples": [],
+  "savedAt": "2026-01-02T13:29:49.402Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-02T13:29:46.282Z"
+}
+Attempting direct search for: "尻もち"
+No examples found for 尻餅. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "6957c860f957b6dae658e5b2",
+  "word": "尻餅",
+  "reading": "しりもち",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "跌坐、屁股著地",
+  "examples": [],
+  "savedAt": "2026-01-02T13:30:08.240Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-02T13:30:05.715Z"
+}
+Attempting direct search for: "扁"
+Direct search failed for "扁". Checking fallbacks...
+Trying conversion to Hiragana for "扁"...
+Attempting direct search for: "扁"
+Direct search failed for "扁". Checking fallbacks...
+Input looks like Chinese. Translating "扁" to Japanese...
+Trying conversion to Hiragana for "扁"...
+Attempting direct search for: "扁的"
+Direct search failed for "扁的". Checking fallbacks...
+Input looks like Chinese. Translating "扁的" to Japanese...
+Trying conversion to Hiragana for "扁的"...
+[Session Started 2026/01/04 �g��  2:52:20.16]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "6957c860f957b6dae658e5b2",
+  "word": "尻餅",
+  "reading": "しりもち",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "跌坐、屁股著地",
+  "examples": [],
+  "savedAt": "2026-01-02T13:30:08.240Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-02T13:30:05.715Z"
+}
+Debug /api/saved first item: {
+  "_id": "6957c860f957b6dae658e5b2",
+  "word": "尻餅",
+  "reading": "しりもち",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "跌坐、屁股著地",
+  "examples": [],
+  "savedAt": "2026-01-02T13:30:08.240Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-02T13:30:05.715Z"
+}
+Attempting direct search for: "尽くす"
+No examples found for 尽くす. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695969a9fa7ffcfc81eba7f6",
+  "word": "尽くす",
+  "reading": "つくす",
+  "accent": "",
+  "part": "他五",
+  "level": "N2",
+  "meaning": "竭盡、盡力、用盡／奉獻、致力",
+  "examples": [],
+  "savedAt": "2026-01-03T19:10:33.510Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T19:10:26.437Z"
+}
+Attempting direct search for: "心尽くし"
+No examples found for 心づくし. Using LLM fallback...
+Attempting direct search for: "尽きる"
+No examples found for 尽きる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695969d8fa7ffcfc81eba801",
+  "word": "尽きる",
+  "reading": "つきる",
+  "accent": "",
+  "part": "自一",
+  "level": "N2",
+  "meaning": "耗盡、用完、枯竭",
+  "examples": [],
+  "savedAt": "2026-01-03T19:11:20.054Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T19:11:17.135Z"
+}
+Attempting direct search for: "愛想をつかす"
+No examples found for 愛想を尽かす. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695969effa7ffcfc81eba809",
+  "word": "愛想を尽かす",
+  "reading": "あいそをつかす",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "失去好感、斷絕情分",
+  "examples": [],
+  "savedAt": "2026-01-03T19:11:43.381Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T19:11:38.836Z"
+}
+Attempting direct search for: "無尽蔵"
+No examples found for 無尽蔵. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69596e20fa7ffcfc81eba811",
+  "word": "無尽蔵",
+  "reading": "むじんぞう",
+  "accent": "",
+  "part": "",
+  "level": "N1",
+  "meaning": "無盡藏、取之不盡",
+  "examples": [],
+  "savedAt": "2026-01-03T19:29:36.415Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T19:29:32.238Z"
+}
+Attempting direct search for: "理不尽"
+No examples found for 理不尽. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69596e32fa7ffcfc81eba819",
+  "word": "理不尽",
+  "reading": "りふじん",
+  "accent": "",
+  "part": "形動名",
+  "level": "N1",
+  "meaning": "不合理、無理",
+  "examples": [],
+  "savedAt": "2026-01-03T19:29:54.555Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T19:29:52.167Z"
+}
+Attempting direct search for: "尾根"
+No examples found for 尾根. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69596e5efa7ffcfc81eba821",
+  "word": "尾根",
+  "reading": "おね",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "山脊、山脈",
+  "examples": [],
+  "savedAt": "2026-01-03T19:30:38.901Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T19:30:31.922Z"
+}
+Attempting direct search for: "備考"
+No examples found for 備考. Using LLM fallback...
+Attempting direct search for: "尾行"
+No examples found for 尾行. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "69596e6cfa7ffcfc81eba82c",
+  "word": "尾行",
+  "reading": "びこう",
+  "accent": "",
+  "part": "",
+  "level": "",
+  "meaning": "跟蹤、尾隨",
+  "examples": [],
+  "savedAt": "2026-01-03T19:30:52.245Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T19:30:49.497Z"
+}
+Attempting direct search for: "尾翼"
+No examples found for 尾翼. Using LLM fallback...
+Attempting direct search for: "首尾"
+No examples found for 首尾. Using LLM fallback...
+Attempting direct search for: "語尾"
+No examples found for 語尾. Using LLM fallback...
+[Session Started 2026/01/04 �g��  5:05:43.02]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "69596e6cfa7ffcfc81eba82c",
+  "word": "尾行",
+  "reading": "びこう",
+  "accent": "",
+  "part": "",
+  "level": "",
+  "meaning": "跟蹤、尾隨",
+  "examples": [],
+  "savedAt": "2026-01-03T19:30:52.245Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T19:30:49.497Z"
+}
+Debug /api/saved first item: {
+  "_id": "69596e6cfa7ffcfc81eba82c",
+  "word": "尾行",
+  "reading": "びこう",
+  "accent": "",
+  "part": "",
+  "level": "",
+  "meaning": "跟蹤、尾隨",
+  "examples": [],
+  "savedAt": "2026-01-03T19:30:52.245Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T19:30:49.497Z"
+}
+Attempting direct search for: "利口"
+No examples found for 利口. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695984ae0f5c9f637a0bcfd5",
+  "word": "利口",
+  "reading": "りこう",
+  "accent": "",
+  "part": "形動名",
+  "level": "N3",
+  "meaning": "聰明、伶俐、機靈",
+  "examples": [],
+  "savedAt": "2026-01-03T21:05:50.748Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T21:05:49.296Z"
+}
+Attempting direct search for: "ざっと"
+No examples found for ざっと. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695984b20f5c9f637a0bcfdd",
+  "word": "ざっと",
+  "reading": "ざっと",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "大致、大約、粗略地",
+  "examples": [],
+  "savedAt": "2026-01-03T21:05:54.468Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T21:05:52.516Z"
+}
+[Session Started 2026/01/04 �g�� 20:29:26.36]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "695984b20f5c9f637a0bcfdd",
+  "word": "ざっと",
+  "reading": "ざっと",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "大致、大約、粗略地",
+  "examples": [],
+  "savedAt": "2026-01-03T21:05:54.468Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T21:05:52.516Z"
+}
+Debug /api/saved first item: {
+  "_id": "695984b20f5c9f637a0bcfdd",
+  "word": "ざっと",
+  "reading": "ざっと",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "大致、大約、粗略地",
+  "examples": [],
+  "savedAt": "2026-01-03T21:05:54.468Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-03T21:05:52.516Z"
+}
+Attempting direct search for: "居る"
+No examples found for 居る. Using LLM fallback...
+Attempting direct search for: "居眠り"
+No examples found for 居眠り. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a62a26cc9260b90721611",
+  "word": "居眠り",
+  "reading": "いねむり",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "打瞌睡、打盹",
+  "examples": [],
+  "savedAt": "2026-01-04T12:52:50.641Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T12:50:36.569Z"
+}
+Attempting direct search for: "芝居"
+No examples found for 芝居. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a62a46cc9260b90721619",
+  "word": "芝居",
+  "reading": "しばい",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "戲劇、演戲／演技、做作",
+  "examples": [],
+  "savedAt": "2026-01-04T12:52:52.439Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T12:52:51.446Z"
+}
+Attempting direct search for: "居住"
+No examples found for 居住. Using LLM fallback...
+Attempting direct search for: "隠居"
+No examples found for 隠居. Using LLM fallback...
+Attempting direct search for: "届く"
+No examples found for 届く. Using LLM fallback...
+Attempting direct search for: "届"
+No examples found for 届. Using LLM fallback...
+Attempting direct search for: "届ｋｗ"
+Direct search failed for "届ｋｗ". Checking fallbacks...
+Trying conversion to Hiragana for "届ｋｗ"...
+Attempting direct search for: "届け"
+No examples found for 届. Using LLM fallback...
+Attempting direct search for: "届ける"
+No examples found for 届ける. Using LLM fallback...
+Attempting direct search for: "居士"
+No examples found for 居士. Using LLM fallback...
+Attempting direct search for: "意気と独"
+Direct search failed for "意気と独". Checking fallbacks...
+Trying conversion to Hiragana for "意気と独"...
+Attempting direct search for: "行き届く"
+No examples found for 行き届く. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a655e6cc9260b90721635",
+  "word": "行き届く",
+  "reading": "いきとどく",
+  "accent": "",
+  "part": "自五",
+  "level": "N2",
+  "meaning": "周到、完善、照顧周全",
+  "examples": [],
+  "savedAt": "2026-01-04T13:04:30.229Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:04:26.789Z"
+}
+Attempting direct search for: "届け"
+No examples found for 届. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a658c6cc9260b9072163c",
+  "word": "届",
+  "reading": "とどけ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "申報、報告、通知／申請書、報告書",
+  "examples": [],
+  "savedAt": "2026-01-04T13:05:16.726Z",
+  "__v": 0,
+  "searchCount": 3,
+  "lastSearched": "2026-01-04T13:04:54.146Z"
+}
+Attempting direct search for: "屈指"
+No examples found for 屈指. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a65906cc9260b90721644",
+  "word": "屈指",
+  "reading": "くっし",
+  "accent": "",
+  "part": "",
+  "level": "N1",
+  "meaning": "屈指可數的、首屈一指的",
+  "examples": [],
+  "savedAt": "2026-01-04T13:05:20.485Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:05:17.675Z"
+}
+Attempting direct search for: "屈折"
+No examples found for 屈折. Using LLM fallback...
+Attempting direct search for: "屈折"
+No examples found for 屈折. Using LLM fallback...
+Attempting direct search for: "屈折"
+Debug /api/saved first item: {
+  "_id": "695a65b16cc9260b9072164e",
+  "word": "屈折",
+  "reading": "くっせつ",
+  "accent": "",
+  "part": "",
+  "level": "",
+  "meaning": "折射、屈折／曲折、波折",
+  "examples": [],
+  "savedAt": "2026-01-04T13:05:53.378Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2026-01-04T13:05:52.968Z"
+}
+No examples found for 屈折. Using LLM fallback...
+Attempting direct search for: "窮屈"
+No examples found for 窮屈. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a65e76cc9260b90721658",
+  "word": "窮屈",
+  "reading": "きゅうくつ",
+  "accent": "",
+  "part": "形動名",
+  "level": "N2",
+  "meaning": "窮屈、侷促、拘束／狹窄、狹小",
+  "examples": [],
+  "savedAt": "2026-01-04T13:06:47.620Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:06:31.723Z"
+}
+Attempting direct search for: "卑屈"
+No examples found for 卑屈. Using LLM fallback...
+Attempting direct search for: "理屈"
+No examples found for 理屈. Using LLM fallback...
+Attempting direct search for: "退屈"
+No examples found for 退屈. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a661a6cc9260b90721666",
+  "word": "退屈",
+  "reading": "たいくつ",
+  "accent": "[0]",
+  "part": "名形動自サ",
+  "level": "N3",
+  "meaning": "無聊",
+  "examples": [],
+  "savedAt": "2026-01-04T13:07:38.936Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:07:29.691Z"
+}
+Attempting direct search for: "展開"
+No examples found for 展開. Using LLM fallback...
+Attempting direct search for: "示す"
+No examples found for 示す. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a66336cc9260b90721671",
+  "word": "示す",
+  "reading": "しめす",
+  "accent": "",
+  "part": "他五",
+  "level": "N3",
+  "meaning": "顯示、表示、指出、表明",
+  "examples": [],
+  "savedAt": "2026-01-04T13:08:03.050Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:08:01.378Z"
+}
+Attempting direct search for: "述べる"
+No examples found for 述べる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a66456cc9260b90721679",
+  "word": "述べる",
+  "reading": "のべる",
+  "accent": "",
+  "part": "他一",
+  "level": "N3",
+  "meaning": "陳述、敘述、講述",
+  "examples": [],
+  "savedAt": "2026-01-04T13:08:21.222Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:08:19.816Z"
+}
+Attempting direct search for: "新手"
+No examples found for 新手. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a665a6cc9260b90721681",
+  "word": "新手",
+  "reading": "あらて",
+  "accent": "",
+  "part": "",
+  "level": "N4",
+  "meaning": "新手、新人",
+  "examples": [],
+  "savedAt": "2026-01-04T13:08:42.332Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:08:40.234Z"
+}
+Attempting direct search for: "進展"
+No examples found for 進展. Using LLM fallback...
+Attempting direct search for: "親展"
+No examples found for 親展. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a66636cc9260b9072168c",
+  "word": "親展",
+  "reading": "しんてん",
+  "accent": "",
+  "part": "",
+  "level": "",
+  "meaning": "親展、親啟",
+  "examples": [],
+  "savedAt": "2026-01-04T13:08:51.645Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:08:50.352Z"
+}
+Debug /api/saved first item: {
+  "_id": "695a665a6cc9260b90721681",
+  "word": "新手",
+  "reading": "あらて",
+  "accent": "",
+  "part": "",
+  "level": "N4",
+  "meaning": "新手、新人",
+  "examples": [],
+  "savedAt": "2026-01-04T13:08:42.332Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:08:40.234Z"
+}
+Attempting direct search for: "発展"
+No examples found for 発展. Using LLM fallback...
+[Session Started 2026/01/04 �g�� 21:18:51.93]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ⚙️  override existing env vars with { override: true }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "695a665a6cc9260b90721681",
+  "word": "新手",
+  "reading": "あらて",
+  "accent": "",
+  "part": "",
+  "level": "N4",
+  "meaning": "新手、新人",
+  "examples": [],
+  "savedAt": "2026-01-04T13:08:42.332Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:08:40.234Z"
+}
+Debug /api/saved first item: {
+  "_id": "695a665a6cc9260b90721681",
+  "word": "新手",
+  "reading": "あらて",
+  "accent": "",
+  "part": "",
+  "level": "N4",
+  "meaning": "新手、新人",
+  "examples": [],
+  "savedAt": "2026-01-04T13:08:42.332Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:08:40.234Z"
+}
+Attempting direct search for: "十繰"
+Direct search failed for "十繰". Checking fallbacks...
+Trying conversion to Hiragana for "十繰"...
+Attempting direct search for: "じっくり"
+No examples found for じっくり. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a68ca88004df9155df8ec",
+  "word": "じっくり",
+  "reading": "じっくり",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "仔細地、慢慢地、充分地",
+  "examples": [],
+  "savedAt": "2026-01-04T13:19:06.042Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:19:04.477Z"
+}
+Attempting direct search for: "怠ける"
+No examples found for 怠ける. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a6ab288004df9155df8f4",
+  "word": "怠ける",
+  "reading": "なまける",
+  "accent": "",
+  "part": "自一",
+  "level": "N3",
+  "meaning": "偷懶、懶惰",
+  "examples": [],
+  "savedAt": "2026-01-04T13:27:14.231Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T13:27:02.944Z"
+}
+Attempting direct search for: "木"
+No examples found for 木. Using LLM fallback...
+Attempting direct search for: "用"
+No examples found for 用. Using LLM fallback...
+Attempting direct search for: "用いる"
+No examples found for 用いる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a734988004df9155df902",
+  "word": "用いる",
+  "reading": "もちいる",
+  "accent": "",
+  "part": "他一",
+  "level": "N3",
+  "meaning": "使用、採用、運用",
+  "examples": [],
+  "savedAt": "2026-01-04T14:03:53.645Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T14:03:51.990Z"
+}
+Attempting direct search for: "お世辞"
+No examples found for お世辞. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695a73ae88004df9155df90a",
+  "word": "お世辞",
+  "reading": "おせじ",
+  "accent": "[0]",
+  "part": "名",
+  "level": "N1",
+  "meaning": "客套話、奉承話、恭維話",
+  "examples": [],
+  "savedAt": "2026-01-04T14:05:34.403Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T14:05:31.250Z"
+}
+[Session Started 2026/01/05 �g�@ 15:21:38.43]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "695a73ae88004df9155df90a",
+  "word": "お世辞",
+  "reading": "おせじ",
+  "accent": "[0]",
+  "part": "名",
+  "level": "N1",
+  "meaning": "客套話、奉承話、恭維話",
+  "examples": [],
+  "savedAt": "2026-01-04T14:05:34.403Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T14:05:31.250Z"
+}
+Debug /api/saved first item: {
+  "_id": "695a73ae88004df9155df90a",
+  "word": "お世辞",
+  "reading": "おせじ",
+  "accent": "[0]",
+  "part": "名",
+  "level": "N1",
+  "meaning": "客套話、奉承話、恭維話",
+  "examples": [],
+  "savedAt": "2026-01-04T14:05:34.403Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-04T14:05:31.250Z"
+}
+Attempting direct search for: "属国"
+No examples found for 属国. Using LLM fallback...
+Attempting direct search for: "直属"
+No examples found for 直属. Using LLM fallback...
+Attempting direct search for: "配属"
+No examples found for 配属. Using LLM fallback...
+Attempting direct search for: "配属一層"
+Direct search failed for "配属一層". Checking fallbacks...
+Trying conversion to Hiragana for "配属一層"...
+Attempting direct search for: "一層"
+No examples found for 一層. Using LLM fallback...
+Attempting direct search for: "多層"
+No examples found for 多層. Using LLM fallback...
+Attempting direct search for: "大層"
+No examples found for 大層. Using LLM fallback...
+Attempting direct search for: "断層"
+No examples found for 断層. Using LLM fallback...
+Attempting direct search for: "若年層"
+No examples found for 若年層. Using LLM fallback...
+Attempting direct search for: "履く"
+No examples found for 履く. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695b6b5b515c3ac6fbdf26bc",
+  "word": "履く",
+  "reading": "はく",
+  "accent": "[0]",
+  "part": "他五",
+  "level": "N5",
+  "meaning": "穿（鞋子等）",
+  "examples": [],
+  "savedAt": "2026-01-05T07:42:19.355Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T07:42:18.513Z"
+}
+Attempting direct search for: "弊履"
+No examples found for 弊履. Using LLM fallback...
+Attempting direct search for: "弊履"
+No examples found for 弊履. Using LLM fallback...
+Attempting direct search for: "履修"
+No examples found for 履修. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695b6c0c515c3ac6fbdf26c9",
+  "word": "履修",
+  "reading": "りしゅう",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "修習、修讀",
+  "examples": [],
+  "savedAt": "2026-01-05T07:45:16.695Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T07:45:14.874Z"
+}
+Attempting direct search for: "履修"
+No examples found for 履修. Using LLM fallback...
+Attempting direct search for: "多岐"
+No examples found for 多岐. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695b6c26515c3ac6fbdf26d3",
+  "word": "多岐",
+  "reading": "たき",
+  "accent": "",
+  "part": "形動名",
+  "level": "N2",
+  "meaning": "多岐、分歧眾多、多方面",
+  "examples": [],
+  "savedAt": "2026-01-05T07:45:42.411Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T07:45:33.886Z"
+}
+Attempting direct search for: "たまる"
+No examples found for 貯まる. Using LLM fallback...
+No examples found for x溜まる. Using LLM fallback...
+No examples found for 堪る. Using LLM fallback...
+Attempting direct search for: "堪る"
+No examples found for 堪る. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695b70d5515c3ac6fbdf26e3",
+  "word": "堪る",
+  "reading": "たまる",
+  "accent": "",
+  "part": "自五",
+  "level": "N3",
+  "meaning": "受不了、難以忍受",
+  "examples": [],
+  "savedAt": "2026-01-05T08:05:41.366Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2026-01-05T08:05:37.736Z"
+}
+Attempting direct search for: "痒い"
+No examples found for x痒い. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695b7131515c3ac6fbdf26eb",
+  "word": "x痒い",
+  "reading": "かゆい",
+  "accent": "[2]",
+  "part": "形",
+  "level": "N3",
+  "meaning": "癢",
+  "examples": [],
+  "savedAt": "2026-01-05T08:07:13.832Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T08:07:12.970Z"
+}
+Attempting direct search for: "毛虫"
+No examples found for 毛虫. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695b7170515c3ac6fbdf26f3",
+  "word": "毛虫",
+  "reading": "けむし",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "毛毛蟲",
+  "examples": [],
+  "savedAt": "2026-01-05T08:08:16.882Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T08:08:12.719Z"
+}
+Attempting direct search for: "台所"
+No examples found for 台所. Using LLM fallback...
+Attempting direct search for: "語る"
+No examples found for 語る. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695b73c6515c3ac6fbdf26fe",
+  "word": "語る",
+  "reading": "かたる",
+  "accent": "",
+  "part": "他五",
+  "level": "N3",
+  "meaning": "敘述、講述、談論、述說",
+  "examples": [],
+  "savedAt": "2026-01-05T08:18:14.425Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T08:18:12.777Z"
+}
+Attempting direct search for: "誤り"
+No examples found for 誤り. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695b7560515c3ac6fbdf2706",
+  "word": "誤り",
+  "reading": "あやまり",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "錯誤、過失、謬誤",
+  "examples": [],
+  "savedAt": "2026-01-05T08:25:04.123Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T08:25:01.773Z"
+}
+Attempting direct search for: "おあきゅ"
+Direct search failed for "おあきゅ". Checking fallbacks...
+Trying conversion to Hiragana for "おあきゅ"...
+Attempting direct search for: "おかゆ"
+No examples found for おx粥. Using LLM fallback...
+No examples found for 陸湯. Using LLM fallback...
+[Session Started 2026/01/05 �g�@ 22:33:37.02]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "695b7560515c3ac6fbdf2706",
+  "word": "誤り",
+  "reading": "あやまり",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "錯誤、過失、謬誤",
+  "examples": [],
+  "savedAt": "2026-01-05T08:25:04.123Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T08:25:01.773Z"
+}
+Debug /api/saved first item: {
+  "_id": "695b7560515c3ac6fbdf2706",
+  "word": "誤り",
+  "reading": "あやまり",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "錯誤、過失、謬誤",
+  "examples": [],
+  "savedAt": "2026-01-05T08:25:04.123Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T08:25:01.773Z"
+}
+Attempting direct search for: "建築"
+No examples found for 建築. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bcbe45903265c5cd027cd",
+  "word": "建築",
+  "reading": "けんちく",
+  "accent": "[0]",
+  "part": "名",
+  "level": "N4",
+  "meaning": "建築",
+  "examples": [],
+  "savedAt": "2026-01-05T14:34:12.578Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T14:34:10.321Z"
+}
+Attempting direct search for: "丁稚"
+No examples found for 丁稚. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bcc025903265c5cd027d5",
+  "word": "丁稚",
+  "reading": "でっち",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "學徒、店員",
+  "examples": [],
+  "savedAt": "2026-01-05T14:34:42.699Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T14:34:40.469Z"
+}
+Attempting direct search for: "奉公"
+No examples found for 奉公. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bcc0a5903265c5cd027dc",
+  "word": "奉公",
+  "reading": "ほうこう",
+  "accent": "",
+  "part": "",
+  "level": "",
+  "meaning": "服侍、侍奉／做工、當傭人",
+  "examples": [],
+  "savedAt": "2026-01-05T14:34:50.739Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2026-01-05T14:34:48.754Z"
+}
+Attempting direct search for: "思いついた"
+Direct search failed for "思いついた". Checking fallbacks...
+Trying conversion to Hiragana for "思いついた"...
+Attempting direct search for: "思いつく"
+No examples found for 思いつく. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bcc255903265c5cd027e4",
+  "word": "思いつく",
+  "reading": "おもいつく",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "想到、想起",
+  "examples": [],
+  "savedAt": "2026-01-05T14:35:17.627Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T14:35:15.341Z"
+}
+Attempting direct search for: "大工"
+No examples found for 大工. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bcc425903265c5cd027ec",
+  "word": "大工",
+  "reading": "だいく",
+  "accent": "[1]",
+  "part": "名",
+  "level": "N3",
+  "meaning": "木匠",
+  "examples": [],
+  "savedAt": "2026-01-05T14:35:46.564Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T14:35:45.051Z"
+}
+Attempting direct search for: "職業"
+No examples found for 職業. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bcc615903265c5cd027f4",
+  "word": "職業",
+  "reading": "しょくぎょう",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "職業",
+  "examples": [],
+  "savedAt": "2026-01-05T14:36:17.143Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T14:36:15.636Z"
+}
+Attempting direct search for: "ズラリ"
+Direct search failed for "ズラリ". Checking fallbacks...
+Trying conversion to Hiragana for "ズラリ"...
+Attempting direct search for: "ずらり"
+No examples found for ずらり. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bcc745903265c5cd027fc",
+  "word": "ずらり",
+  "reading": "ずらり",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "一排、成列地",
+  "examples": [],
+  "savedAt": "2026-01-05T14:36:36.400Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T14:36:34.800Z"
+}
+Attempting direct search for: "呆れる"
+No examples found for x呆れる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bcc825903265c5cd02804",
+  "word": "x呆れる",
+  "reading": "あきれる",
+  "accent": "[0]",
+  "part": "自下",
+  "level": "N2",
+  "meaning": "傻眼、愕然、目瞪口呆",
+  "examples": [],
+  "savedAt": "2026-01-05T14:36:50.149Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T14:36:48.668Z"
+}
+Attempting direct search for: "お順"
+Direct search failed for "お順". Checking fallbacks...
+Trying conversion to Hiragana for "お順"...
+Attempting direct search for: "順"
+No examples found for 順. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bcc975903265c5cd0280c",
+  "word": "順",
+  "reading": "じゅん",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "順序、次序／順",
+  "examples": [],
+  "savedAt": "2026-01-05T14:37:11.110Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T14:37:08.716Z"
+}
+Attempting direct search for: "不況"
+No examples found for 不況. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bcca05903265c5cd02814",
+  "word": "不況",
+  "reading": "ふきょう",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "不景氣、蕭條",
+  "examples": [],
+  "savedAt": "2026-01-05T14:37:20.257Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T14:37:19.046Z"
+}
+Attempting direct search for: "めげる"
+No examples found for めげる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bccb95903265c5cd0281c",
+  "word": "めげる",
+  "reading": "めげる",
+  "accent": "",
+  "part": "自一",
+  "level": "N2",
+  "meaning": "氣餒、沮喪",
+  "examples": [],
+  "savedAt": "2026-01-05T14:37:45.424Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T14:37:43.947Z"
+}
+Attempting direct search for: "求人"
+No examples found for 求人. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd60a5903265c5cd02824",
+  "word": "求人",
+  "reading": "きゅうじん",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "徵人、招聘／求職",
+  "examples": [],
+  "savedAt": "2026-01-05T15:17:30.073Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:17:28.483Z"
+}
+Attempting direct search for: "仏器ら"
+Direct search failed for "仏器ら". Checking fallbacks...
+Trying conversion to Hiragana for "仏器ら"...
+Attempting direct search for: "ぶっきら"
+Direct search failed for "ぶっきら". Checking fallbacks...
+Trying conversion to Hiragana for "ぶっきら"...
+Attempting direct search for: "ぶっきらぼう"
+No examples found for ぶっきら棒. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd61d5903265c5cd0282c",
+  "word": "ぶっきら棒",
+  "reading": "ぶっきらぼう",
+  "accent": "",
+  "part": "形動名",
+  "level": "",
+  "meaning": "生硬、冷淡、無禮貌／木頭人",
+  "examples": [],
+  "savedAt": "2026-01-05T15:17:49.960Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:17:47.989Z"
+}
+Attempting direct search for: "無賃"
+No examples found for 無賃. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd6e85903265c5cd02834",
+  "word": "無賃",
+  "reading": "むちん",
+  "accent": "",
+  "part": "",
+  "level": "",
+  "meaning": "免費、無償／逃票",
+  "examples": [],
+  "savedAt": "2026-01-05T15:21:12.306Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:18:43.115Z"
+}
+Attempting direct search for: "バリバリ"
+No examples found for バリバリ. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd6f35903265c5cd0283c",
+  "word": "バリバリ",
+  "reading": "バリバリ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "精力充沛地、幹勁十足地／撕裂聲、剝離聲",
+  "examples": [],
+  "savedAt": "2026-01-05T15:21:23.753Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:21:22.104Z"
+}
+Attempting direct search for: "削る"
+No examples found for 削る. Using LLM fallback...
+No examples found for 削る. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd6fa5903265c5cd02846",
+  "word": "削る",
+  "reading": "けずる",
+  "accent": "",
+  "part": "他五",
+  "level": "N3",
+  "meaning": "削、刨、刮／削減、減少",
+  "examples": [],
+  "savedAt": "2026-01-05T15:21:30.845Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2026-01-05T15:21:29.346Z"
+}
+Attempting direct search for: "はがす"
+No examples found for x剥がす. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd7015903265c5cd0284e",
+  "word": "x剥がす",
+  "reading": "はがす",
+  "accent": "",
+  "part": "他五",
+  "level": "N3",
+  "meaning": "剝下、撕下、撕掉、剝離、剝落",
+  "examples": [],
+  "savedAt": "2026-01-05T15:21:37.025Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:21:34.639Z"
+}
+Attempting direct search for: "そる"
+No examples found for 反る. Using LLM fallback...
+No examples found for x剃る. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd7075903265c5cd02859",
+  "word": "x剃る",
+  "reading": "そる",
+  "accent": "",
+  "part": "他五",
+  "level": "N2",
+  "meaning": "剃、刮",
+  "examples": [],
+  "savedAt": "2026-01-05T15:21:43.853Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:21:41.265Z"
+}
+Attempting direct search for: "流れ"
+No examples found for 流れ. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd7115903265c5cd02861",
+  "word": "流れ",
+  "reading": "ながれ",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "流動、流向／潮流、趨勢／流程、過程",
+  "examples": [],
+  "savedAt": "2026-01-05T15:21:53.576Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:21:51.717Z"
+}
+Attempting direct search for: "恐れる"
+No examples found for 恐れる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd7575903265c5cd02869",
+  "word": "恐れる",
+  "reading": "おそれる",
+  "accent": "",
+  "part": "他一",
+  "level": "N3",
+  "meaning": "害怕、恐懼／敬畏",
+  "examples": [],
+  "savedAt": "2026-01-05T15:23:03.764Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:23:01.848Z"
+}
+Attempting direct search for: "大垣"
+No examples found for 大垣. Using LLM fallback...
+Attempting direct search for: "萌芽"
+No examples found for x萌芽. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd7705903265c5cd02874",
+  "word": "x萌芽",
+  "reading": "ほうが",
+  "accent": "",
+  "part": "",
+  "level": "N1",
+  "meaning": "萌芽、發芽",
+  "examples": [],
+  "savedAt": "2026-01-05T15:23:28.983Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:23:28.069Z"
+}
+Attempting direct search for: "段取"
+Direct search failed for "段取". Checking fallbacks...
+Trying conversion to Hiragana for "段取"...
+Attempting direct search for: "段取り"
+No examples found for 段取り. Using LLM fallback...
+Attempting direct search for: "半段"
+Direct search failed for "半段". Checking fallbacks...
+Trying conversion to Hiragana for "半段"...
+Attempting direct search for: "半端"
+No examples found for 半端. Using LLM fallback...
+Attempting direct search for: "半端ない"
+No examples found for 半端ない. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd7b45903265c5cd02882",
+  "word": "半端ない",
+  "reading": "はんぱない",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "非同小可、不得了",
+  "examples": [],
+  "savedAt": "2026-01-05T15:24:36.490Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:24:34.559Z"
+}
+Attempting direct search for: "建築"
+No examples found for 建築. Using LLM fallback...
+Attempting direct search for: "築"
+No examples found for 築. Using LLM fallback...
+Attempting direct search for: "築く"
+No examples found for 築く. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd8275903265c5cd0288f",
+  "word": "築く",
+  "reading": "きずく",
+  "accent": "",
+  "part": "他五",
+  "level": "N2",
+  "meaning": "建築、建造、築造／建立、構築",
+  "examples": [],
+  "savedAt": "2026-01-05T15:26:31.566Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:26:29.383Z"
+}
+Attempting direct search for: "朝一番"
+No examples found for 朝一番. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd88a5903265c5cd02897",
+  "word": "朝一番",
+  "reading": "あさいちばん",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "一大早、清晨第一時間",
+  "examples": [],
+  "savedAt": "2026-01-05T15:28:10.804Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:28:09.175Z"
+}
+Attempting direct search for: "電燈"
+No examples found for 電灯. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd8a85903265c5cd0289f",
+  "word": "電灯",
+  "reading": "でんとう",
+  "accent": "",
+  "part": "名",
+  "level": "N4",
+  "meaning": "電燈",
+  "examples": [],
+  "savedAt": "2026-01-05T15:28:40.169Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:28:37.893Z"
+}
+Attempting direct search for: "電燈"
+No examples found for 電灯. Using LLM fallback...
+Attempting direct search for: "懷中"
+Direct search failed for "懷中". Checking fallbacks...
+Trying conversion to Hiragana for "懷中"...
+Attempting direct search for: "懐中"
+No examples found for 懐中. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd8d65903265c5cd028a9",
+  "word": "懐中",
+  "reading": "かいちゅう",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "懷中／懷抱、胸懷",
+  "examples": [],
+  "savedAt": "2026-01-05T15:29:26.088Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:29:24.802Z"
+}
+Attempting direct search for: "懐中"
+No examples found for 懐中. Using LLM fallback...
+Attempting direct search for: "懐中電柱"
+Direct search failed for "懐中電柱". Checking fallbacks...
+Trying conversion to Hiragana for "懐中電柱"...
+Attempting direct search for: "懐中電灯"
+No examples found for 懐中電灯. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd8ee5903265c5cd028b3",
+  "word": "懐中電灯",
+  "reading": "かいちゅうでんとう",
+  "accent": "[5]",
+  "part": "名",
+  "level": "N3",
+  "meaning": "手電筒",
+  "examples": [],
+  "savedAt": "2026-01-05T15:29:50.466Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:29:48.626Z"
+}
+Debug /api/saved first item: {
+  "_id": "695bd8d65903265c5cd028a9",
+  "word": "懐中",
+  "reading": "かいちゅう",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "懷中／懷抱、胸懷",
+  "examples": [],
+  "savedAt": "2026-01-05T15:29:26.088Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2026-01-05T15:29:31.914Z"
+}
+Debug /api/saved first item: {
+  "_id": "695bd9045903265c5cd028bb",
+  "word": "懐中電灯",
+  "reading": "かいちゅうでんとう",
+  "accent": "[5]",
+  "part": "名",
+  "level": "N3",
+  "meaning": "手電筒",
+  "examples": [],
+  "savedAt": "2026-01-05T15:30:12.004Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:29:48.626Z"
+}
+Attempting direct search for: "住宅"
+No examples found for 住宅. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd9095903265c5cd028c3",
+  "word": "住宅",
+  "reading": "じゅうたく",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "住宅、住家、房屋",
+  "examples": [],
+  "savedAt": "2026-01-05T15:30:17.592Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:30:16.587Z"
+}
+Attempting direct search for: "ひっばって"
+Direct search failed for "ひっばって". Checking fallbacks...
+Trying conversion to Hiragana for "ひっばって"...
+Attempting direct search for: "ひっばる"
+Direct search failed for "ひっばる". Checking fallbacks...
+Trying conversion to Hiragana for "ひっばる"...
+Attempting direct search for: "連れ戻す"
+No examples found for 連れ戻す. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd9945903265c5cd028cb",
+  "word": "連れ戻す",
+  "reading": "つれもどす",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "帶回、帶回來",
+  "examples": [],
+  "savedAt": "2026-01-05T15:32:36.942Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:32:35.314Z"
+}
+Attempting direct search for: "つい"
+No examples found for つい. Using LLM fallback...
+No examples found for 終. Using LLM fallback...
+No examples found for 対. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bd9ad5903265c5cd028d9",
+  "word": "つい",
+  "reading": "つい",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "不經意地、不小心、無意中／一不留神",
+  "examples": [],
+  "savedAt": "2026-01-05T15:33:01.621Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:32:59.731Z"
+}
+Attempting direct search for: "割りブル"
+Direct search failed for "割りブル". Checking fallbacks...
+Trying conversion to Hiragana for "割りブル"...
+Attempting direct search for: "割り振る"
+No examples found for 割り振る. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bda7e5903265c5cd028e1",
+  "word": "割り振る",
+  "reading": "わりふる",
+  "accent": "[3]",
+  "part": "他五",
+  "level": "N1",
+  "meaning": "分配",
+  "examples": [],
+  "savedAt": "2026-01-05T15:36:30.410Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:36:28.765Z"
+}
+Attempting direct search for: "段取り"
+No examples found for 段取り. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdaec5903265c5cd028e8",
+  "word": "段取り",
+  "reading": "だんどり",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "安排、準備、程序",
+  "examples": [],
+  "savedAt": "2026-01-05T15:38:20.741Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2026-01-05T15:38:18.153Z"
+}
+Attempting direct search for: "捲り"
+No examples found for x捲り. Using LLM fallback...
+No examples found for x捲り. Using LLM fallback...
+Attempting direct search for: "捲った"
+Direct search failed for "捲った". Checking fallbacks...
+Trying conversion to Hiragana for "捲った"...
+Attempting direct search for: "幸い"
+No examples found for 幸い. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdbe25903265c5cd028f5",
+  "word": "幸い",
+  "reading": "さいわい",
+  "accent": "",
+  "part": "形動名",
+  "level": "N3",
+  "meaning": "幸運、幸好、幸虧／幸福、福氣",
+  "examples": [],
+  "savedAt": "2026-01-05T15:42:26.146Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:42:24.573Z"
+}
+Attempting direct search for: "原稿"
+No examples found for 原稿. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdbf65903265c5cd028fd",
+  "word": "原稿",
+  "reading": "げんこう",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "原稿、稿件",
+  "examples": [],
+  "savedAt": "2026-01-05T15:42:46.150Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:42:44.992Z"
+}
+Attempting direct search for: "執筆"
+No examples found for 執筆. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdc085903265c5cd02905",
+  "word": "執筆",
+  "reading": "しっぴつ",
+  "accent": "",
+  "part": "",
+  "level": "N1",
+  "meaning": "執筆、撰寫、撰稿",
+  "examples": [],
+  "savedAt": "2026-01-05T15:43:04.905Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:43:03.459Z"
+}
+Attempting direct search for: "寝転がる"
+No examples found for 寝転がる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdc3c5903265c5cd0290d",
+  "word": "寝転がる",
+  "reading": "ねころがる",
+  "accent": "",
+  "part": "自五",
+  "level": "N3",
+  "meaning": "躺下、橫臥",
+  "examples": [],
+  "savedAt": "2026-01-05T15:43:56.279Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:43:54.820Z"
+}
+Attempting direct search for: "農場"
+No examples found for 農場. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdc545903265c5cd02915",
+  "word": "農場",
+  "reading": "のうじょう",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "農場",
+  "examples": [],
+  "savedAt": "2026-01-05T15:44:20.675Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:44:19.279Z"
+}
+Attempting direct search for: "取り寄せry"
+Direct search failed for "取り寄せry". Checking fallbacks...
+Trying conversion to Hiragana for "取り寄せry"...
+Attempting direct search for: "取り寄せる"
+No examples found for 取り寄せる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdc695903265c5cd0291d",
+  "word": "取り寄せる",
+  "reading": "とりよせる",
+  "accent": "",
+  "part": "他一",
+  "level": "N2",
+  "meaning": "訂購、郵購、取寄",
+  "examples": [],
+  "savedAt": "2026-01-05T15:44:41.903Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:44:40.611Z"
+}
+Attempting direct search for: "焙煎"
+No examples found for x焙煎. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdc705903265c5cd02925",
+  "word": "x焙煎",
+  "reading": "ばいせん",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "烘焙、焙炒",
+  "examples": [],
+  "savedAt": "2026-01-05T15:44:48.148Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:44:47.021Z"
+}
+Attempting direct search for: "乾せる"
+Direct search failed for "乾せる". Checking fallbacks...
+Trying conversion to Hiragana for "乾せる"...
+Attempting direct search for: "ほせう"
+Direct search failed for "ほせう". Checking fallbacks...
+Trying conversion to Hiragana for "ほせう"...
+Attempting direct search for: "ほせる"
+Direct search failed for "ほせる". Checking fallbacks...
+Trying conversion to Hiragana for "ほせる"...
+Attempting direct search for: "ほせう"
+Direct search failed for "ほせう". Checking fallbacks...
+Trying conversion to Hiragana for "ほせう"...
+Attempting direct search for: "ほせ"
+Direct search failed for "ほせ". Checking fallbacks...
+Trying conversion to Hiragana for "ほせ"...
+Attempting direct search for: "乾せ"
+Direct search failed for "乾せ". Checking fallbacks...
+Trying conversion to Hiragana for "乾せ"...
+Attempting direct search for: "乾せ"
+Direct search failed for "乾せ". Checking fallbacks...
+Trying conversion to Hiragana for "乾せ"...
+Attempting direct search for: "干せる"
+Direct search failed for "干せる". Checking fallbacks...
+Trying conversion to Hiragana for "干せる"...
+Attempting direct search for: "干"
+No examples found for 干し. Using LLM fallback...
+Attempting direct search for: "ホセル"
+Direct search failed for "ホセル". Checking fallbacks...
+Trying conversion to Hiragana for "ホセル"...
+Attempting direct search for: "貧乏"
+No examples found for 貧乏. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdcee5903265c5cd02930",
+  "word": "貧乏",
+  "reading": "びんぼう",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "貧窮、貧困／窮困",
+  "examples": [],
+  "savedAt": "2026-01-05T15:46:54.792Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:46:52.876Z"
+}
+Attempting direct search for: "周り"
+No examples found for 周り. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdcfb5903265c5cd02938",
+  "word": "周り",
+  "reading": "まわり",
+  "accent": "[0]",
+  "part": "名",
+  "level": "N5",
+  "meaning": "周圍、周遭",
+  "examples": [],
+  "savedAt": "2026-01-05T15:47:07.223Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:47:05.375Z"
+}
+Attempting direct search for: "仕入れる"
+No examples found for 仕入れる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdd085903265c5cd0293f",
+  "word": "仕入れる",
+  "reading": "しいれる",
+  "accent": "",
+  "part": "他一",
+  "level": "N2",
+  "meaning": "進貨、採購",
+  "examples": [],
+  "savedAt": "2026-01-05T15:47:20.948Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2026-01-05T15:47:19.719Z"
+}
+Attempting direct search for: "ふらふら"
+No examples found for ふらふら. Using LLM fallback...
+Attempting direct search for: "細部"
+No examples found for 細部. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdd575903265c5cd02949",
+  "word": "細部",
+  "reading": "さいぶ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "細部、細節",
+  "examples": [],
+  "savedAt": "2026-01-05T15:48:39.812Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:48:38.737Z"
+}
+Attempting direct search for: "兩杯"
+Direct search failed for "兩杯". Checking fallbacks...
+Trying conversion to Hiragana for "兩杯"...
+Attempting direct search for: "二杯"
+Direct search failed for "二杯". Checking fallbacks...
+Trying conversion to Hiragana for "二杯"...
+Attempting direct search for: "二杯"
+Direct search failed for "二杯". Checking fallbacks...
+Trying conversion to Hiragana for "二杯"...
+Attempting direct search for: "二杯"
+Direct search failed for "二杯". Checking fallbacks...
+Trying conversion to Hiragana for "二杯"...
+Attempting direct search for: "金額"
+No examples found for 金額. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdd9c5903265c5cd02951",
+  "word": "金額",
+  "reading": "きんがく",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "金額",
+  "examples": [],
+  "savedAt": "2026-01-05T15:49:48.974Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:49:48.230Z"
+}
+Attempting direct search for: "休憩"
+No examples found for 休憩. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bddac5903265c5cd02959",
+  "word": "休憩",
+  "reading": "きゅうけい",
+  "accent": "[0]",
+  "part": "名自サ",
+  "level": "N3",
+  "meaning": "休息",
+  "examples": [],
+  "savedAt": "2026-01-05T15:50:04.746Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:50:03.315Z"
+}
+Attempting direct search for: "細かい"
+No examples found for 細かい. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bddc45903265c5cd02961",
+  "word": "細かい",
+  "reading": "こまかい",
+  "accent": "[3]",
+  "part": "形",
+  "level": "N4",
+  "meaning": "零碎的／詳細的",
+  "examples": [],
+  "savedAt": "2026-01-05T15:50:28.763Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:50:27.474Z"
+}
+Attempting direct search for: "細い"
+No examples found for 細い. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bddc85903265c5cd02969",
+  "word": "細い",
+  "reading": "ほそい",
+  "accent": "[2]",
+  "part": "形",
+  "level": "N5",
+  "meaning": "細的",
+  "examples": [],
+  "savedAt": "2026-01-05T15:50:32.599Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:50:31.743Z"
+}
+Attempting direct search for: "色鉛筆"
+No examples found for 色鉛筆. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bddd55903265c5cd02971",
+  "word": "色鉛筆",
+  "reading": "いろえんぴつ",
+  "accent": "",
+  "part": "名",
+  "level": "N5",
+  "meaning": "彩色鉛筆",
+  "examples": [],
+  "savedAt": "2026-01-05T15:50:45.687Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:50:43.987Z"
+}
+Attempting direct search for: "どれくらい"
+No examples found for どれ位. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bddfb5903265c5cd02979",
+  "word": "どれ位",
+  "reading": "どれくらい",
+  "accent": "",
+  "part": "",
+  "level": "N4",
+  "meaning": "多少、多少程度",
+  "examples": [],
+  "savedAt": "2026-01-05T15:51:23.886Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:51:22.590Z"
+}
+Attempting direct search for: "どのくらい"
+No examples found for どの位. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bde065903265c5cd02981",
+  "word": "どの位",
+  "reading": "どのくらい",
+  "accent": "",
+  "part": "",
+  "level": "N4",
+  "meaning": "多少、多少程度",
+  "examples": [],
+  "savedAt": "2026-01-05T15:51:34.983Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:51:27.651Z"
+}
+Attempting direct search for: "金湯"
+Direct search failed for "金湯". Checking fallbacks...
+Trying conversion to Hiragana for "金湯"...
+Attempting direct search for: "銭湯"
+No examples found for 銭湯. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bde1c5903265c5cd02989",
+  "word": "銭湯",
+  "reading": "せんとう",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "錢湯、公共澡堂、大眾浴場",
+  "examples": [],
+  "savedAt": "2026-01-05T15:51:56.150Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:51:54.631Z"
+}
+Attempting direct search for: "作業"
+No examples found for 作業. Using LLM fallback...
+Attempting direct search for: "感觸"
+Direct search failed for "感觸". Checking fallbacks...
+Trying conversion to Hiragana for "感觸"...
+Attempting direct search for: "感觸"
+Direct search failed for "感觸". Checking fallbacks...
+Input looks like Chinese. Translating "感觸" to Japanese...
+Trying conversion to Hiragana for "感觸"...
+Attempting direct search for: "感触"
+No examples found for 感触. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bde675903265c5cd02993",
+  "word": "感触",
+  "reading": "かんしょく",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "觸感、手感、質感",
+  "examples": [],
+  "savedAt": "2026-01-05T15:53:11.800Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:53:10.658Z"
+}
+Attempting direct search for: "連載"
+No examples found for 連載. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bde9a5903265c5cd0299b",
+  "word": "連載",
+  "reading": "れんさい",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "連載、連續刊登",
+  "examples": [],
+  "savedAt": "2026-01-05T15:54:02.998Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:54:01.878Z"
+}
+Attempting direct search for: "つかめる"
+Direct search failed for "つかめる". Checking fallbacks...
+Trying conversion to Hiragana for "つかめる"...
+Attempting direct search for: "つか"
+No examples found for 塚. Using LLM fallback...
+No examples found for 束. Using LLM fallback...
+No examples found for 柄. Using LLM fallback...
+Attempting direct search for: "掴める"
+Direct search failed for "掴める". Checking fallbacks...
+Trying conversion to Hiragana for "掴める"...
+Attempting direct search for: "掴ある"
+Direct search failed for "掴ある". Checking fallbacks...
+Trying conversion to Hiragana for "掴ある"...
+Attempting direct search for: "掴まる"
+No examples found for 捕まる. Using LLM fallback...
+Attempting direct search for: "掴む"
+No examples found for x掴む. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdefe5903265c5cd029af",
+  "word": "x掴む",
+  "reading": "つかむ",
+  "accent": "[2]",
+  "part": "他五",
+  "level": "N3",
+  "meaning": "抓住／抓到",
+  "examples": [],
+  "savedAt": "2026-01-05T15:55:42.980Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:55:41.552Z"
+}
+Attempting direct search for: "路頭"
+No examples found for 路頭. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bdf145903265c5cd029b7",
+  "word": "路頭",
+  "reading": "ろとう",
+  "accent": "",
+  "part": "名",
+  "level": "",
+  "meaning": "街頭、路邊",
+  "examples": [],
+  "savedAt": "2026-01-05T15:56:04.581Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T15:56:02.761Z"
+}
+Attempting direct search for: "味見"
+No examples found for 味見. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bebef5903265c5cd029bf",
+  "word": "味見",
+  "reading": "あじみ",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "試味、嚐味／品嚐",
+  "examples": [],
+  "savedAt": "2026-01-05T16:50:55.394Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T16:50:54.216Z"
+}
+Attempting direct search for: "隙間"
+No examples found for 隙間. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bec315903265c5cd029c7",
+  "word": "隙間",
+  "reading": "すきま",
+  "accent": "",
+  "part": "名",
+  "level": "N3",
+  "meaning": "縫隙、空隙、間隙",
+  "examples": [],
+  "savedAt": "2026-01-05T16:52:01.894Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T16:51:54.401Z"
+}
+Attempting direct search for: "隙間"
+No examples found for 隙間. Using LLM fallback...
+Attempting direct search for: "済む"
+No examples found for 済む. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bed4d5903265c5cd029d1",
+  "word": "済む",
+  "reading": "すむ",
+  "accent": "[1]",
+  "part": "自五",
+  "level": "N4",
+  "meaning": "解決",
+  "examples": [],
+  "savedAt": "2026-01-05T16:56:45.647Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T16:56:44.177Z"
+}
+Attempting direct search for: "とはいえ"
+No examples found for とは言え. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695befc35903265c5cd029d9",
+  "word": "とは言え",
+  "reading": "とはいえ",
+  "accent": "",
+  "part": "",
+  "level": "N2",
+  "meaning": "話雖如此、儘管如此",
+  "examples": [],
+  "savedAt": "2026-01-05T17:07:15.038Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T17:07:13.684Z"
+}
+Attempting direct search for: "とはいえ"
+No examples found for とは言え. Using LLM fallback...
+Attempting direct search for: "寝ぼける"
+No examples found for 寝ぼける. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695beffe5903265c5cd029e3",
+  "word": "寝ぼける",
+  "reading": "ねぼける",
+  "accent": "",
+  "part": "自一",
+  "level": "N2",
+  "meaning": "睡眼惺忪、迷迷糊糊／糊塗、恍惚",
+  "examples": [],
+  "savedAt": "2026-01-05T17:08:14.089Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T17:08:12.137Z"
+}
+Attempting direct search for: "そびれる"
+No examples found for そびれる. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bf2175903265c5cd029eb",
+  "word": "そびれる",
+  "reading": "そびれる",
+  "accent": "",
+  "part": "",
+  "level": "",
+  "meaning": "錯過...、沒能...",
+  "examples": [],
+  "savedAt": "2026-01-05T17:17:11.979Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T17:17:09.546Z"
+}
+Attempting direct search for: "殊勝"
+No examples found for 殊勝. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695bf4135903265c5cd029f3",
+  "word": "殊勝",
+  "reading": "しゅしょう",
+  "accent": "",
+  "part": "形動名",
+  "level": "N1",
+  "meaning": "值得讚賞的、令人敬佩的、難得的／殊勝",
+  "examples": [],
+  "savedAt": "2026-01-05T17:25:39.564Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T17:25:38.217Z"
+}
+[Session Started 2026/01/06 �g�G 15:57:32.40]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "695bf4135903265c5cd029f3",
+  "word": "殊勝",
+  "reading": "しゅしょう",
+  "accent": "",
+  "part": "形動名",
+  "level": "N1",
+  "meaning": "值得讚賞的、令人敬佩的、難得的／殊勝",
+  "examples": [],
+  "savedAt": "2026-01-05T17:25:39.564Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T17:25:38.217Z"
+}
+Debug /api/saved first item: {
+  "_id": "695bf4135903265c5cd029f3",
+  "word": "殊勝",
+  "reading": "しゅしょう",
+  "accent": "",
+  "part": "形動名",
+  "level": "N1",
+  "meaning": "值得讚賞的、令人敬佩的、難得的／殊勝",
+  "examples": [],
+  "savedAt": "2026-01-05T17:25:39.564Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-05T17:25:38.217Z"
+}
+Attempting direct search for: "いわば"
+No examples found for 言わば. Using LLM fallback...
+No examples found for 岩場. Using LLM fallback...
+Attempting direct search for: "岩場"
+No examples found for 岩場. Using LLM fallback...
+Attempting direct search for: "岩山"
+No examples found for 岩山. Using LLM fallback...
+Attempting direct search for: "一枚岩"
+No examples found for 一枚岩. Using LLM fallback...
+Attempting direct search for: "溶岩"
+No examples found for 溶岩. Using LLM fallback...
+Attempting direct search for: "岸"
+No examples found for 岸. Using LLM fallback...
+Attempting direct search for: "沿る"
+Direct search failed for "沿る". Checking fallbacks...
+Trying conversion to Hiragana for "沿る"...
+Attempting direct search for: "沿"
+Direct search failed for "沿". Checking fallbacks...
+Trying conversion to Hiragana for "沿"...
+Attempting direct search for: "沿"
+Direct search failed for "沿". Checking fallbacks...
+Trying conversion to Hiragana for "沿"...
+Attempting direct search for: "沿"
+Direct search failed for "沿". Checking fallbacks...
+Trying conversion to Hiragana for "沿"...
+Attempting direct search for: "沿う"
+No examples found for 沿う. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695cc129bc0227b9c6e71b66",
+  "word": "沿う",
+  "reading": "そう",
+  "accent": "",
+  "part": "自五",
+  "level": "N2",
+  "meaning": "沿著、順著、依循",
+  "examples": [],
+  "savedAt": "2026-01-06T08:00:41.978Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:00:40.445Z"
+}
+Attempting direct search for: "護岸"
+No examples found for 護岸. Using LLM fallback...
+Attempting direct search for: "切がm"
+Direct search failed for "切がm". Checking fallbacks...
+Trying conversion to Hiragana for "切がm"...
+Attempting direct search for: "接岸"
+No examples found for 接岸. Using LLM fallback...
+Attempting direct search for: "相応しい"
+No examples found for 相応しい. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695cc22fbc0227b9c6e71b74",
+  "word": "相応しい",
+  "reading": "ふさわしい",
+  "accent": "",
+  "part": "形",
+  "level": "N2",
+  "meaning": "相稱的、合適的、相配的",
+  "examples": [],
+  "savedAt": "2026-01-06T08:05:03.960Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:05:02.320Z"
+}
+Attempting direct search for: "煮る"
+No examples found for 煮る. Using LLM fallback...
+Attempting direct search for: "似る"
+No examples found for 似る. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695cc237bc0227b9c6e71b7f",
+  "word": "似る",
+  "reading": "にる",
+  "accent": "[0]",
+  "part": "自上",
+  "level": "N4",
+  "meaning": "像／相似",
+  "examples": [],
+  "savedAt": "2026-01-06T08:05:11.910Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:05:10.108Z"
+}
+Debug /api/saved first item: {
+  "_id": "695cc237bc0227b9c6e71b7f",
+  "word": "似る",
+  "reading": "にる",
+  "accent": "[0]",
+  "part": "自上",
+  "level": "N4",
+  "meaning": "像／相似",
+  "examples": [],
+  "savedAt": "2026-01-06T08:05:11.910Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:05:10.108Z"
+}
+Debug /api/saved first item: {
+  "_id": "695cc237bc0227b9c6e71b7f",
+  "word": "似る",
+  "reading": "にる",
+  "accent": "[0]",
+  "part": "自上",
+  "level": "N4",
+  "meaning": "像／相似",
+  "examples": [],
+  "savedAt": "2026-01-06T08:05:11.910Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:05:10.108Z"
+}
+Attempting direct search for: "認める"
+No examples found for 認める. Using LLM fallback...
+No examples found for 認める. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695cc777bc0227b9c6e71b8b",
+  "word": "認める",
+  "reading": "したためる",
+  "accent": "",
+  "part": "他一",
+  "level": "",
+  "meaning": "寫、書寫、記錄",
+  "examples": [],
+  "savedAt": "2026-01-06T08:27:35.247Z",
+  "__v": 0,
+  "searchCount": 2,
+  "lastSearched": "2026-01-06T08:27:33.532Z"
+}
+Attempting direct search for: "求める"
+No examples found for 求める. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695cc785bc0227b9c6e71b93",
+  "word": "求める",
+  "reading": "もとめる",
+  "accent": "",
+  "part": "他一",
+  "level": "N4",
+  "meaning": "尋求、要求、追求／購買",
+  "examples": [],
+  "savedAt": "2026-01-06T08:27:49.290Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:27:47.498Z"
+}
+Attempting direct search for: "早め"
+No examples found for 早め. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695cc7c0bc0227b9c6e71b9b",
+  "word": "早め",
+  "reading": "はやめ",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "提早、提前／稍早",
+  "examples": [],
+  "savedAt": "2026-01-06T08:28:48.101Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:28:44.932Z"
+}
+Attempting direct search for: "noberu "
+Direct search failed for "noberu ". Checking fallbacks...
+Trying conversion to Hiragana for "noberu "...
+Attempting direct search for: "述べる"
+No examples found for 述べる. Using LLM fallback...
+Attempting direct search for: "どなた"
+No examples found for 何方. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695cc9a3bc0227b9c6e71ba5",
+  "word": "何方",
+  "reading": "どなた",
+  "accent": "",
+  "part": "",
+  "level": "N3",
+  "meaning": "哪位、誰",
+  "examples": [],
+  "savedAt": "2026-01-06T08:36:51.769Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:36:40.580Z"
+}
+Attempting direct search for: "有無"
+No examples found for 有無. Using LLM fallback...
+Debug /api/saved first item: {
+  "_id": "695cc9babc0227b9c6e71bad",
+  "word": "有無",
+  "reading": "うむ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "有無、有沒有、存在與否",
+  "examples": [],
+  "savedAt": "2026-01-06T08:37:14.230Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:37:12.692Z"
+}
+[Session Started 2026/01/06 �g�G 18:42:34.21]  
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+Server running on http://localhost:3000
+Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
+Connected to MongoDB
+Debug /api/saved first item: {
+  "_id": "695cc9babc0227b9c6e71bad",
+  "word": "有無",
+  "reading": "うむ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "有無、有沒有、存在與否",
+  "examples": [],
+  "savedAt": "2026-01-06T08:37:14.230Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:37:12.692Z"
+}
+Debug /api/saved first item: {
+  "_id": "695cc9babc0227b9c6e71bad",
+  "word": "有無",
+  "reading": "うむ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "有無、有沒有、存在與否",
+  "examples": [],
+  "savedAt": "2026-01-06T08:37:14.230Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:37:12.692Z"
+}
+Debug /api/saved first item: {
+  "_id": "695cc9babc0227b9c6e71bad",
+  "word": "有無",
+  "reading": "うむ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "有無、有沒有、存在與否",
+  "examples": [],
+  "savedAt": "2026-01-06T08:37:14.230Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:37:12.692Z"
+}
+Attempting direct search for: "N2"
+Direct search failed for "N2". Checking fallbacks...
+Trying conversion to Hiragana for "N2"...
+Attempting direct search for: "N2"
+Direct search failed for "N2". Checking fallbacks...
+Trying conversion to Hiragana for "N2"...
+Attempting direct search for: "N2"
+Direct search failed for "N2". Checking fallbacks...
+Trying conversion to Hiragana for "N2"...
+Attempting direct search for: "N2"
+Direct search failed for "N2". Checking fallbacks...
+Trying conversion to Hiragana for "N2"...
+Debug /api/saved first item: {
+  "_id": "695cc9babc0227b9c6e71bad",
+  "word": "有無",
+  "reading": "うむ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "有無、有沒有、存在與否",
+  "examples": [],
+  "savedAt": "2026-01-06T08:37:14.230Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:37:12.692Z"
+}
+Debug /api/saved first item: {
+  "_id": "695cc9babc0227b9c6e71bad",
+  "word": "有無",
+  "reading": "うむ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "有無、有沒有、存在與否",
+  "examples": [],
+  "savedAt": "2026-01-06T08:37:14.230Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:37:12.692Z"
+}
+Debug /api/saved first item: {
+  "_id": "695cc9babc0227b9c6e71bad",
+  "word": "有無",
+  "reading": "うむ",
+  "accent": "",
+  "part": "名",
+  "level": "N2",
+  "meaning": "有無、有沒有、存在與否",
+  "examples": [],
+  "savedAt": "2026-01-06T08:37:14.230Z",
+  "__v": 0,
+  "searchCount": 1,
+  "lastSearched": "2026-01-06T08:37:12.692Z"
+}

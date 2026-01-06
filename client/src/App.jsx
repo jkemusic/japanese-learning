@@ -20,6 +20,15 @@ function App() {
   const [sortOrder, setSortOrder] = useState('desc'); // 'desc' or 'asc'
   const [currentPage, setCurrentPage] = useState(1);
   const [selectionPopup, setSelectionPopup] = useState({ show: false, x: 0, y: 0, loading: false, result: null, text: '' });
+  
+  // Flashcard State
+  const [flashcardMode, setFlashcardMode] = useState('none'); // 'none', 'setup', 'game', 'summary'
+  const [flashcards, setFlashcards] = useState([]);
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [flashcardSettings, setFlashcardSettings] = useState({ count: 10, mode: 'ja-zh' }); // mode: 'ja-zh' (Show JP, Guess CH), 'zh-ja' (Show CH, Guess JP)
+  const [sessionStats, setSessionStats] = useState({ correct: 0, incorrect: 0 });
+
   const ITEMS_PER_PAGE = 16;
   const searchTimeout = useRef(null);
   const popupRef = useRef(null);
@@ -250,6 +259,68 @@ function App() {
       setCurrentPage(1);
     }
   }, [currentPage, totalPages]);
+
+  // Flashcard Logic
+  const startFlashcardSetup = () => {
+    setFlashcardMode('setup');
+    setFlashcardSettings(prev => ({ ...prev, count: Math.min(10, savedWords.length) }));
+  };
+
+  const startFlashcardGame = () => {
+    // 1. Filter candidates (optionally filter by level if needed, but for now take all)
+    let candidates = [...savedWords];
+    
+    // 2. Shuffle (Fisher-Yates)
+    for (let i = candidates.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+    }
+
+    // 3. Selection Algorithm (Slightly favor items with high incorrect count?)
+    // For now, simpler: Just take the first N after shuffle. 
+    // Ideally we sort by "need review" but random is good for general review.
+    // Let's optimize: Sort by (correct - incorrect) ascending? So harder ones come first?
+    // Let's do a mix: Shuffle is good.
+    
+    const selected = candidates.slice(0, flashcardSettings.count);
+    setFlashcards(selected);
+    setCurrentCardIndex(0);
+    setIsFlipped(false);
+    setSessionStats({ correct: 0, incorrect: 0 }); // Reset session stats
+    setFlashcardMode('game');
+  };
+
+  const handleCardResult = async (result) => {
+    // result: 'correct' | 'incorrect'
+    const currentCard = flashcards[currentCardIndex];
+    
+    // 1. Update Backend
+    try {
+      await axios.post(`${API_URL}/flashcard/review`, {
+        word: currentCard.word,
+        result: result
+      });
+      // Update local savedWords to reflect new stats (optional, for sorting view)
+       // We can just rely on next fetchSavedWords, or manually update.
+    } catch (e) {
+      console.error('Failed to update flashcard stats', e);
+    }
+
+    // 2. Update Session Stats
+    setSessionStats(prev => ({
+      ...prev,
+      [result]: prev[result] + 1
+    }));
+
+    // 3. Next Card or Finish
+    if (currentCardIndex < flashcards.length - 1) {
+      setIsFlipped(false);
+      setTimeout(() => setCurrentCardIndex(prev => prev + 1), 200); // Slight delay for animation if needed
+    } else {
+      setFlashcardMode('summary');
+      fetchSavedWords(); // Refresh main list to show updated stats if we display them
+    }
+  };
 
   return (
     <div className="app">
@@ -532,7 +603,168 @@ function App() {
               <span>連線錯誤</span>
             </div>
           )}
+          
+          <button 
+            className="btn glass-panel"
+            onClick={startFlashcardSetup}
+            style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 1rem', fontSize: '0.9rem', color: 'white', borderRadius: '20px' }}
+          >
+            <div style={{ position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-2px', right: '-2px', width: '8px', height: '8px', background: 'var(--accent)', borderRadius: '50%' }}></div>
+              <Volume2 size={18} style={{ transform: 'rotate(-90deg)' }} /> {/* Using Volume icon as card-like for now or Layers */}
+            </div>
+            單字卡
+          </button>
         </div>
+
+        {/* Flashcard Overlays */}
+        {flashcardMode !== 'none' && (
+          <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.85)', zIndex: 2000, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '1rem' }}>
+            
+            {/* SETUP MODE */}
+            {flashcardMode === 'setup' && (
+              <div className="glass-panel card" style={{ maxWidth: '400px', width: '100%', textAlign: 'center' }}>
+                <h2 style={{ marginBottom: '1.5rem' }}>單字卡設定</h2>
+                
+                <div style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>題目數量 ({savedWords.length} 可用)</label>
+                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    {[5, 10, 20, 30].map(num => (
+                      <button 
+                        key={num}
+                        className={`btn ${flashcardSettings.count === num ? 'btn-primary' : 'glass-panel'}`}
+                        onClick={() => setFlashcardSettings(prev => ({ ...prev, count: num }))}
+                        style={{ flex: 1, padding: '0.5rem', color: 'white' }}
+                        disabled={num > savedWords.length}
+                      >
+                        {num}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '2rem', textAlign: 'left' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>模式</label>
+                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <button 
+                      className={`btn ${flashcardSettings.mode === 'ja-zh' ? 'btn-primary' : 'glass-panel'}`}
+                      onClick={() => setFlashcardSettings(prev => ({ ...prev, mode: 'ja-zh' }))}
+                      style={{ flex: 1, padding: '0.5rem', color: 'white' }}
+                    >
+                      看日文 -> 猜中文
+                    </button>
+                    <button 
+                      className={`btn ${flashcardSettings.mode === 'zh-ja' ? 'btn-primary' : 'glass-panel'}`}
+                      onClick={() => setFlashcardSettings(prev => ({ ...prev, mode: 'zh-ja' }))}
+                      style={{ flex: 1, padding: '0.5rem', color: 'white' }}
+                    >
+                      看中文 -> 猜日文
+                    </button>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '1rem' }}>
+                  <button className="btn glass-panel" style={{ flex: 1, color: 'white' }} onClick={() => setFlashcardMode('none')}>取消</button>
+                  <button className="btn btn-primary" style={{ flex: 2, color: 'white' }} onClick={startFlashcardGame}>開始練習</button>
+                </div>
+              </div>
+            )}
+
+            {/* GAME MODE */}
+            {flashcardMode === 'game' && flashcards[currentCardIndex] && (
+              <div style={{ maxWidth: '400px', width: '100%', perspective: '1000px' }}>
+                 <div style={{ display: 'flex', justifyContent: 'space-between', color: 'white', marginBottom: '1rem' }}>
+                    <span>進度: {currentCardIndex + 1} / {flashcards.length}</span>
+                    <button onClick={() => setFlashcardMode('none')} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer' }}>跳出</button>
+                 </div>
+
+                 {/* Card Container */}
+                 <div 
+                   onClick={() => !isFlipped && setIsFlipped(true)}
+                   style={{ 
+                     position: 'relative', 
+                     width: '100%', 
+                     minHeight: '300px', 
+                     cursor: 'pointer',
+                     transformStyle: 'preserve-3d',
+                     transition: 'transform 0.6s',
+                     transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                   }}
+                 >
+                    {/* FRONT */}
+                    <div className="glass-panel" style={{ 
+                      position: 'absolute', width: '100%', height: '100%', backfaceVisibility: 'hidden',
+                      display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
+                      background: 'rgba(30,30,30, 0.9)', border: '1px solid rgba(255,255,255,0.1)'
+                    }}>
+                      <div style={{ fontSize: '2.5rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '1rem' }}>
+                        {flashcardSettings.mode === 'ja-zh' ? flashcards[currentCardIndex].word : flashcards[currentCardIndex].meaning}
+                      </div>
+                      <div style={{ color: 'var(--text-secondary)' }}>
+                        (點擊翻面)
+                      </div>
+                    </div>
+
+                    {/* BACK */}
+                    <div className="glass-panel" style={{ 
+                      position: 'absolute', width: '100%', height: '100%', backfaceVisibility: 'hidden',
+                      transform: 'rotateY(180deg)',
+                      display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
+                      background: 'rgba(40,40,40, 0.95)', border: '1px solid rgba(255,255,255,0.1)'
+                    }}>
+                       <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)', marginBottom: '0.5rem' }}>
+                         {flashcardSettings.mode === 'ja-zh' ? flashcards[currentCardIndex].meaning : flashcards[currentCardIndex].word}
+                       </div>
+                       <div style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
+                         {flashcards[currentCardIndex].reading}
+                       </div>
+                       
+                       {/* Feedback Buttons (Only interactive when flipped) */}
+                       <div style={{ display: 'flex', gap: '1rem', width: '80%', pointerEvents: isFlipped ? 'auto' : 'none' }}>
+                         <button 
+                           className="btn" 
+                           onClick={(e) => { e.stopPropagation(); handleCardResult('correct'); }}
+                           style={{ flex: 1, background: '#10b981', color: '#ffffff', border: 'none', fontWeight: 'bold' }}
+                         >
+                           ✅ 我會
+                         </button>
+                         <button 
+                           className="btn" 
+                           onClick={(e) => { e.stopPropagation(); handleCardResult('incorrect'); }}
+                           style={{ flex: 1, background: '#ef4444', color: '#ffffff', border: 'none', fontWeight: 'bold' }}
+                         >
+                           ❌ 忘了
+                         </button>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+            )}
+
+            {/* SUMMARY MODE */}
+            {flashcardMode === 'summary' && (
+              <div className="glass-panel card" style={{ maxWidth: '400px', width: '100%', textAlign: 'center' }}>
+                <h2 style={{ marginBottom: '1rem' }}>🎉 練習完成！</h2>
+                <div style={{ fontSize: '4rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--primary)' }}>
+                  {Math.round((sessionStats.correct / flashcards.length) * 100)}%
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '2rem' }}>
+                  <div>
+                    <div style={{ fontSize: '1.5rem', color: '#10b981' }}>{sessionStats.correct}</div>
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>答對</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '1.5rem', color: '#ef4444' }}>{sessionStats.incorrect}</div>
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>需要複習</div>
+                  </div>
+                </div>
+                <button className="btn btn-primary" style={{ width: '100%' }} onClick={() => setFlashcardMode('none')}>
+                  結束
+                </button>
+              </div>
+            )}
+          </div>
+        )}
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -626,6 +858,19 @@ function App() {
               </div>
               <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{item.reading}</div>
               <div style={{ marginTop: '0.5rem', fontSize: '0.9rem' }} className="truncate">{item.meaning}</div>
+              
+              {/* Flashcard Stats */}
+              {(item.flashcardStats && (item.flashcardStats.correct > 0 || item.flashcardStats.incorrect > 0)) && (
+                <div style={{ marginTop: '0.5rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', gap: '1rem', fontSize: '0.8rem' }}>
+                  <span style={{ color: '#10b981' }}>✅ {item.flashcardStats.correct}</span>
+                  <span style={{ color: '#ef4444' }}>❌ {item.flashcardStats.incorrect}</span>
+                  {item.flashcardStats.lastReview && (
+                     <span style={{ marginLeft: 'auto', color: 'var(--text-secondary)' }}>
+                       {new Date(item.flashcardStats.lastReview).toLocaleDateString()}
+                     </span>
+                  )}
+                </div>
+              )}
             </div>
           ))}
           

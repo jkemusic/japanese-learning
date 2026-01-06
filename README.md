@@ -1,289 +1,286 @@
-# 日文學習系統 📚
+# Japanese Learning System 📚
 
-一個功能強大的日文學習工具，提供單字查詢、文法解釋、例句生成等功能，並整合 Google Gemini AI 提供智能翻譯和中文查詞支援。
+A powerful Japanese learning tool providing vocabulary search, grammar explanations, and sentence generation. Integrated with Google Gemini AI for smart translation and Chinese dictionary support.
 
 ![License](https://img.shields.io/badge/license-ISC-blue.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)
 ![React](https://img.shields.io/badge/React-19.2.0-blue.svg)
 
-## ✨ 主要功能
+## ✨ Key Features
 
-### 📖 單字查詢
-- **即時查詢**：輸入日文單字立即顯示完整資訊
-- **雙向翻譯**：支援中文→日文、日文→中文兩種查詢模式
-- **中文智能翻譯**：支援輸入中文，自動翻譯成日文後查詢
-- **日文轉中文**：輸入日文單字，使用 AI 翻譯成繁體中文
-- **翻譯方向切換**：一鍵切換中→日或日→中模式
-- **假名轉換**：自動嘗試將輸入轉換為平假名重新查詢
-- **完整資訊**：包含假名讀音、重音、詞性、級數、中文意思
+### 📖 Vocabulary Search
+- **Instant Search**: View complete information immediately upon entering a Japanese word.
+- **Bi-directional Translation**: Supports Chinese → Japanese and Japanese → Chinese modes.
+- **Smart Chinese Translation**: Input Chinese to automatically translate to Japanese and search.
+- **Japanese to Chinese**: Input Japanese words to get Traditional Chinese translations via AI.
+- **Toggle Direction**: One-click switch between CN→JP and JP→CN modes.
+- **Kana Conversion**: Automatically attempts to convert input to Hiragana for searching.
+- **Complete Details**: Includes Kana reading, accent, part of speech, JLPT level, and Chinese meaning.
 
-### 💬 例句系統
-- **網頁爬取**：優先從 sigure.tw 日文辭典爬取例句
-- **AI 生成**：無例句時使用 Gemini AI 自動生成實用例句
-- **雙語對照**：日文例句搭配繁體中文翻譯
+### 💬 Sentence System
+- **Web Scraping**: Prioritizes scraping examples from the sigure.tw Japanese dictionary.
+- **AI Generation**: Uses Gemini AI to generate practical examples when none are found.
+- **Bilingual**: Japanese examples paired with Traditional Chinese translations.
 
-### 📝 文法解釋
-- **AI 驅動**：使用 Gemini AI 解釋日文文法
-- **詳細說明**：包含文法模式、意思、用法說明
-- **實例演示**：提供多個例句幫助理解
+### 📝 Grammar Explanations
+- **AI Powered**: Uses Gemini AI to explain Japanese grammar.
+- **Detailed Explanations**: Includes grammar patterns, meanings, and usage instructions.
+- **Practical Examples**: Provides multiple sentence examples to aid understanding.
 
-### 💡 智能建議
-- **關聯詞彙**：根據搜尋詞提供相關日文單字建議
-- **快速學習**：一鍵點擊建議詞彙即可查詢
+### 💡 Smart Suggestions
+- **Related Vocabulary**: Provides related Japanese word suggestions based on search terms.
+- **Quick Learning**: Click on suggested words to search immediately.
 
-### 📚 單字收藏
-- **本地儲存**：將重要單字儲存到個人單字本
-- **搜尋歷史**：自動記錄查詢次數和時間
-- **資料管理**：支援刪除和管理已儲存的單字
+### 📚 Saved Words (Flashcards)
+- **Local Storage**: Save important words to your personal vocabulary list.
+- **History Tracking**: Automatically records search counts and timestamps.
+- **Flashcard Mode**: Practice saved words with flip cards and spaced repetition (SRS) feedback (Correct/Forgot/Stats).
+- **Management**: Sort by Date or Popularity, filter by JLPT level, and delete words.
 
-### 🔄 自動關機
-- **智能管理**：前端關閉後，後端自動在 60 秒後關閉
-- **心跳檢測**：透過心跳機制確保資源不浪費
+### 🔄 Auto Shutdown
+- **Smart Management**: Backend automatically shuts down 60 seconds after the frontend is closed.
+- **Heartbeat Check**: Ensures resources aren't wasted using a heartbeat mechanism.
 
-## 🚀 快速開始
+## 🚀 Quick Start
 
-### 系統需求
+### System Requirements
 
-- **Node.js** 18.0 或更高版本
-- **npm** 或 **yarn**
-- **Google Gemini API Key**（選用，但強烈建議）
+- **Node.js** 18.0 or higher
+- **npm** or **yarn**
+- **Google Gemini API Key** (Optional, but highly recommended)
 
-### 安裝步驟
+### Installation
 
-#### 方法一：一鍵啟動（推薦）
+#### Method 1: One-Click Start (Recommended)
 
-1. **確保已安裝 Node.js**
-   - 從 [nodejs.org](https://nodejs.org) 下載安裝
+1. **Ensure Node.js is installed**
+   - Download from [nodejs.org](https://nodejs.org)
 
-2. **設定 API Key**
-   - 到 [Google AI Studio](https://aistudio.google.com/apikey) 取得免費 API Key
-   - 在 `server/.env` 檔案中設定：
+2. **Set API Key**
+   - Get a free API Key from [Google AI Studio](https://aistudio.google.com/apikey)
+   - Create `server/.env` file and add:
      ```env
-     GEMINI_API_KEY=你的API金鑰
+     GEMINI_API_KEY=your_api_key_here
      ```
 
-3. **雙擊啟動**
-   - 直接雙擊 `start_silent.vbs` 或 `start_app.bat`
-   - 腳本會自動：
-     - ✅ 偵測 Node.js 路徑
-     - ✅ 安裝缺少的依賴
-     - ✅ 啟動前後端伺服器
-     - ✅ 開啟瀏覽器
+3. **Double Click to Start**
+   - Double click `start_silent.vbs` or `start_app.bat`
+   - The script will automatically:
+     - ✅ Detect Node.js path
+     - ✅ Install missing dependencies
+     - ✅ Start backend and frontend servers
+     - ✅ Open browser
 
-#### 方法二：手動安裝
+#### Method 2: Manual Installation
 
-1. **克隆或下載專案**
+1. **Clone or Download Project**
    ```bash
-   # 進入專案資料夾
-   cd 日文
+   # Enter project directory
+   cd JapaneseLearning
    ```
 
-2. **安裝後端依賴**
+2. **Install Backend Dependencies**
    ```bash
    cd server
    npm install
    cd ..
    ```
 
-3. **安裝前端依賴**
+3. **Install Frontend Dependencies**
    ```bash
    cd client
    npm install
    cd ..
    ```
 
-4. **設定環境變數**
-   - 在 `server/.env` 中設定 Gemini API Key
+4. **Set Environment Variables**
+   - Set Gemini API Key in `server/.env`
 
-5. **啟動應用程式**
+5. **Start Application**
    ```bash
-   # 雙擊 start_app.bat
-   # 或手動啟動兩個終端機：
+   # Double click start_app.bat
+   # Or manually start two terminals:
    
-   # 終端機 1 - 後端
+   # Terminal 1 - Backend
    cd server
    node server.js
    
-   # 終端機 2 - 前端
+   # Terminal 2 - Frontend
    cd client
    npm run dev
    ```
 
-6. **開啟瀏覽器**
-   - 前往 http://localhost:5173
+6. **Open Browser**
+   - Go to http://localhost:5173
 
-## 📁 專案結構
+## 📁 Project Structure
 
 ```
-日文/
-├── client/                 # React 前端
-│   ├── src/               # 原始碼
-│   ├── public/            # 靜態資源
-│   ├── package.json       # 前端依賴
-│   └── vite.config.js     # Vite 配置
-├── server/                # Express 後端
-│   ├── server.js          # 主要伺服器檔案
-│   ├── db.json            # 已儲存單字資料庫
-│   ├── history.json       # 搜尋歷史記錄
-│   ├── .env               # 環境變數（需自行建立）
-│   └── package.json       # 後端依賴
-├── start_app.bat          # Windows 啟動腳本
-├── start_silent.vbs       # 靜默啟動腳本
-└── README.md              # 專案說明文件
+JapaneseLearning/
+├── client/                 # React Frontend
+│   ├── src/               # Source Code
+│   ├── public/            # Static Assets
+│   ├── package.json       # Frontend Dependencies
+│   └── vite.config.js     # Vite Config
+├── server/                # Express Backend
+│   ├── server.js          # Main Server File
+│   ├── db.json            # Saved Words Database (Old/Backup)
+│   ├── history.json       # Search History
+│   ├── .env               # Environment Variables (Create manually)
+│   └── package.json       # Backend Dependencies
+├── start_app.bat          # Windows Start Script
+├── start_silent.vbs       # Silent Start Script
+└── README.md              # Project Documentation
 ```
 
-## 🛠️ 技術棧
+## 🛠️ Tech Stack
 
-### 前端
-- **React 19.2.0** - UI 框架
-- **Vite 7.2.4** - 建置工具
-- **Axios** - HTTP 請求
-- **Lucide React** - 圖示庫
+### Frontend
+- **React 19.2.0** - UI Framework
+- **Vite 7.2.4** - Build Tool
+- **Axios** - HTTP Requests
+- **Lucide React** - Icons
 
-### 後端
-- **Express 5.2.1** - Web 框架
-- **Google Generative AI** - Gemini API 整合
-- **Axios** - HTTP 請求
-- **Cheerio** - HTML 解析（網頁爬蟲）
-- **CORS** - 跨域資源共享
-- **dotenv** - 環境變數管理
+### Backend
+- **Express 5.2.1** - Web Framework
+- **Google Generative AI** - Gemini API Integration
+- **Mongoose** - MongoDB ODM
+- **Axios** - HTTP Requests
+- **Cheerio** - HTML Parsing (Web Scraping)
+- **CORS** - Cross-Origin Resource Sharing
+- **dotenv** - Environment Variable Management
 
-## 🔧 配置說明
+## 🔧 Configuration
 
-### 環境變數
+### Environment Variables
 
-在 `server/.env` 中設定：
+Set in `server/.env`:
 
 ```env
-# Google Gemini API Key（必需，用於 AI 功能）
-GEMINI_API_KEY=你的API金鑰
+# Google Gemini API Key (Required for AI features)
+GEMINI_API_KEY=your_api_key_here
+
+# MongoDB URI (Required for History/Saved Words persistence)
+MONGODB_URI=mongodb+srv://...
 ```
 
-### API Key 取得方式
+### Getting an API Key
 
-1. 前往 [Google AI Studio](https://aistudio.google.com/apikey)
-2. 登入 Google 帳號
-3. 點擊「Create API Key」
-4. 複製 API Key 並貼到 `.env` 檔案
+1. Go to [Google AI Studio](https://aistudio.google.com/apikey)
+2. Log in with Google account
+3. Click "Create API Key"
+4. Copy and paste into `.env` file
 
 > [!IMPORTANT]
-> 免費額度：Gemini API 提供每天 200 次請求的免費額度。如果超過額度，請等待隔天重置或升級方案。
+> Free Tier: Gemini API provides 200 free requests per day. If exceeded, wait for reset or upgrade.
 
-## 📚 API 端點
+## 📚 API Endpoints
 
-### 後端 API (Port 3000)
+### Backend API (Port 3000)
 
-| 端點 | 方法 | 參數 | 說明 |
+| Endpoint | Method | Params | Description |
 |------|------|------|------|
-| `/api/search` | GET | `q`: 查詢詞彙<br>`direction`: 翻譯方向 (`zh-ja` 或 `ja-zh`) | 查詢單字資訊，支援雙向翻譯 |
-| `/api/suggest` | GET | `q`: 關鍵字 | 取得相關單字建議 |
-| `/api/grammar` | GET | `q`: 文法句型 | 查詢文法解釋 |
-| `/api/saved` | GET | - | 取得已儲存的單字 |
-| `/api/save` | POST | 單字物件 | 儲存單字 |
-| `/api/saved/:word` | DELETE | `word`: 單字 | 刪除已儲存的單字 |
-| `/api/heartbeat` | GET | - | 心跳檢測 |
+| `/api/search` | GET | `q`: query<br>`direction`: `zh-ja` or `ja-zh` | Search word info, supports bi-directional translation |
+| `/api/suggest` | GET | `q`: keyword | Get related vocabulary suggestions |
+| `/api/grammar` | GET | `q`: grammar pattern | Get grammar explanations |
+| `/api/saved` | GET | - | Get saved words |
+| `/api/save` | POST | word object | Save a word |
+| `/api/saved/:word` | DELETE | `word`: word string | Delete a saved word |
+| `/api/flashcard/review` | POST | `word`, `result` | Update flashcard SRS stats (correct/incorrect) |
+| `/api/heartbeat` | GET | - | Server heartbeat check |
 
-## 🎯 使用說明
+## 🎯 Usage Guide
 
-### 單字查詢
+### Vocabulary Search
 
-#### 中文→日文模式（預設）
-1. 確認翻譯方向按鈕顯示「中→日」
-2. 在搜尋框輸入中文詞彙（如：貓）
-3. 系統自動翻譯成日文（猫）後查詢字典
-4. 查看完整的日文單字資訊、讀音、例句
+#### CN → JP Mode (Default)
+1. Ensure direction button says "CN → JP".
+2. Enter Chinese word (e.g., 貓).
+3. System translates to Japanese (猫) and searches.
+4. View complete info, reading, and examples.
 
-#### 日文→中文模式
-1. 點擊 ⇄ 按鈕切換到「日→中」模式
-2. 在搜尋框輸入日文單字（如：猫）
-3. 查詢字典後，AI 自動翻譯成繁體中文
-4. 顯示 AI 翻譯的中文意思，並附上字典原文供參考
+#### JP → CN Mode
+1. Click ⇄ button to switch to "JP → CN".
+2. Enter Japanese word (e.g., 猫).
+3. AI translates to Traditional Chinese after dictionary lookup.
+4. Shows AI meaning and original dictionary meaning.
 
-#### 一般操作
-1. 按 Enter 或點擊搜尋按鈕
-2. 查看單字資訊、例句和相關建議
-3. 點擊「收藏」按鈕儲存到單字本
+#### General
+1. Press Enter or click Search.
+2. Click "Save" (Bookmark icon) to add to list.
 
-### 文法查詢
-1. 切換到「文法查詢 (AI)」標籤
-2. 輸入文法句型（如：ほど～ない）
-3. 查看 AI 生成的詳細解釋和例句
+### Grammar Search
+1. Switch to "Grammar (AI)" tab.
+2. Enter grammar pattern (e.g., ほど～ない).
+3. View AI-generated explanation and examples.
 
-### 管理單字本
-1. 向下滾動到「收藏單字」區域
-2. 使用級數篩選器（N5、N4、N3、N2、N1）
-3. 點擊單字卡片查看詳細資訊
-4. 點擊 ❌ 刪除不需要的單字
+### Vocabulary Management & Flashcards
+1. Scroll down to "Saved Words".
+2. Use JLPT filters (N5-N1).
+3. **Flashcards**: Click "🔊 Flashcards" button to start practice mode.
+   - Flip cards, mark as Known/Forgot.
+   - SRS system tracks your progress.
 
-## 🔄 啟動腳本功能
+## 🔄 Start Script Features
 
-`start_app.bat` 提供以下智能功能：
+`start_app.bat` features:
 
-### ✅ Node.js 自動偵測
-- 檢查常見安裝位置
-- 自動加入 PATH 環境變數
-- 支援 nvm 多版本管理
+### ✅ Auto Node.js Detection
+- Checks common install paths
+- Auto-adds to PATH
+- Supports nvm
 
-### ✅ 依賴自動安裝
-- 檢查 `node_modules` 是否存在
-- 缺少時自動執行 `npm install`
-- 分別處理前後端依賴
+### ✅ Auto Dependency Install
+- Checks `node_modules`
+- Runs `npm install` if missing
 
-### ✅ 錯誤處理
-- 清楚的錯誤訊息
-- 安裝失敗時提供解決建議
-- 找不到 Node.js 時提供下載連結
+### ✅ Error Handling
+- Clear error messages
+- Troubleshooting tips
 
-## 🐛 常見問題
+## 🐛 FAQ
 
-### Q: 雙擊後沒有反應？
-**A:** 確認 Node.js 已安裝。開啟命令提示字元執行 `node --version` 檢查。
+### Q: No reaction when double-clicking?
+**A:** Check if Node.js is installed. Run `node --version` in CMD.
 
-### Q: 顯示「找不到 Node.js」？
+### Q: "Node.js not found"?
 **A:** 
-- 到 [nodejs.org](https://nodejs.org) 下載安裝 Node.js
-- 安裝後重新啟動腳本
+- Download from [nodejs.org](https://nodejs.org)
+- Restart script after install
 
-### Q: API Quota Exceeded 錯誤？
+### Q: API Quota Exceeded?
 **A:** 
-- Gemini API 免費額度為每天 200 次請求
-- 等待隔天重置或減少查詢頻率
-- 考慮升級到付費方案
+- Free tier limit is 200 req/day.
+- Wait for reset or upgrade.
 
-### Q: 查不到某些單字？
+### Q: Can't find certain words?
 **A:** 
-- 本系統使用 sigure.tw 作為資料來源
-- 如果該辭典沒有收錄，可能查不到
-- 嘗試輸入假名或其他寫法
+- Source is sigure.tw.
+- Try entering Kana or alternative writing.
 
-### Q: 例句都是 AI 生成的？
+### Q: Are examples AI-generated?
 **A:** 
-- 優先爬取 sigure.tw 的真實例句
-- 只有在無例句時才使用 AI 生成
-- AI 生成的例句會標記為 `isLLM: true`
+- Real examples from sigure.tw are prioritized.
+- AI is used only as fallback (marked `isLLM: true`).
 
-### Q: 如何關閉伺服器？
+### Q: How to stop the server?
 **A:** 
-- 關閉瀏覽器後，伺服器會在 60 秒後自動關閉
-- 或直接關閉兩個命令視窗
+- Close the browser (auto-shutdowns in 60s).
+- Or close the two command windows.
 
-## 🤝 貢獻
+## 🤝 Contribution
+Issues and Pull Requests welcome!
 
-歡迎提交 Issue 和 Pull Request！
-
-## 📄 授權
-
+## 📄 License
 ISC License
 
-## 🙏 致謝
+## 🙏 Acknowledgements
+- [sigure.tw](https://www.sigure.tw) - Dictionary Data
+- [Google Gemini](https://ai.google.dev) - AI Support
+- [MongoDB Atlas](https://www.mongodb.com/atlas) - Cloud Database
 
-- [sigure.tw](https://www.sigure.tw) - 提供日文辭典資料
-- [Google Gemini](https://ai.google.dev) - AI 功能支援
-- 所有使用者的回饋和建議
-
-## 📞 聯絡方式
-
-如有問題或建議，歡迎開 Issue 討論！
+## 📞 Contact
+Open an Issue for questions!
 
 ---
 

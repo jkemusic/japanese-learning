@@ -37,7 +37,12 @@ const SavedWordSchema = new mongoose.Schema({
     level: String,
     meaning: String,
     examples: Array,
-    savedAt: { type: Date, default: Date.now }
+    savedAt: { type: Date, default: Date.now },
+    flashcardStats: {
+        correct: { type: Number, default: 0 },
+        incorrect: { type: Number, default: 0 },
+        lastReview: { type: Date, default: null }
+    }
 });
 const SavedWord = mongoose.model('SavedWord', SavedWordSchema);
 
@@ -410,6 +415,27 @@ app.delete('/api/saved/:word', async (req, res) => {
         await SavedWord.deleteOne({ word: wordToDelete });
         const words = await SavedWord.find().sort({ savedAt: -1 });
         res.json({ success: true, data: words });
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
+// Flashcard Review Endpoint
+app.post('/api/flashcard/review', async (req, res) => {
+    const { word, result } = req.body; // result: 'correct' | 'incorrect'
+    if (!word || !result) return res.status(400).json({ error: 'Missing word or result' });
+
+    try {
+        const updateField = result === 'correct' ? 'flashcardStats.correct' : 'flashcardStats.incorrect';
+        const savedWord = await SavedWord.findOneAndUpdate(
+            { word },
+            { 
+                $inc: { [updateField]: 1 },
+                $set: { 'flashcardStats.lastReview': new Date() }
+            },
+            { new: true }
+        );
+        res.json({ success: true, data: savedWord });
     } catch (e) {
         res.status(500).json({ error: e.message });
     }
