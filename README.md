@@ -32,9 +32,12 @@ A powerful Japanese learning tool providing vocabulary search, grammar explanati
 - **Quick Learning**: Click on suggested words to search immediately.
 
 ### 📚 Saved Words (Flashcards)
-- **Local Storage**: Save important words to your personal vocabulary list.
+- **Hybrid Storage**: 
+  - **Cloud Mode**: Synced via MongoDB Atlas.
+  - **Local Mode**: Falls back to local `db.json` if cloud is unreachable (Auto-Backup).
 - **History Tracking**: Automatically records search counts and timestamps.
 - **Flashcard Mode**: Practice saved words with flip cards and spaced repetition (SRS) feedback (Correct/Forgot/Stats).
+  - *Note: Button enters hidden mode if no words are saved.*
 - **Management**: Sort by Date or Popularity, filter by JLPT level, and delete words.
 
 ### 🔄 Auto Shutdown
@@ -49,29 +52,30 @@ A powerful Japanese learning tool providing vocabulary search, grammar explanati
 - **npm** or **yarn**
 - **Google Gemini API Key** (Optional, but highly recommended)
 
-### Installation
+### Installation & Startup
 
-#### Method 1: One-Click Start (Recommended)
+#### 🍎 macOS Users
+1. **Download Project**: Download and unzip the project.
+2. **Create Configuration File (IMPORTANT)**:
+   - Go to the `server` folder.
+   - Create a new file named `.env`.
+   - Add your API keys (see [Configuration](#-configuration) section).
+3. **Start**: Double-click the `start_app.command` file.
+   - It will automatically check permissions, install dependencies, and launch the app.
+   - If blocked by security settings, go to System Settings > Privacy & Security to allow it.
 
-1. **Ensure Node.js is installed**
-   - Download from [nodejs.org](https://nodejs.org)
+#### 🪟 Windows Users
+1. **Download Project**: Download and unzip the project.
+2. **Create Configuration File (IMPORTANT)**:
+   - Go to the `server` folder.
+   - Create a new file named `.env`.
+   - Add your API keys (see [Configuration](#-configuration) section).
+3. **Start**: Double-click `start_app.bat` (or `start_silent.vbs` for silent mode).
+   - It will detect Node.js, install dependencies, and launch the app.
 
-2. **Set API Key**
-   - Get a free API Key from [Google AI Studio](https://aistudio.google.com/apikey)
-   - Create `server/.env` file and add:
-     ```env
-     GEMINI_API_KEY=your_api_key_here
-     ```
+---
 
-3. **Double Click to Start**
-   - Double click `start_silent.vbs` or `start_app.bat`
-   - The script will automatically:
-     - ✅ Detect Node.js path
-     - ✅ Install missing dependencies
-     - ✅ Start backend and frontend servers
-     - ✅ Open browser
-
-#### Method 2: Manual Installation
+### Manual Setup (Developers)
 
 1. **Clone or Download Project**
    ```bash
@@ -79,28 +83,21 @@ A powerful Japanese learning tool providing vocabulary search, grammar explanati
    cd JapaneseLearning
    ```
 
-2. **Install Backend Dependencies**
+2. **Install Dependencies**
    ```bash
-   cd server
-   npm install
-   cd ..
+   cd server && npm install
+   cd ../client && npm install
    ```
 
-3. **Install Frontend Dependencies**
-   ```bash
-   cd client
-   npm install
-   cd ..
-   ```
+3. **Set Environment Variables**
+   - Create `server/.env` and set your optional API keys:
+     ```env
+     GEMINI_API_KEY=your_key_here
+     MONGODB_URI=your_mongo_uri
+     ```
 
-4. **Set Environment Variables**
-   - Set Gemini API Key in `server/.env`
-
-5. **Start Application**
+4. **Start Application**
    ```bash
-   # Double click start_app.bat
-   # Or manually start two terminals:
-   
    # Terminal 1 - Backend
    cd server
    node server.js
@@ -110,7 +107,7 @@ A powerful Japanese learning tool providing vocabulary search, grammar explanati
    npm run dev
    ```
 
-6. **Open Browser**
+5. **Open Browser**
    - Go to http://localhost:5173
 
 ## 📁 Project Structure
@@ -120,16 +117,14 @@ JapaneseLearning/
 ├── client/                 # React Frontend
 │   ├── src/               # Source Code
 │   ├── public/            # Static Assets
-│   ├── package.json       # Frontend Dependencies
-│   └── vite.config.js     # Vite Config
+│   └── ...
 ├── server/                # Express Backend
 │   ├── server.js          # Main Server File
-│   ├── db.json            # Saved Words Database (Old/Backup)
-│   ├── history.json       # Search History
-│   ├── .env               # Environment Variables (Create manually)
-│   └── package.json       # Backend Dependencies
+│   ├── db.json            # Local Fallback Database
+│   ├── history.json       # Local History Tracking
+│   └── ...
+├── start_app.command      # macOS Start Script
 ├── start_app.bat          # Windows Start Script
-├── start_silent.vbs       # Silent Start Script
 └── README.md              # Project Documentation
 ```
 
@@ -144,7 +139,7 @@ JapaneseLearning/
 ### Backend
 - **Express 5.2.1** - Web Framework
 - **Google Generative AI** - Gemini API Integration
-- **Mongoose** - MongoDB ODM
+- **Mongoose** - MongoDB ODM (with Local Fallback)
 - **Axios** - HTTP Requests
 - **Cheerio** - HTML Parsing (Web Scraping)
 - **CORS** - Cross-Origin Resource Sharing
@@ -160,7 +155,7 @@ Set in `server/.env`:
 # Google Gemini API Key (Required for AI features)
 GEMINI_API_KEY=your_api_key_here
 
-# MongoDB URI (Required for History/Saved Words persistence)
+# MongoDB URI (Optional - System will use local file if forbidden or missing)
 MONGODB_URI=mongodb+srv://...
 ```
 
@@ -183,7 +178,7 @@ MONGODB_URI=mongodb+srv://...
 | `/api/search` | GET | `q`: query<br>`direction`: `zh-ja` or `ja-zh` | Search word info, supports bi-directional translation |
 | `/api/suggest` | GET | `q`: keyword | Get related vocabulary suggestions |
 | `/api/grammar` | GET | `q`: grammar pattern | Get grammar explanations |
-| `/api/saved` | GET | - | Get saved words |
+| `/api/saved` | GET | - | Get saved words (Auto Local/Cloud switch) |
 | `/api/save` | POST | word object | Save a word |
 | `/api/saved/:word` | DELETE | `word`: word string | Delete a saved word |
 | `/api/flashcard/review` | POST | `word`, `result` | Update flashcard SRS stats (correct/incorrect) |
@@ -220,33 +215,22 @@ MONGODB_URI=mongodb+srv://...
 3. **Flashcards**: Click "🔊 Flashcards" button to start practice mode.
    - Flip cards, mark as Known/Forgot.
    - SRS system tracks your progress.
-
-## 🔄 Start Script Features
-
-`start_app.bat` features:
-
-### ✅ Auto Node.js Detection
-- Checks common install paths
-- Auto-adds to PATH
-- Supports nvm
-
-### ✅ Auto Dependency Install
-- Checks `node_modules`
-- Runs `npm install` if missing
-
-### ✅ Error Handling
-- Clear error messages
-- Troubleshooting tips
+   - *Button auto-hides if list is empty.*
 
 ## 🐛 FAQ
 
 ### Q: No reaction when double-clicking?
-**A:** Check if Node.js is installed. Run `node --version` in CMD.
+**A:** Check if Node.js is installed. Run `node --version` in CMD/Terminal.
 
 ### Q: "Node.js not found"?
 **A:** 
 - Download from [nodejs.org](https://nodejs.org)
 - Restart script after install
+
+### Q: Why is the cloud icon orange (Local)?
+**A:** 
+- This means the server couldn't connect to MongoDB Atlas (likely due to IP whitelist restrictions or network issues).
+- The system has automatically switched to **Local Mode**, saving data to `db.json` on your computer so you can continue working without interruption.
 
 ### Q: API Quota Exceeded?
 **A:** 
@@ -266,7 +250,7 @@ MONGODB_URI=mongodb+srv://...
 ### Q: How to stop the server?
 **A:** 
 - Close the browser (auto-shutdowns in 60s).
-- Or close the two command windows.
+- Or close the two command windows (Terminal).
 
 ## 🤝 Contribution
 Issues and Pull Requests welcome!

@@ -47,12 +47,31 @@ const SavedWordSchema = new mongoose.Schema({
 const SavedWord = mongoose.model('SavedWord', SavedWordSchema);
 
 // MongoDB Connection & Migration
-mongoose.connect(process.env.MONGODB_URI)
+// MongoDB Connection & Migration
+let useLocalDB = false;
+
+// Helpers for Local DB
+const getLocalHistory = () => {
+    if (!fs.existsSync(HISTORY_FILE)) return {};
+    return JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
+};
+const saveLocalHistory = (data) => fs.writeFileSync(HISTORY_FILE, JSON.stringify(data, null, 2));
+
+const getLocalSaved = () => {
+    if (!fs.existsSync(DB_FILE)) return [];
+    return JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
+};
+const saveLocalSaved = (data) => fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+
+mongoose.connect(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 5000 })
     .then(async () => {
         console.log('Connected to MongoDB');
         await migrateData();
     })
-    .catch(err => console.error('MongoDB connection error:', err));
+    .catch(err => {
+        console.error('MongoDB connection failed (Timeout or Auth Error). Switching to LOCAL JSON mode.');
+        useLocalDB = true;
+    });
 
 const migrateData = async () => {
     try {
@@ -63,9 +82,9 @@ const migrateData = async () => {
             if (data.trim() !== '{}') {
                 const localHistory = JSON.parse(data);
                 const docs = Object.entries(localHistory).map(([word, val]) => ({
-                    word, 
-                    count: val.count, 
-                    lastSearched: val.lastSearched 
+                    word,
+                    count: val.count,
+                    lastSearched: val.lastSearched
                 }));
                 if (docs.length > 0) {
                     await History.insertMany(docs);
@@ -86,7 +105,7 @@ const migrateData = async () => {
                         await SavedWord.insertMany(localSaved);
                         console.log(`Migrated ${localSaved.length} saved words to Cloud.`);
                     } catch (e) {
-                         console.warn('Migration warning ( SavedWords):', e.message);
+                        console.warn('Migration warning ( SavedWords):', e.message);
                     }
                 }
             }
@@ -168,7 +187,7 @@ app.get('/api/search', async (req, res) => {
                     const prompt = `Translate the Chinese word "${query}" to the most common Japanese word (Kanji or Kana). Return ONLY the Japanese word.`;
                     const resultLLM = await model.generateContent(prompt);
                     const translated = resultLLM.response.text().trim();
-                    
+
                     if (translated) {
                         console.log(`Translated to "${translated}". Searching...`);
                         results = await scrapeSigure(translated);
@@ -213,19 +232,48 @@ app.get('/api/search', async (req, res) => {
         for (const result of results) {
             if (originalQuery) result.originalQuery = originalQuery;
 
-            // Update History in MongoDB
-            let historyItem = await History.findOne({ word: result.word });
-            if (!historyItem) {
-                historyItem = new History({ word: result.word });
+            // Update History
+            const now = new Date();
+            let count = 1;
+            let lastSearched = now;
+
+            if (useLocalDB) {
+                // Local Mode: Update history.json
+                try {
+                    const history = getLocalHistory();
+                    if (!history[result.word]) {
+                        history[result.word] = { count: 0, lastSearched: null };
+                    }
+                    history[result.word].count += 1;
+                    history[result.word].lastSearched = now.toISOString();
+                    saveLocalHistory(history);
+
+                    count = history[result.word].count;
+                    lastSearched = history[result.word].lastSearched;
+                } catch (e) {
+                    console.error('Local history update failed:', e);
+                }
+            } else {
+                // Cloud Mode: Update MongoDB
+                try {
+                    let historyItem = await History.findOne({ word: result.word });
+                    if (!historyItem) {
+                        historyItem = new History({ word: result.word });
+                    }
+                    historyItem.count += 1;
+                    historyItem.lastSearched = now;
+                    await historyItem.save();
+
+                    count = historyItem.count;
+                    lastSearched = historyItem.lastSearched;
+                } catch (e) {
+                    console.error('MongoDB history update failed:', e);
+                }
             }
-            const previousDate = historyItem.lastSearched;
-            historyItem.count += 1;
-            historyItem.lastSearched = now;
-            await historyItem.save();
 
             result.history = {
-                count: historyItem.count,
-                lastSearched: previousDate
+                count: count,
+                lastSearched: lastSearched
             };
 
             // LLM Example Fallback
@@ -248,7 +296,7 @@ app.get('/api/search', async (req, res) => {
 
             // JA-ZH Extra Translation
             if (direction === 'ja-zh' && process.env.GEMINI_API_KEY && results.length <= 3) {
-                 try {
+                try {
                     const prompt = `Translate the Japanese word "${result.word}" (reading: ${result.reading}) to Traditional Chinese (Taiwan usage). Return ONLY the Chinese translation, no explanation.`;
                     const resultLLM = await model.generateContent(prompt);
                     result.translatedMeaning = resultLLM.response.text().trim();
@@ -358,6 +406,25 @@ app.get('/api/grammar', async (req, res) => {
 // Saved Words Endpoints (MongoDB)
 app.get('/api/saved', async (req, res) => {
     try {
+        // Check for local mode OR if MongoDB is not connected (fail-safe)
+        if (useLocalDB || mongoose.connection.readyState !== 1) {
+            console.log('Using Local DB (Mode flag:', useLocalDB, 'State:', mongoose.connection.readyState, ')');
+            const saved = getLocalSaved();
+            const history = getLocalHistory();
+
+            // Merge history data
+            const words = saved.map(item => {
+                const h = history[item.word];
+                return {
+                    ...item,
+                    searchCount: h ? h.count : 0,
+                    lastSearched: h ? h.lastSearched : null
+                };
+            }).sort((a, b) => new Date(b.savedAt) - new Date(a.savedAt));
+
+            return res.json(words);
+        }
+
         const words = await SavedWord.aggregate([
             {
                 $lookup: {
@@ -369,8 +436,8 @@ app.get('/api/saved', async (req, res) => {
             },
             {
                 $addFields: {
-                   searchCount: { $ifNull: [{ $arrayElemAt: ["$historyData.count", 0] }, 0] },
-                   lastSearched: { $arrayElemAt: ["$historyData.lastSearched", 0] }
+                    searchCount: { $ifNull: [{ $arrayElemAt: ["$historyData.count", 0] }, 0] },
+                    lastSearched: { $arrayElemAt: ["$historyData.lastSearched", 0] }
                 }
             },
             {
@@ -380,12 +447,6 @@ app.get('/api/saved', async (req, res) => {
             },
             { $sort: { savedAt: -1 } }
         ]);
-        
-        if (words.length > 0) {
-            console.log('Debug /api/saved first item:', JSON.stringify(words[0], null, 2));
-        } else {
-            console.log('Debug /api/saved: No saved words found.');
-        }
 
         res.json(words);
     } catch (e) {
@@ -397,6 +458,19 @@ app.get('/api/saved', async (req, res) => {
 app.post('/api/save', async (req, res) => {
     const newWord = req.body;
     try {
+        if (useLocalDB) {
+            const saved = getLocalSaved();
+            const existingIndex = saved.findIndex(w => w.word === newWord.word);
+            if (existingIndex === -1) {
+                // Add new
+                saved.push({ ...newWord, savedAt: new Date(), flashcardStats: { correct: 0, incorrect: 0, lastReview: null } });
+            } else {
+                // Update existing? Usually save doesn't update unless specific logic
+            }
+            saveLocalSaved(saved);
+            return res.json({ success: true, data: saved.reverse() }); // Return reversed for display
+        }
+
         const existing = await SavedWord.findOne({ word: newWord.word });
         if (!existing) {
             await new SavedWord(newWord).save();
@@ -412,6 +486,13 @@ app.post('/api/save', async (req, res) => {
 app.delete('/api/saved/:word', async (req, res) => {
     const wordToDelete = req.params.word;
     try {
+        if (useLocalDB) {
+            let saved = getLocalSaved();
+            saved = saved.filter(w => w.word !== wordToDelete);
+            saveLocalSaved(saved);
+            return res.json({ success: true, data: saved.reverse() });
+        }
+
         await SavedWord.deleteOne({ word: wordToDelete });
         const words = await SavedWord.find().sort({ savedAt: -1 });
         res.json({ success: true, data: words });
@@ -426,10 +507,25 @@ app.post('/api/flashcard/review', async (req, res) => {
     if (!word || !result) return res.status(400).json({ error: 'Missing word or result' });
 
     try {
+        if (useLocalDB) {
+            const saved = getLocalSaved();
+            const target = saved.find(w => w.word === word);
+            if (target) {
+                if (!target.flashcardStats) target.flashcardStats = { correct: 0, incorrect: 0, lastReview: null };
+
+                if (result === 'correct') target.flashcardStats.correct++;
+                else target.flashcardStats.incorrect++;
+
+                target.flashcardStats.lastReview = new Date();
+                saveLocalSaved(saved);
+            }
+            return res.json({ success: true, data: target });
+        }
+
         const updateField = result === 'correct' ? 'flashcardStats.correct' : 'flashcardStats.incorrect';
         const savedWord = await SavedWord.findOneAndUpdate(
             { word },
-            { 
+            {
                 $inc: { [updateField]: 1 },
                 $set: { 'flashcardStats.lastReview': new Date() }
             },
@@ -441,7 +537,6 @@ app.post('/api/flashcard/review', async (req, res) => {
     }
 });
 
-// Heartbeat System
 app.get('/api/heartbeat', (req, res) => {
     const dbState = mongoose.connection.readyState;
     const statusMap = {
@@ -450,10 +545,15 @@ app.get('/api/heartbeat', (req, res) => {
         2: 'connecting',
         3: 'disconnecting'
     };
-    res.json({ 
-        status: 'alive', 
-        dbStatus: statusMap[dbState] || 'unknown',
-        dbMode: process.env.MONGODB_URI ? 'cloud' : 'local' 
+
+    // Explicitly return local if flag is set, regardless of actual Mongoose state (which might be 0)
+    const finalDbStatus = useLocalDB ? 'connected' : (statusMap[dbState] || 'unknown');
+    const finalDbMode = useLocalDB ? 'local' : 'cloud';
+
+    res.json({
+        status: 'alive',
+        dbStatus: finalDbStatus,
+        dbMode: finalDbMode
     });
 });
 

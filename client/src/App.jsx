@@ -20,7 +20,7 @@ function App() {
   const [sortOrder, setSortOrder] = useState('desc'); // 'desc' or 'asc'
   const [currentPage, setCurrentPage] = useState(1);
   const [selectionPopup, setSelectionPopup] = useState({ show: false, x: 0, y: 0, loading: false, result: null, text: '' });
-  
+
   // Flashcard State
   const [flashcardMode, setFlashcardMode] = useState('none'); // 'none', 'setup', 'game', 'summary'
   const [flashcards, setFlashcards] = useState([]);
@@ -51,7 +51,7 @@ function App() {
         // Calculate position
         const range = selection.getRangeAt(0);
         const rect = range.getBoundingClientRect();
-        
+
         setSelectionPopup({
           show: true,
           x: rect.left + window.scrollX,
@@ -66,7 +66,7 @@ function App() {
       } else {
         // Only close if clicking outside popup
         if (popupRef.current && !popupRef.current.contains(e.target)) {
-           setSelectionPopup(prev => ({ ...prev, show: false }));
+          setSelectionPopup(prev => ({ ...prev, show: false }));
         }
       }
     };
@@ -226,7 +226,7 @@ function App() {
 
   // Calculate filtered and paginated items
   const [statsFilter, setStatsFilter] = useState('all'); // 'all', 'mastered', 'learning'
-  
+
   // Calculate filtered and paginated items
   const filteredSavedWords = savedWords.filter(item => {
     // 1. Level Filter
@@ -240,13 +240,13 @@ function App() {
 
     // 2. Stats Filter
     if (statsFilter === 'mastered') {
-       const isMastered = (item.flashcardStats?.correct || 0) > (item.flashcardStats?.incorrect || 0) * 2 && (item.flashcardStats?.correct || 0) > 3;
-       if (!isMastered) return false;
+      const isMastered = (item.flashcardStats?.correct || 0) > (item.flashcardStats?.incorrect || 0) * 2 && (item.flashcardStats?.correct || 0) > 3;
+      if (!isMastered) return false;
     } else if (statsFilter === 'learning') {
-       const hasStats = item.flashcardStats && (item.flashcardStats.correct > 0 || item.flashcardStats.incorrect > 0);
-       const isMastered = (item.flashcardStats?.correct || 0) > (item.flashcardStats?.incorrect || 0) * 2 && (item.flashcardStats?.correct || 0) > 3;
-       // Learning = Has been exercised but not yet mastered
-       if (!hasStats || isMastered) return false;
+      const hasStats = item.flashcardStats && (item.flashcardStats.correct > 0 || item.flashcardStats.incorrect > 0);
+      const isMastered = (item.flashcardStats?.correct || 0) > (item.flashcardStats?.incorrect || 0) * 2 && (item.flashcardStats?.correct || 0) > 3;
+      // Learning = Has been exercised but not yet mastered
+      if (!hasStats || isMastered) return false;
     }
 
     return true;
@@ -276,14 +276,14 @@ function App() {
       setCurrentPage(1);
     }
   }, [currentPage, totalPages]);
-  
+
   // Reset stats filter when leaving page or changing level? 
   // Maybe better to keep it independent.
 
   // Flashcard Logic
   const startFlashcardSetup = () => {
     setFlashcardMode('setup');
-    
+
     // Set count based on current filtered view if stats filter is active?
     // Or just default to filteredSavedWords length? 
     // Usually users practice specific sets. 
@@ -296,12 +296,12 @@ function App() {
     // The previous logic used savedWords. 
     // If statsFilter is active, user probably wants to practice "Learning" words.
     // Let's us filteredSavedWords as the pool candidates if filter is active, otherwise savedWords.
-    
+
     let pool = statsFilter !== 'all' ? filteredSavedWords : savedWords;
     if (pool.length === 0) pool = savedWords; // Fallback
 
     let candidates = [...pool];
-    
+
     // 2. Shuffle (Fisher-Yates)
     for (let i = candidates.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -323,7 +323,7 @@ function App() {
   const handleCardResult = async (result) => {
     // result: 'correct' | 'incorrect'
     const currentCard = flashcards[currentCardIndex];
-    
+
     // 1. Update Backend
     try {
       await axios.post(`${API_URL}/flashcard/review`, {
@@ -331,7 +331,7 @@ function App() {
         result: result
       });
       // Update local savedWords to reflect new stats (optional, for sorting view)
-       // We can just rely on next fetchSavedWords, or manually update.
+      // We can just rely on next fetchSavedWords, or manually update.
     } catch (e) {
       console.error('Failed to update flashcard stats', e);
     }
@@ -495,9 +495,9 @@ function App() {
                     <h2 className="word-title">{item.word}</h2>
                     <div className="reading">{item.reading}</div>
                   </div>
-                  <button 
-                    className="btn btn-icon" 
-                    onClick={() => handleToggleSave(item)} 
+                  <button
+                    className="btn btn-icon"
+                    onClick={() => handleToggleSave(item)}
                     title={savedWords.find(w => w.word === item.word) ? "取消收藏" : "收藏"}
                   >
                     <Bookmark size={24} fill={savedWords.find(w => w.word === item.word) ? "currentColor" : "none"} />
@@ -566,44 +566,44 @@ function App() {
             ))
           ) : (
             // Handle Grammar (Single Object) or fallback
-             <div className="glass-panel card">
-            {searchMode === 'grammar' && !Array.isArray(result) ? (
-              <>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h2 className="word-title" style={{ fontSize: '2rem' }}>{result.grammar}</h2>
-                  <div style={{ display: 'inline-block', background: 'var(--accent)', color: 'white', padding: '0.2rem 0.6rem', borderRadius: '4px', fontSize: '0.8rem', marginTop: '0.5rem' }}>
-                    <Sparkles size={12} style={{ marginRight: '4px' }} />
-                    AI 文法解析
-                  </div>
-                </div>
-
-                <div className="meaning" style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>中文意思</h3>
-                  <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{result.meaning}</p>
-                </div>
-
-                <div className="usage" style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>用法解說</h3>
-                  <p style={{ lineHeight: '1.6' }}>{result.usage}</p>
-                </div>
-
-                {result.examples && result.examples.length > 0 && (
-                  <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--glass-border)' }}>
-                    <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                      例句
-                    </h3>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                      {result.examples.map((ex, idx) => (
-                        <div key={idx} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '0.5rem' }}>
-                          <div style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>{ex.jap}</div>
-                          <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{ex.cht}</div>
-                        </div>
-                      ))}
+            <div className="glass-panel card">
+              {searchMode === 'grammar' && !Array.isArray(result) ? (
+                <>
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <h2 className="word-title" style={{ fontSize: '2rem' }}>{result.grammar}</h2>
+                    <div style={{ display: 'inline-block', background: 'var(--accent)', color: 'white', padding: '0.2rem 0.6rem', borderRadius: '4px', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+                      <Sparkles size={12} style={{ marginRight: '4px' }} />
+                      AI 文法解析
                     </div>
                   </div>
-                )}
-              </>
-            ) : null}
+
+                  <div className="meaning" style={{ marginBottom: '1.5rem' }}>
+                    <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>中文意思</h3>
+                    <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{result.meaning}</p>
+                  </div>
+
+                  <div className="usage" style={{ marginBottom: '1.5rem' }}>
+                    <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>用法解說</h3>
+                    <p style={{ lineHeight: '1.6' }}>{result.usage}</p>
+                  </div>
+
+                  {result.examples && result.examples.length > 0 && (
+                    <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--glass-border)' }}>
+                      <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+                        例句
+                      </h3>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                        {result.examples.map((ex, idx) => (
+                          <div key={idx} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '0.5rem' }}>
+                            <div style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>{ex.jap}</div>
+                            <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{ex.cht}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </>
+              ) : null}
             </div>
           )}
         </div>
@@ -622,74 +622,76 @@ function App() {
             </div>
           )}
           {dbStatus === 'local' && (
-             <div title="僅本機儲存" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#f59e0b', background: 'rgba(245, 158, 11, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
+            <div title="僅本機儲存" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#f59e0b', background: 'rgba(245, 158, 11, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
               <CloudOff size={14} />
               <span>Local</span>
             </div>
           )}
-           {dbStatus === 'error' && (
-             <div title="連線錯誤" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#ef4444', background: 'rgba(239, 68, 68, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
+          {dbStatus === 'error' && (
+            <div title="連線錯誤" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#ef4444', background: 'rgba(239, 68, 68, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
               <CloudOff size={14} />
               <span>連線錯誤</span>
             </div>
           )}
-          
-          <button 
-            className="btn glass-panel"
-            onClick={startFlashcardSetup}
-            style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 1rem', fontSize: '0.9rem', color: 'white', borderRadius: '20px' }}
-          >
-            <div style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute', top: '-2px', right: '-2px', width: '8px', height: '8px', background: 'var(--accent)', borderRadius: '50%' }}></div>
-              <Volume2 size={18} style={{ transform: 'rotate(-90deg)' }} /> {/* Using Volume icon as card-like for now or Layers */}
-            </div>
-            單字卡
-          </button>
+
+          {savedWords.length > 0 && (
+            <button
+              className="btn glass-panel"
+              onClick={startFlashcardSetup}
+              style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 1rem', fontSize: '0.9rem', color: 'white', borderRadius: '20px' }}
+            >
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-2px', right: '-2px', width: '8px', height: '8px', background: 'var(--accent)', borderRadius: '50%' }}></div>
+                <Volume2 size={18} style={{ transform: 'rotate(-90deg)' }} /> {/* Using Volume icon as card-like for now or Layers */}
+              </div>
+              單字卡
+            </button>
+          )}
         </div>
 
         {/* Global Stats Summary & Filter */}
         {savedWords.some(w => w.flashcardStats && (w.flashcardStats.correct > 0 || w.flashcardStats.incorrect > 0)) && (
           <div className="glass-panel" style={{ marginBottom: '1.5rem', padding: '1rem', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-            
+
             {/* Total Reviews / All */}
-            <div 
-               onClick={() => { setStatsFilter('all'); setCurrentPage(1); }}
-               style={{ textAlign: 'center', cursor: 'pointer', padding: '0.5rem', borderRadius: '8px', background: statsFilter === 'all' ? 'rgba(255,255,255,0.1)' : 'transparent', transition: 'background 0.2s' }}
+            <div
+              onClick={() => { setStatsFilter('all'); setCurrentPage(1); }}
+              style={{ textAlign: 'center', cursor: 'pointer', padding: '0.5rem', borderRadius: '8px', background: statsFilter === 'all' ? 'rgba(255,255,255,0.1)' : 'transparent', transition: 'background 0.2s' }}
             >
-               <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>總練習次數</div>
-               <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
-                 {savedWords.reduce((acc, w) => acc + (w.flashcardStats?.correct || 0) + (w.flashcardStats?.incorrect || 0), 0)}
-               </div>
+              <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>總練習次數</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
+                {savedWords.reduce((acc, w) => acc + (w.flashcardStats?.correct || 0) + (w.flashcardStats?.incorrect || 0), 0)}
+              </div>
             </div>
-            
+
             <div style={{ width: '1px', height: '40px', background: 'var(--glass-border)' }}></div>
-            
+
             {/* Learning / Need Review */}
-            <div 
-               onClick={() => { setStatsFilter('learning'); setCurrentPage(1); }}
-               style={{ textAlign: 'center', cursor: 'pointer', padding: '0.5rem', borderRadius: '8px', background: statsFilter === 'learning' ? 'rgba(255,255,255,0.1)' : 'transparent', transition: 'background 0.2s' }}
+            <div
+              onClick={() => { setStatsFilter('learning'); setCurrentPage(1); }}
+              style={{ textAlign: 'center', cursor: 'pointer', padding: '0.5rem', borderRadius: '8px', background: statsFilter === 'learning' ? 'rgba(255,255,255,0.1)' : 'transparent', transition: 'background 0.2s' }}
             >
-               <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>加強中</div>
-               <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#f59e0b' }}>
-                 {savedWords.filter(w => {
-                    const hasStats = w.flashcardStats && (w.flashcardStats.correct > 0 || w.flashcardStats.incorrect > 0);
-                    const isMastered = (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3;
-                    return hasStats && !isMastered;
-                 }).length}
-               </div>
+              <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>加強中</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#f59e0b' }}>
+                {savedWords.filter(w => {
+                  const hasStats = w.flashcardStats && (w.flashcardStats.correct > 0 || w.flashcardStats.incorrect > 0);
+                  const isMastered = (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3;
+                  return hasStats && !isMastered;
+                }).length}
+              </div>
             </div>
 
             <div style={{ width: '1px', height: '40px', background: 'var(--glass-border)' }}></div>
 
             {/* Mastered */}
-            <div 
-               onClick={() => { setStatsFilter('mastered'); setCurrentPage(1); }}
-               style={{ textAlign: 'center', cursor: 'pointer', padding: '0.5rem', borderRadius: '8px', background: statsFilter === 'mastered' ? 'rgba(255,255,255,0.1)' : 'transparent', transition: 'background 0.2s' }}
+            <div
+              onClick={() => { setStatsFilter('mastered'); setCurrentPage(1); }}
+              style={{ textAlign: 'center', cursor: 'pointer', padding: '0.5rem', borderRadius: '8px', background: statsFilter === 'mastered' ? 'rgba(255,255,255,0.1)' : 'transparent', transition: 'background 0.2s' }}
             >
-               <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>已熟記</div>
-               <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#10b981' }}>
-                 {savedWords.filter(w => (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3).length}
-               </div>
+              <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>已熟記</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#10b981' }}>
+                {savedWords.filter(w => (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3).length}
+              </div>
             </div>
           </div>
         )}
@@ -697,17 +699,17 @@ function App() {
         {/* Flashcard Overlays */}
         {flashcardMode !== 'none' && (
           <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.85)', zIndex: 2000, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '1rem' }}>
-            
+
             {/* SETUP MODE */}
             {flashcardMode === 'setup' && (
               <div className="glass-panel card" style={{ maxWidth: '400px', width: '100%', textAlign: 'center' }}>
                 <h2 style={{ marginBottom: '1.5rem' }}>單字卡設定</h2>
-                
+
                 <div style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
                   <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>題目數量 ({savedWords.length} 可用)</label>
                   <div style={{ display: 'flex', gap: '0.5rem' }}>
                     {[5, 10, 20, 30].map(num => (
-                      <button 
+                      <button
                         key={num}
                         className={`btn ${flashcardSettings.count === num ? 'btn-primary' : 'glass-panel'}`}
                         onClick={() => setFlashcardSettings(prev => ({ ...prev, count: num }))}
@@ -723,14 +725,14 @@ function App() {
                 <div style={{ marginBottom: '2rem', textAlign: 'left' }}>
                   <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>模式</label>
                   <div style={{ display: 'flex', gap: '0.5rem' }}>
-                    <button 
+                    <button
                       className={`btn ${flashcardSettings.mode === 'ja-zh' ? 'btn-primary' : 'glass-panel'}`}
                       onClick={() => setFlashcardSettings(prev => ({ ...prev, mode: 'ja-zh' }))}
                       style={{ flex: 1, padding: '0.5rem', color: 'white' }}
                     >
                       看日文 -> 猜中文
                     </button>
-                    <button 
+                    <button
                       className={`btn ${flashcardSettings.mode === 'zh-ja' ? 'btn-primary' : 'glass-panel'}`}
                       onClick={() => setFlashcardSettings(prev => ({ ...prev, mode: 'zh-ja' }))}
                       style={{ flex: 1, padding: '0.5rem', color: 'white' }}
@@ -750,71 +752,71 @@ function App() {
             {/* GAME MODE */}
             {flashcardMode === 'game' && flashcards[currentCardIndex] && (
               <div style={{ maxWidth: '400px', width: '100%', perspective: '1000px' }}>
-                 <div style={{ display: 'flex', justifyContent: 'space-between', color: 'white', marginBottom: '1rem' }}>
-                    <span>進度: {currentCardIndex + 1} / {flashcards.length}</span>
-                    <button onClick={() => setFlashcardMode('none')} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer' }}>跳出</button>
-                 </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: 'white', marginBottom: '1rem' }}>
+                  <span>進度: {currentCardIndex + 1} / {flashcards.length}</span>
+                  <button onClick={() => setFlashcardMode('none')} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer' }}>跳出</button>
+                </div>
 
-                 {/* Card Container */}
-                 <div 
-                   onClick={() => !isFlipped && setIsFlipped(true)}
-                   style={{ 
-                     position: 'relative', 
-                     width: '100%', 
-                     minHeight: '300px', 
-                     cursor: 'pointer',
-                     transformStyle: 'preserve-3d',
-                     transition: 'transform 0.6s',
-                     transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
-                   }}
-                 >
-                    {/* FRONT */}
-                    <div className="glass-panel" style={{ 
-                      position: 'absolute', width: '100%', height: '100%', backfaceVisibility: 'hidden',
-                      display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
-                      background: 'rgba(30,30,30, 0.9)', border: '1px solid rgba(255,255,255,0.1)'
-                    }}>
-                      <div style={{ fontSize: '2.5rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '1rem' }}>
-                        {flashcardSettings.mode === 'ja-zh' ? flashcards[currentCardIndex].word : flashcards[currentCardIndex].meaning}
-                      </div>
-                      <div style={{ color: 'var(--text-secondary)' }}>
-                        (點擊翻面)
-                      </div>
+                {/* Card Container */}
+                <div
+                  onClick={() => !isFlipped && setIsFlipped(true)}
+                  style={{
+                    position: 'relative',
+                    width: '100%',
+                    minHeight: '300px',
+                    cursor: 'pointer',
+                    transformStyle: 'preserve-3d',
+                    transition: 'transform 0.6s',
+                    transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                  }}
+                >
+                  {/* FRONT */}
+                  <div className="glass-panel" style={{
+                    position: 'absolute', width: '100%', height: '100%', backfaceVisibility: 'hidden',
+                    display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
+                    background: 'rgba(30,30,30, 0.9)', border: '1px solid rgba(255,255,255,0.1)'
+                  }}>
+                    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '1rem' }}>
+                      {flashcardSettings.mode === 'ja-zh' ? flashcards[currentCardIndex].word : flashcards[currentCardIndex].meaning}
+                    </div>
+                    <div style={{ color: 'var(--text-secondary)' }}>
+                      (點擊翻面)
+                    </div>
+                  </div>
+
+                  {/* BACK */}
+                  <div className="glass-panel" style={{
+                    position: 'absolute', width: '100%', height: '100%', backfaceVisibility: 'hidden',
+                    transform: 'rotateY(180deg)',
+                    display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
+                    background: 'rgba(40,40,40, 0.95)', border: '1px solid rgba(255,255,255,0.1)'
+                  }}>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)', marginBottom: '0.5rem' }}>
+                      {flashcardSettings.mode === 'ja-zh' ? flashcards[currentCardIndex].meaning : flashcards[currentCardIndex].word}
+                    </div>
+                    <div style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
+                      {flashcards[currentCardIndex].reading}
                     </div>
 
-                    {/* BACK */}
-                    <div className="glass-panel" style={{ 
-                      position: 'absolute', width: '100%', height: '100%', backfaceVisibility: 'hidden',
-                      transform: 'rotateY(180deg)',
-                      display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
-                      background: 'rgba(40,40,40, 0.95)', border: '1px solid rgba(255,255,255,0.1)'
-                    }}>
-                       <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)', marginBottom: '0.5rem' }}>
-                         {flashcardSettings.mode === 'ja-zh' ? flashcards[currentCardIndex].meaning : flashcards[currentCardIndex].word}
-                       </div>
-                       <div style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
-                         {flashcards[currentCardIndex].reading}
-                       </div>
-                       
-                       {/* Feedback Buttons (Only interactive when flipped) */}
-                       <div style={{ display: 'flex', gap: '1rem', width: '80%', pointerEvents: isFlipped ? 'auto' : 'none' }}>
-                         <button 
-                           className="btn" 
-                           onClick={(e) => { e.stopPropagation(); handleCardResult('correct'); }}
-                           style={{ flex: 1, background: '#10b981', color: '#ffffff', border: 'none', fontWeight: 'bold' }}
-                         >
-                           ✅ 我會
-                         </button>
-                         <button 
-                           className="btn" 
-                           onClick={(e) => { e.stopPropagation(); handleCardResult('incorrect'); }}
-                           style={{ flex: 1, background: '#ef4444', color: '#ffffff', border: 'none', fontWeight: 'bold' }}
-                         >
-                           ❌ 忘了
-                         </button>
-                       </div>
+                    {/* Feedback Buttons (Only interactive when flipped) */}
+                    <div style={{ display: 'flex', gap: '1rem', width: '80%', pointerEvents: isFlipped ? 'auto' : 'none' }}>
+                      <button
+                        className="btn"
+                        onClick={(e) => { e.stopPropagation(); handleCardResult('correct'); }}
+                        style={{ flex: 1, background: '#10b981', color: '#ffffff', border: 'none', fontWeight: 'bold' }}
+                      >
+                        ✅ 我會
+                      </button>
+                      <button
+                        className="btn"
+                        onClick={(e) => { e.stopPropagation(); handleCardResult('incorrect'); }}
+                        style={{ flex: 1, background: '#ef4444', color: '#ffffff', border: 'none', fontWeight: 'bold' }}
+                      >
+                        ❌ 忘了
+                      </button>
                     </div>
-                 </div>
+                  </div>
+                </div>
               </div>
             )}
 
@@ -848,16 +850,16 @@ function App() {
             {['All', 'N5', 'N4', 'N3', 'N2', 'N1', 'Uncategorized'].map(level => {
               // Calculate counts based on current stats filter
               const currentStatsFiltered = savedWords.filter(w => {
-                 if (statsFilter === 'all') return true;
-                 if (statsFilter === 'mastered') {
-                    return (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3;
-                 }
-                 if (statsFilter === 'learning') {
-                    const hasStats = w.flashcardStats && (w.flashcardStats.correct > 0 || w.flashcardStats.incorrect > 0);
-                    const isMastered = (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3;
-                    return hasStats && !isMastered;
-                 }
-                 return true;
+                if (statsFilter === 'all') return true;
+                if (statsFilter === 'mastered') {
+                  return (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3;
+                }
+                if (statsFilter === 'learning') {
+                  const hasStats = w.flashcardStats && (w.flashcardStats.correct > 0 || w.flashcardStats.incorrect > 0);
+                  const isMastered = (w.flashcardStats?.correct || 0) > (w.flashcardStats?.incorrect || 0) * 2 && (w.flashcardStats?.correct || 0) > 3;
+                  return hasStats && !isMastered;
+                }
+                return true;
               });
 
               const count = level === 'All'
@@ -881,7 +883,7 @@ function App() {
 
           <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
             <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>排序:</span>
-            <button 
+            <button
               className={`btn ${sortBy === 'date' ? 'btn-primary' : 'glass-panel'}`}
               style={{ padding: '0.2rem 0.6rem', fontSize: '0.85rem', borderRadius: '8px', color: 'white', display: 'flex', alignItems: 'center', gap: '0.25rem' }}
               onClick={() => {
@@ -892,7 +894,7 @@ function App() {
               時間
               {sortBy === 'date' && (sortOrder === 'desc' ? '↓' : '↑')}
             </button>
-            <button 
+            <button
               className={`btn ${sortBy === 'count' ? 'btn-primary' : 'glass-panel'}`}
               style={{ padding: '0.2rem 0.6rem', fontSize: '0.85rem', borderRadius: '8px', color: 'white', display: 'flex', alignItems: 'center', gap: '0.25rem' }}
               onClick={() => {
@@ -911,8 +913,8 @@ function App() {
             <div
               key={item.word}
               className="glass-panel saved-item"
-              onClick={() => { 
-                setQuery(item.word); 
+              onClick={() => {
+                setQuery(item.word);
                 // Normalize history data structure to match search result format
                 const normalizedItem = {
                   ...item,
@@ -921,7 +923,7 @@ function App() {
                     lastSearched: item.lastSearched
                   }
                 };
-                setResult([normalizedItem]); 
+                setResult([normalizedItem]);
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
@@ -949,22 +951,22 @@ function App() {
               </div>
               <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{item.reading}</div>
               <div style={{ marginTop: '0.5rem', fontSize: '0.9rem' }} className="truncate">{item.meaning}</div>
-              
+
               {/* Flashcard Stats */}
               {(item.flashcardStats && (item.flashcardStats.correct > 0 || item.flashcardStats.incorrect > 0)) && (
                 <div style={{ marginTop: '0.5rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', gap: '1rem', fontSize: '0.8rem' }}>
                   <span style={{ color: '#10b981' }}>✅ {item.flashcardStats.correct}</span>
                   <span style={{ color: '#ef4444' }}>❌ {item.flashcardStats.incorrect}</span>
                   {item.flashcardStats.lastReview && (
-                     <span style={{ marginLeft: 'auto', color: 'var(--text-secondary)' }}>
-                       {new Date(item.flashcardStats.lastReview).toLocaleDateString()}
-                     </span>
+                    <span style={{ marginLeft: 'auto', color: 'var(--text-secondary)' }}>
+                      {new Date(item.flashcardStats.lastReview).toLocaleDateString()}
+                    </span>
                   )}
                 </div>
               )}
             </div>
           ))}
-          
+
           {filteredSavedWords.length === 0 && (
             <p style={{ color: 'var(--text-secondary)', fontStyle: 'italic' }}>尚無收藏單字</p>
           )}
@@ -973,8 +975,8 @@ function App() {
         {/* Pagination Controls - Moved Outside saved-list */}
         {filteredSavedWords.length > 0 && (
           <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '2rem', gap: '1rem' }}>
-            <button 
-              className="btn glass-panel" 
+            <button
+              className="btn glass-panel"
               disabled={currentPage === 1}
               onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
               style={{ padding: '0.5rem 1rem', color: 'white', opacity: currentPage === 1 ? 0.5 : 1, cursor: currentPage === 1 ? 'default' : 'pointer' }}
@@ -984,8 +986,8 @@ function App() {
             <span style={{ color: 'white', fontWeight: 'bold' }}>
               {currentPage} / {totalPages || 1}
             </span>
-            <button 
-              className="btn glass-panel" 
+            <button
+              className="btn glass-panel"
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
               style={{ padding: '0.5rem 1rem', color: 'white', opacity: currentPage === totalPages ? 0.5 : 1, cursor: currentPage === totalPages ? 'default' : 'pointer' }}
@@ -998,7 +1000,7 @@ function App() {
 
       {/* Selection Popup */}
       {selectionPopup.show && (
-        <div 
+        <div
           ref={popupRef}
           className="glass-panel"
           style={{
@@ -1013,56 +1015,56 @@ function App() {
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '0.5rem' }}>
-             <span style={{ fontWeight: 'bold', color: 'var(--primary)' }}>快速查詢</span>
-             <button onClick={() => setSelectionPopup(prev => ({...prev, show: false}))} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}>✕</button>
+            <span style={{ fontWeight: 'bold', color: 'var(--primary)' }}>快速查詢</span>
+            <button onClick={() => setSelectionPopup(prev => ({ ...prev, show: false }))} style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}>✕</button>
           </div>
-          
+
           {selectionPopup.loading ? (
-             <div style={{ textAlign: 'center', padding: '1rem', color: 'var(--text-secondary)' }}>
-               <Sparkles className="spin" size={20} style={{ marginBottom: '0.5rem' }} />
-               <p>搜尋 "{selectionPopup.text}" 中...</p>
-             </div>
+            <div style={{ textAlign: 'center', padding: '1rem', color: 'var(--text-secondary)' }}>
+              <Sparkles className="spin" size={20} style={{ marginBottom: '0.5rem' }} />
+              <p>搜尋 "{selectionPopup.text}" 中...</p>
+            </div>
           ) : selectionPopup.result ? (
             <div>
-               <div style={{ fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '0.2rem' }}>{selectionPopup.result.word}</div>
-               <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>{selectionPopup.result.reading}</div>
-               
-               <div style={{ marginBottom: '0.5rem' }}>
-                 {selectionPopup.result.accent && <span className="badge badge-accent" style={{ fontSize: '0.7rem', marginRight: '0.25rem' }}>{selectionPopup.result.accent}</span>}
-                 {selectionPopup.result.level && (
-                   <span className={`badge ${selectionPopup.result.level.includes('N1') ? 'badge-n1' :
-                     selectionPopup.result.level.includes('N2') ? 'badge-n2' :
-                       selectionPopup.result.level.includes('N3') ? 'badge-n3' :
-                         selectionPopup.result.level.includes('N4') ? 'badge-n4' :
-                           selectionPopup.result.level.includes('N5') ? 'badge-n5' :
-                             'badge-level'
-                     }`} style={{ fontSize: '0.7rem' }}>
-                     {selectionPopup.result.level}
-                   </span>
-                 )}
-               </div>
+              <div style={{ fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '0.2rem' }}>{selectionPopup.result.word}</div>
+              <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>{selectionPopup.result.reading}</div>
 
-               <div style={{ fontSize: '0.95rem', lineHeight: '1.4' }}>
-                 {selectionPopup.result.translatedMeaning || selectionPopup.result.meaning}
-               </div>
-               
-               <button 
-                  className="btn btn-primary" 
-                  style={{ width: '100%', marginTop: '1rem', padding: '0.4rem', fontSize: '0.9rem' }}
-                  onClick={() => {
-                     setQuery(selectionPopup.result.word);
-                     setResult(Array.isArray(selectionPopup.result) ? selectionPopup.result : [selectionPopup.result]);
-                     setSelectionPopup(prev => ({...prev, show: false}));
-                     window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-               >
-                 查看完整詳情
-               </button>
+              <div style={{ marginBottom: '0.5rem' }}>
+                {selectionPopup.result.accent && <span className="badge badge-accent" style={{ fontSize: '0.7rem', marginRight: '0.25rem' }}>{selectionPopup.result.accent}</span>}
+                {selectionPopup.result.level && (
+                  <span className={`badge ${selectionPopup.result.level.includes('N1') ? 'badge-n1' :
+                    selectionPopup.result.level.includes('N2') ? 'badge-n2' :
+                      selectionPopup.result.level.includes('N3') ? 'badge-n3' :
+                        selectionPopup.result.level.includes('N4') ? 'badge-n4' :
+                          selectionPopup.result.level.includes('N5') ? 'badge-n5' :
+                            'badge-level'
+                    }`} style={{ fontSize: '0.7rem' }}>
+                    {selectionPopup.result.level}
+                  </span>
+                )}
+              </div>
+
+              <div style={{ fontSize: '0.95rem', lineHeight: '1.4' }}>
+                {selectionPopup.result.translatedMeaning || selectionPopup.result.meaning}
+              </div>
+
+              <button
+                className="btn btn-primary"
+                style={{ width: '100%', marginTop: '1rem', padding: '0.4rem', fontSize: '0.9rem' }}
+                onClick={() => {
+                  setQuery(selectionPopup.result.word);
+                  setResult(Array.isArray(selectionPopup.result) ? selectionPopup.result : [selectionPopup.result]);
+                  setSelectionPopup(prev => ({ ...prev, show: false }));
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              >
+                查看完整詳情
+              </button>
             </div>
           ) : (
-             <div style={{ textAlign: 'center', padding: '1rem', color: '#ef4444' }}>
-               找不到 "{selectionPopup.text}" 的結果
-             </div>
+            <div style={{ textAlign: 'center', padding: '1rem', color: '#ef4444' }}>
+              找不到 "{selectionPopup.text}" 的結果
+            </div>
           )}
         </div>
       )}
