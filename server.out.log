@@ -1,5 +1,9 @@
-[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
 Server running on http://localhost:3000
 Auto-shutdown enabled: Server will close if no heartbeat for 60s (after first connection)
-Using Local DB (Mode flag: false State: 2 )
-Using Local DB (Mode flag: false State: 2 )
+Connected to MongoDB
+Attempting direct search for: "そもそも"
+No examples found for 抑. Using LLM fallback...
+Attempting direct search for: "いかん"
+Attempting direct search for: "寄付"
+No examples found for 寄付. Using LLM fallback...

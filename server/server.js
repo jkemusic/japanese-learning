@@ -47,7 +47,6 @@ const SavedWordSchema = new mongoose.Schema({
 const SavedWord = mongoose.model('SavedWord', SavedWordSchema);
 
 // MongoDB Connection & Migration
-// MongoDB Connection & Migration
 let useLocalDB = false;
 
 // Helpers for Local DB
@@ -63,13 +62,14 @@ const getLocalSaved = () => {
 };
 const saveLocalSaved = (data) => fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
 
-mongoose.connect(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 5000 })
+mongoose.connect(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 15000 })
     .then(async () => {
         console.log('Connected to MongoDB');
         await migrateData();
     })
     .catch(err => {
         console.error('MongoDB connection failed (Timeout or Auth Error). Switching to LOCAL JSON mode.');
+        console.error('Connection Error Details:', err.message);
         useLocalDB = true;
     });
 

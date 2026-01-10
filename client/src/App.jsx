@@ -91,8 +91,12 @@ function App() {
   const checkConnection = async () => {
     try {
       const { data } = await axios.get(`${API_URL}/heartbeat`);
-      if (data.dbMode === 'cloud' && data.dbStatus === 'connected') {
-        setDbStatus('connected');
+      if (data.dbStatus === 'connected') {
+        if (data.dbMode === 'local') {
+          setDbStatus('local');
+        } else {
+          setDbStatus('connected');
+        }
       } else {
         setDbStatus('error');
       }
