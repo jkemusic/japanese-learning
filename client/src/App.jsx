@@ -190,11 +190,14 @@ function App() {
   const handleToggleSave = async (targetItem) => {
     const itemToSave = targetItem || result; // Fallback for safety or old calls
     if (!itemToSave) return;
-    const isSaved = savedWords.some(w => w.word === itemToSave.word);
+
+    // Check duplication by Word AND Reading
+    const isSaved = savedWords.some(w => w.word === itemToSave.word && w.reading === itemToSave.reading);
 
     try {
       if (isSaved) {
-        await axios.delete(`${API_URL}/saved/${itemToSave.word}`);
+        // Delete with reading param
+        await axios.delete(`${API_URL}/saved/${itemToSave.word}?reading=${encodeURIComponent(itemToSave.reading)}`);
       } else {
         await axios.post(`${API_URL}/save`, itemToSave);
       }
@@ -204,10 +207,13 @@ function App() {
     }
   };
 
-  const handleDelete = async (word, e) => {
+  const handleDelete = async (word, e, reading = null) => {
     e.stopPropagation();
     try {
-      await axios.delete(`${API_URL}/saved/${word}`);
+      let url = `${API_URL}/saved/${word}`;
+      if (reading) url += `?reading=${encodeURIComponent(reading)}`;
+
+      await axios.delete(url);
       fetchSavedWords();
     } catch (err) {
       console.error('Failed to delete', err);
@@ -502,9 +508,9 @@ function App() {
                   <button
                     className="btn btn-icon"
                     onClick={() => handleToggleSave(item)}
-                    title={savedWords.find(w => w.word === item.word) ? "取消收藏" : "收藏"}
+                    title={savedWords.find(w => w.word === item.word && w.reading === item.reading) ? "取消收藏" : "收藏"}
                   >
-                    <Bookmark size={24} fill={savedWords.find(w => w.word === item.word) ? "currentColor" : "none"} />
+                    <Bookmark size={24} fill={savedWords.find(w => w.word === item.word && w.reading === item.reading) ? "currentColor" : "none"} />
                   </button>
                 </div>
 
@@ -783,6 +789,14 @@ function App() {
                     <div style={{ fontSize: '2.5rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '1rem' }}>
                       {flashcardSettings.mode === 'ja-zh' ? flashcards[currentCardIndex].word : flashcards[currentCardIndex].meaning}
                     </div>
+
+                    {/* Furigana Hint */}
+                    {flashcardSettings.mode === 'ja-zh' && (
+                      <div style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '1rem', fontStyle: 'italic' }}>
+                        {flashcards[currentCardIndex].reading}
+                      </div>
+                    )}
+
                     <div style={{ color: 'var(--text-secondary)' }}>
                       (點擊翻面)
                     </div>
@@ -949,7 +963,7 @@ function App() {
                     </span>
                   )}
                 </div>
-                <button className="btn-icon" onClick={(e) => handleDelete(item.word, e)}>
+                <button className="btn-icon" onClick={(e) => handleDelete(item.word, e, item.reading)}>
                   <Trash2 size={16} />
                 </button>
               </div>

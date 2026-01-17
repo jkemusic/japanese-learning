@@ -30,7 +30,7 @@ const HistorySchema = new mongoose.Schema({
 const History = mongoose.model('History', HistorySchema);
 
 const SavedWordSchema = new mongoose.Schema({
-    word: { type: String, unique: true },
+    word: { type: String }, // Removed unique: true to allow homographs
     reading: String,
     accent: String,
     part: String,
@@ -44,6 +44,8 @@ const SavedWordSchema = new mongoose.Schema({
         lastReview: { type: Date, default: null }
     }
 });
+// Compound unique index: Word + Reading must be unique
+SavedWordSchema.index({ word: 1, reading: 1 }, { unique: true });
 const SavedWord = mongoose.model('SavedWord', SavedWordSchema);
 
 // MongoDB Connection & Migration
@@ -65,6 +67,20 @@ const saveLocalSaved = (data) => fs.writeFileSync(DB_FILE, JSON.stringify(data, 
 mongoose.connect(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 15000 })
     .then(async () => {
         console.log('Connected to MongoDB');
+
+        // Fix for Homographs: Drop legacy unique index on 'word' if it exists.
+        // We moved to compound index { word: 1, reading: 1 }
+        try {
+            const indexes = await SavedWord.collection.indexes();
+            const wordIndex = indexes.find(idx => idx.name === 'word_1');
+            if (wordIndex) {
+                console.log('Dropping legacy index: word_1');
+                await SavedWord.collection.dropIndex('word_1');
+            }
+        } catch (e) {
+            console.warn('Index drop warning:', e.message);
+        }
+
         await migrateData();
     })
     .catch(err => {
@@ -241,15 +257,22 @@ app.get('/api/search', async (req, res) => {
                 // Local Mode: Update history.json
                 try {
                     const history = getLocalHistory();
+                    let previousLastSearched = null; // Store previous time
+
                     if (!history[result.word]) {
                         history[result.word] = { count: 0, lastSearched: null };
+                    } else {
+                        previousLastSearched = history[result.word].lastSearched; // Capture existing
                     }
+
                     history[result.word].count += 1;
                     history[result.word].lastSearched = now.toISOString();
                     saveLocalHistory(history);
 
                     count = history[result.word].count;
-                    lastSearched = history[result.word].lastSearched;
+                    // Send PREVIOUS lastSearched to UI, so user sees "Last viewed: 2 days ago" instead of "Just now"
+                    // If never searched before, it remains null (or maybe user wants to know it's new)
+                    lastSearched = previousLastSearched;
                 } catch (e) {
                     console.error('Local history update failed:', e);
                 }
@@ -257,15 +280,20 @@ app.get('/api/search', async (req, res) => {
                 // Cloud Mode: Update MongoDB
                 try {
                     let historyItem = await History.findOne({ word: result.word });
+                    let previousLastSearched = null;
+
                     if (!historyItem) {
                         historyItem = new History({ word: result.word });
+                    } else {
+                        previousLastSearched = historyItem.lastSearched;
                     }
+
                     historyItem.count += 1;
                     historyItem.lastSearched = now;
                     await historyItem.save();
 
                     count = historyItem.count;
-                    lastSearched = historyItem.lastSearched;
+                    lastSearched = previousLastSearched;
                 } catch (e) {
                     console.error('MongoDB history update failed:', e);
                 }
@@ -460,7 +488,9 @@ app.post('/api/save', async (req, res) => {
     try {
         if (useLocalDB) {
             const saved = getLocalSaved();
-            const existingIndex = saved.findIndex(w => w.word === newWord.word);
+            // Check for existing word AND reading
+            const existingIndex = saved.findIndex(w => w.word === newWord.word && w.reading === newWord.reading);
+
             if (existingIndex === -1) {
                 // Add new
                 saved.push({ ...newWord, savedAt: new Date(), flashcardStats: { correct: 0, incorrect: 0, lastReview: null } });
@@ -471,7 +501,8 @@ app.post('/api/save', async (req, res) => {
             return res.json({ success: true, data: saved.reverse() }); // Return reversed for display
         }
 
-        const existing = await SavedWord.findOne({ word: newWord.word });
+        // Cloud DB: Check for word AND reading
+        const existing = await SavedWord.findOne({ word: newWord.word, reading: newWord.reading });
         if (!existing) {
             await new SavedWord(newWord).save();
         }
@@ -479,21 +510,39 @@ app.post('/api/save', async (req, res) => {
         const words = await SavedWord.find().sort({ savedAt: -1 });
         res.json({ success: true, data: words });
     } catch (e) {
+        // Handle Duplicate Key Error specifically if index hasn't updated yet or race condition
+        if (e.code === 11000) {
+            console.warn('Duplicate entry ignored.');
+            return res.json({ success: true }); // Treat as success
+        }
         res.status(500).json({ error: e.message });
     }
 });
 
 app.delete('/api/saved/:word', async (req, res) => {
     const wordToDelete = req.params.word;
+    const readingToDelete = req.query.reading; // Get reading from query param
+
     try {
         if (useLocalDB) {
             let saved = getLocalSaved();
-            saved = saved.filter(w => w.word !== wordToDelete);
+            if (readingToDelete) {
+                // Delete specific match (word + reading)
+                saved = saved.filter(w => !(w.word === wordToDelete && w.reading === readingToDelete));
+            } else {
+                // Backward compatibility: Delete ALL matches for this word if no reading provided
+                saved = saved.filter(w => w.word !== wordToDelete);
+            }
             saveLocalSaved(saved);
             return res.json({ success: true, data: saved.reverse() });
         }
 
-        await SavedWord.deleteOne({ word: wordToDelete });
+        if (readingToDelete) {
+            await SavedWord.deleteOne({ word: wordToDelete, reading: readingToDelete });
+        } else {
+            await SavedWord.deleteMany({ word: wordToDelete });
+        }
+
         const words = await SavedWord.find().sort({ savedAt: -1 });
         res.json({ success: true, data: words });
     } catch (e) {
@@ -503,13 +552,15 @@ app.delete('/api/saved/:word', async (req, res) => {
 
 // Flashcard Review Endpoint
 app.post('/api/flashcard/review', async (req, res) => {
-    const { word, result } = req.body; // result: 'correct' | 'incorrect'
+    const { word, result, reading } = req.body; // Accept reading for specificity
     if (!word || !result) return res.status(400).json({ error: 'Missing word or result' });
 
     try {
         if (useLocalDB) {
             const saved = getLocalSaved();
-            const target = saved.find(w => w.word === word);
+            // Try to find by word AND reading if provided, otherwise just word (fallback)
+            const target = saved.find(w => w.word === word && (!reading || w.reading === reading));
+
             if (target) {
                 if (!target.flashcardStats) target.flashcardStats = { correct: 0, incorrect: 0, lastReview: null };
 
@@ -523,8 +574,11 @@ app.post('/api/flashcard/review', async (req, res) => {
         }
 
         const updateField = result === 'correct' ? 'flashcardStats.correct' : 'flashcardStats.incorrect';
+        const query = { word };
+        if (reading) query.reading = reading;
+
         const savedWord = await SavedWord.findOneAndUpdate(
-            { word },
+            query,
             {
                 $inc: { [updateField]: 1 },
                 $set: { 'flashcardStats.lastReview': new Date() }
